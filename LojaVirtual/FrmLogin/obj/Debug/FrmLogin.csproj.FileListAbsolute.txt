@@ -1,0 +1,110 @@
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.exe.config
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.exe
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.pdb
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csprojResolveAssemblyReference.cache
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.Properties.Resources.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csproj.GenerateResource.Cache
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.exe
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.pdb
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmInicial.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmLogin.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoConsultarExcluir.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmCategoriaCrud.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmClienteAletarCadastrar.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmClienteConsultarExcluir.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmPedidoAlterarCadastrar.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmPedidoConsultarExcluir.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoAlterarCadastrar.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioAlterarCadastrar.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioConsultarExcluir.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.exe.config
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.exe
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.pdb
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.exe
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.pdb
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csprojResolveAssemblyReference.cache
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmCategoriaCrud.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmClienteAletarCadastrar.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmClienteConsultarExcluir.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmInicial.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmLogin.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmPedidoAlterarCadastrar.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmPedidoConsultarExcluir.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoAlterarCadastrar.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoConsultarExcluir.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioConsultarExcluir.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioAlterarCadastrar.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.Properties.Resources.resources
+C:\Users\ednalva.soliveira\Documents\Visual Studio 2015\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csproj.GenerateResource.Cache
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.exe.config
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.exe
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.pdb
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.exe
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.pdb
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csprojResolveAssemblyReference.cache
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmCategoriaCrud.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmClienteAletarCadastrar.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmClienteConsultarExcluir.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmInicial.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmLogin.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmPedidoAlterarCadastrar.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmPedidoConsultarExcluir.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoAlterarCadastrar.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoConsultarExcluir.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioConsultarExcluir.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioAlterarCadastrar.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.Properties.Resources.resources
+C:\Users\lucia\Desktop\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csproj.GenerateResource.Cache
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.exe.config
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.exe
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.pdb
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.exe
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.pdb
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csprojResolveAssemblyReference.cache
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmCategoriaCrud.resources
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmInicial.resources
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmLogin.resources
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoAlterarCadastrar.resources
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoConsultarExcluir.resources
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioConsultarExcluir.resources
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioAlterarCadastrar.resources
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.Properties.Resources.resources
+C:\Users\lucia\Desktop\faculadade SENAC\Terceiro Semestre\PI3\VisualStudio\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csproj.GenerateResource.Cache
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.exe.config
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.exe
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.pdb
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.exe
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.pdb
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csprojResolveAssemblyReference.cache
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmCategoriaCrud.resources
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmInicial.resources
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmLogin.resources
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoAlterarCadastrar.resources
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoConsultarExcluir.resources
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioConsultarExcluir.resources
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioAlterarCadastrar.resources
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.MdiPrincipal.resources
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.Properties.Resources.resources
+C:\Users\Ednalva Oliveira\Documents\Visual Studio 2015\Projects\LojaVirtual2.0\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csproj.GenerateResource.Cache
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.exe.config
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.exe
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.exe
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\FrmLogin.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csprojResolveAssemblyReference.cache
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmCategoriaCrud.resources
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmInicial.resources
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmLogin.resources
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoAlterarCadastrar.resources
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoConsultarExcluir.resources
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioConsultarExcluir.resources
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioAlterarCadastrar.resources
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.MdiPrincipal.resources
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.Properties.Resources.resources
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csproj.GenerateResource.Cache
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\Conexao.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\Conexao.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\Negocio.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\Negocio.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\ObjetoTransferencia.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\ObjetoTransferencia.pdb

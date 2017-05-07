@@ -1,0 +1,5 @@
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Conexao\bin\Debug\Conexao.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Conexao\bin\Debug\Conexao.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Conexao\obj\Debug\Conexao.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Conexao\obj\Debug\Conexao.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Conexao\bin\Debug\Conexao.dll.config

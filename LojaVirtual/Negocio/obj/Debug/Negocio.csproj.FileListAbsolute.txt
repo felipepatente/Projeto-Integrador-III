@@ -1,0 +1,7 @@
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\bin\Debug\Negocio.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\bin\Debug\Conexao.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\bin\Debug\Conexao.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\obj\Debug\Negocio.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
