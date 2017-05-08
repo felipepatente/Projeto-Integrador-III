@@ -33,14 +33,6 @@
             this.rdbCategoria = new System.Windows.Forms.RadioButton();
             this.rdbPreco = new System.Windows.Forms.RadioButton();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
-            this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescProm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -49,6 +41,15 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescProm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,75 +110,14 @@
             this.Preço,
             this.DescProm,
             this.Categoria,
+            this.idCategoria,
             this.Ativo,
             this.Quantidade});
-            this.dgvProduto.Location = new System.Drawing.Point(7, 234);
+            this.dgvProduto.Location = new System.Drawing.Point(12, 234);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduto.Size = new System.Drawing.Size(843, 269);
             this.dgvProduto.TabIndex = 14;
-            // 
-            // IdProduto
-            // 
-            this.IdProduto.DataPropertyName = "idProduto";
-            this.IdProduto.HeaderText = "IdProduto";
-            this.IdProduto.Name = "IdProduto";
-            this.IdProduto.ReadOnly = true;
-            this.IdProduto.Width = 70;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "nomeProduto";
-            this.Nome.HeaderText = "Produto";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Descrição
-            // 
-            this.Descrição.DataPropertyName = "descProduto";
-            this.Descrição.HeaderText = "Descrição";
-            this.Descrição.Name = "Descrição";
-            this.Descrição.ReadOnly = true;
-            this.Descrição.Width = 300;
-            // 
-            // Preço
-            // 
-            this.Preço.DataPropertyName = "precProduto";
-            this.Preço.HeaderText = "Preço";
-            this.Preço.Name = "Preço";
-            this.Preço.ReadOnly = true;
-            this.Preço.Width = 50;
-            // 
-            // DescProm
-            // 
-            this.DescProm.DataPropertyName = "descontoPromocao";
-            this.DescProm.HeaderText = "Desconto";
-            this.DescProm.Name = "DescProm";
-            this.DescProm.ReadOnly = true;
-            this.DescProm.Width = 80;
-            // 
-            // Categoria
-            // 
-            this.Categoria.DataPropertyName = "nomeCategoria";
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            // 
-            // Ativo
-            // 
-            this.Ativo.DataPropertyName = "ativoProduto";
-            this.Ativo.HeaderText = "Ativo";
-            this.Ativo.Name = "Ativo";
-            this.Ativo.ReadOnly = true;
-            this.Ativo.Width = 50;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.DataPropertyName = "qtdMinEstoque";
-            this.Quantidade.HeaderText = "Qtd Minima";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
-            this.Quantidade.Width = 50;
             // 
             // txtPesquisar
             // 
@@ -284,6 +224,76 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
+            // IdProduto
+            // 
+            this.IdProduto.DataPropertyName = "idProduto";
+            this.IdProduto.HeaderText = "IdProduto";
+            this.IdProduto.Name = "IdProduto";
+            this.IdProduto.ReadOnly = true;
+            this.IdProduto.Width = 70;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "nomeProduto";
+            this.Nome.HeaderText = "Produto";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Descrição
+            // 
+            this.Descrição.DataPropertyName = "descProduto";
+            this.Descrição.HeaderText = "Descrição";
+            this.Descrição.Name = "Descrição";
+            this.Descrição.ReadOnly = true;
+            this.Descrição.Width = 300;
+            // 
+            // Preço
+            // 
+            this.Preço.DataPropertyName = "precProduto";
+            this.Preço.HeaderText = "Preço";
+            this.Preço.Name = "Preço";
+            this.Preço.ReadOnly = true;
+            this.Preço.Width = 50;
+            // 
+            // DescProm
+            // 
+            this.DescProm.DataPropertyName = "descontoPromocao";
+            this.DescProm.HeaderText = "Desconto";
+            this.DescProm.Name = "DescProm";
+            this.DescProm.ReadOnly = true;
+            this.DescProm.Width = 80;
+            // 
+            // Categoria
+            // 
+            this.Categoria.DataPropertyName = "nomeCategoria";
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            // 
+            // idCategoria
+            // 
+            this.idCategoria.DataPropertyName = "idCategoria";
+            this.idCategoria.HeaderText = "idCategoria";
+            this.idCategoria.Name = "idCategoria";
+            this.idCategoria.ReadOnly = true;
+            this.idCategoria.Width = 70;
+            // 
+            // Ativo
+            // 
+            this.Ativo.DataPropertyName = "ativoProduto";
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
+            this.Ativo.Width = 50;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "qtdMinEstoque";
+            this.Quantidade.HeaderText = "Qtd Minima";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            this.Quantidade.Width = 50;
+            // 
             // FrmProdutoConsultarExcluir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,6 +343,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescProm;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
     }

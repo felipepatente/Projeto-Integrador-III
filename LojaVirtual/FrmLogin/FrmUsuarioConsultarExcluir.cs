@@ -21,7 +21,7 @@ namespace FrmLogin
             chamarTela = new ChamarTela();
             InitializeComponent();
         }
-
+        
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Close();
@@ -39,10 +39,15 @@ namespace FrmLogin
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            chamarTela.UsuarioAlterarCadastrar();
+            
+            Usuario usuarioSelecionado = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
+            FrmUsuarioAlterarCadastrar frmUsuario = new FrmUsuarioAlterarCadastrar(usuarioSelecionado);
+            frmUsuario.MdiParent = MdiPrincipal.ActiveForm;
+            frmUsuario.Show();
+            //chamarTela.UsuarioAlterarCadastrar();
             Close();
         }
-
+        
         private void btnConsultar_Click(object sender, EventArgs e)
         {
 

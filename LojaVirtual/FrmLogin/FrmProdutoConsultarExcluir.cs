@@ -39,7 +39,11 @@ namespace FrmLogin
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            chamarTela.ProdutoAlterarCadastrar();
+            Produto produtoSelecionado = (dgvProduto.SelectedRows[0].DataBoundItem as Produto);
+            FrmProdutoAlterarCadastrar frmProduto = new FrmProdutoAlterarCadastrar(produtoSelecionado);
+            frmProduto.MdiParent = MdiPrincipal.ActiveForm;
+            frmProduto.Show();
+            //chamarTela.ProdutoAlterarCadastrar();
             Close();
         }
 

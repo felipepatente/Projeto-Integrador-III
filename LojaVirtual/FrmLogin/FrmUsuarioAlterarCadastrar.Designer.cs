@@ -40,7 +40,7 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdbDesativado = new System.Windows.Forms.RadioButton();
             this.rdbAtivado = new System.Windows.Forms.RadioButton();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -177,7 +177,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.rdbDesativado);
             this.groupBox1.Controls.Add(this.rdbAtivado);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(436, 344);
@@ -187,16 +187,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Status";
             // 
-            // radioButton2
+            // rdbDesativado
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(115, 21);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(79, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Desativado";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbDesativado.AutoSize = true;
+            this.rdbDesativado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbDesativado.Location = new System.Drawing.Point(115, 21);
+            this.rdbDesativado.Name = "rdbDesativado";
+            this.rdbDesativado.Size = new System.Drawing.Size(79, 17);
+            this.rdbDesativado.TabIndex = 1;
+            this.rdbDesativado.Text = "Desativado";
+            this.rdbDesativado.UseVisualStyleBackColor = true;
             // 
             // rdbAtivado
             // 
@@ -294,6 +294,7 @@
             this.sltTipoPerfil.Name = "sltTipoPerfil";
             this.sltTipoPerfil.Size = new System.Drawing.Size(225, 21);
             this.sltTipoPerfil.TabIndex = 35;
+            this.sltTipoPerfil.Text = "E";
             // 
             // FrmUsuarioAlterarCadastrar
             // 
@@ -346,7 +347,7 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdbDesativado;
         private System.Windows.Forms.RadioButton rdbAtivado;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;

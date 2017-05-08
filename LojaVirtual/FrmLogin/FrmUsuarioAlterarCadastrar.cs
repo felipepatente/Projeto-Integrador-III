@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using ObjetoTransferencia;
 
 namespace FrmLogin
 {
@@ -15,10 +16,21 @@ namespace FrmLogin
     {
         private ChamarTela chamarTela;
 
-        public FrmUsuarioAlterarCadastrar()
+        public void Construtor()
         {
             chamarTela = new ChamarTela();
             InitializeComponent();
+        }
+
+        public FrmUsuarioAlterarCadastrar()
+        {
+            this.Construtor();
+        }
+
+        public FrmUsuarioAlterarCadastrar(Usuario usuario)
+        {
+            this.Construtor();
+            SetarUsuario(usuario);
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -42,6 +54,25 @@ namespace FrmLogin
 
             chamarTela.UsuarioAlterarCadastrar();
             Close();
+        }
+
+        private void SetarUsuario(Usuario usuario)
+        {
+            txtCodigo.Text = Convert.ToString(usuario.IdUsuario);
+            txtLogin.Text = Convert.ToString(usuario.LoginUsuario);
+            txtSenha.Text = Convert.ToString(usuario.SenhaUsuario);
+            txtNome.Text = Convert.ToString(usuario.NomeUsuario);
+            sltTipoPerfil.Text = usuario.TipoPerfil.Equals("A") ? "A" : "E";
+            
+            if (usuario.UsuarioAtivo.Equals("1"))
+            {
+                rdbAtivado.Checked = true;
+            }
+            else
+            {
+                rdbDesativado.Checked = true;
+            }
+
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)

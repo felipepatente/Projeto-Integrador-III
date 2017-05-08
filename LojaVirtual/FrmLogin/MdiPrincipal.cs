@@ -14,13 +14,19 @@ namespace FrmLogin
     {
         private int childFormNumber = 0;
         private ChamarTela chamarTela;
+        private string idUsuario;
 
         public MdiPrincipal()
         {
             chamarTela = new ChamarTela();
             InitializeComponent();
+        }
 
-            
+        public MdiPrincipal(string idUsuario)
+        {
+            chamarTela = new ChamarTela();
+            InitializeComponent();
+            this.idUsuario = idUsuario;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -110,6 +116,11 @@ namespace FrmLogin
 
         private void tsmiCadastrarProduto_Click(object sender, EventArgs e)
         {
+            //FrmLogin login = new FrmLogin();
+            //Convert.ToInt32(idUsuario)
+            //FrmProdutoAlterarCadastrar produto = new FrmProdutoAlterarCadastrar(4);
+            //produto.MdiParent = MdiPrincipal.ActiveForm;
+            //produto.Show();
             chamarTela.ProdutoAlterarCadastrar();
         }
 

@@ -14,12 +14,11 @@ namespace FrmLogin
 {
     public partial class FrmLogin : Form
     {
-        public int login;
-        
+        //public int logando;
+
         public FrmLogin()
         {
             InitializeComponent();
-            login = 0;
         }
         
         private void btbEntrar_Click(object sender, EventArgs e)
@@ -27,8 +26,13 @@ namespace FrmLogin
             Consultar consultar = new Consultar();
             
             int linhas = consultar.ConsultarUsuarioLogin(txtLogin.Text, txtSenha.Text);
-            //MessageBox.Show(" " + linhas);
-            
+            //MdiPrincipal principal = new MdiPrincipal(linhas.ToString());
+            //logando = linhas;
+            //MessageBox.Show(" " + logando);
+            //FrmProdutoAlterarCadastrar produto = new FrmProdutoAlterarCadastrar();
+            //produto.Set(linhas.ToString());
+
+
             if (linhas == 0)
             {
                 MessageBox.Show("Senha ou Login incorretos");

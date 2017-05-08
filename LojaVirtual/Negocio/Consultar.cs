@@ -106,7 +106,7 @@ namespace Negocio
                 SqlCommand comando = conexao.CreateCommand();
                 
                 comando.CommandText = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, " +
-                    "nomeCategoria, ativoProduto, idUsuario, qtdMinEstoque " +
+                    "nomeCategoria, c.idCategoria, ativoProduto, idUsuario, qtdMinEstoque " +
                     "FROM Produto AS p " +
                     "INNER JOIN Categoria AS c " +
                     "ON c.idCategoria = p.idCategoria " +
@@ -124,6 +124,7 @@ namespace Negocio
                     produto.PrecProduto = Convert.ToDecimal(meuDataReader["precProduto"]);
                     produto.DescontoPromocao = Convert.ToDecimal(meuDataReader["descontoPromocao"]);
                     produto.NomeCategoria = Convert.ToString(meuDataReader["nomeCategoria"]);
+                    produto.IdCategoria = Convert.ToInt32(meuDataReader["idCategoria"]);
                     produto.AtivoProduto = Convert.ToString(meuDataReader["ativoProduto"]);
                     produto.IdUsuario = Convert.ToInt32(meuDataReader["idUsuario"]);
                     produto.QtdMinEstoque = Convert.ToInt32(meuDataReader["qtdMinEstoque"]);
