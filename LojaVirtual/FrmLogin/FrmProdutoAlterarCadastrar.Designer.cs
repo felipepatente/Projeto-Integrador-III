@@ -60,6 +60,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.produtoAtivoNao = new System.Windows.Forms.RadioButton();
             this.btnPesquisarUsuario = new System.Windows.Forms.Button();
+            this.txtIdCategoria = new System.Windows.Forms.TextBox();
+            this.txtIdProduto = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -330,6 +333,7 @@
             // produtoAtivoSim
             // 
             this.produtoAtivoSim.AutoSize = true;
+            this.produtoAtivoSim.Checked = true;
             this.produtoAtivoSim.Location = new System.Drawing.Point(408, 303);
             this.produtoAtivoSim.Name = "produtoAtivoSim";
             this.produtoAtivoSim.Size = new System.Drawing.Size(42, 17);
@@ -360,7 +364,7 @@
             // 
             // btnPesquisarUsuario
             // 
-            this.btnPesquisarUsuario.Location = new System.Drawing.Point(635, 326);
+            this.btnPesquisarUsuario.Location = new System.Drawing.Point(488, 326);
             this.btnPesquisarUsuario.Name = "btnPesquisarUsuario";
             this.btnPesquisarUsuario.Size = new System.Drawing.Size(30, 23);
             this.btnPesquisarUsuario.TabIndex = 33;
@@ -368,11 +372,37 @@
             this.btnPesquisarUsuario.UseVisualStyleBackColor = true;
             this.btnPesquisarUsuario.Click += new System.EventHandler(this.btnPesquisarUsuario_Click);
             // 
+            // txtIdCategoria
+            // 
+            this.txtIdCategoria.Location = new System.Drawing.Point(408, 326);
+            this.txtIdCategoria.Name = "txtIdCategoria";
+            this.txtIdCategoria.Size = new System.Drawing.Size(55, 20);
+            this.txtIdCategoria.TabIndex = 34;
+            // 
+            // txtIdProduto
+            // 
+            this.txtIdProduto.Location = new System.Drawing.Point(610, 323);
+            this.txtIdProduto.Name = "txtIdProduto";
+            this.txtIdProduto.Size = new System.Drawing.Size(55, 20);
+            this.txtIdProduto.TabIndex = 36;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(552, 326);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 13);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "IdProduto";
+            // 
             // FrmProdutoAlterarCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 504);
+            this.Controls.Add(this.txtIdProduto);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtIdCategoria);
             this.Controls.Add(this.btnPesquisarUsuario);
             this.Controls.Add(this.produtoAtivoNao);
             this.Controls.Add(this.label11);
@@ -446,5 +476,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton produtoAtivoNao;
         private System.Windows.Forms.Button btnPesquisarUsuario;
+        private System.Windows.Forms.TextBox txtIdCategoria;
+        private System.Windows.Forms.TextBox txtIdProduto;
+        private System.Windows.Forms.Label label12;
     }
 }

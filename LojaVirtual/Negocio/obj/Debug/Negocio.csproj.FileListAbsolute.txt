@@ -5,3 +5,5 @@ C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\bin\De
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\obj\Debug\Negocio.dll
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\obj\Debug\Negocio.pdb
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\bin\Debug\ObjetoTransferencia.dll
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\bin\Debug\ObjetoTransferencia.pdb

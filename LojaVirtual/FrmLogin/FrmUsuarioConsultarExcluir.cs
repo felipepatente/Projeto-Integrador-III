@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
+using ObjetoTransferencia;
 
 namespace FrmLogin
 {
@@ -27,6 +29,10 @@ namespace FrmLogin
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            Deletar deletar = new Deletar();
+            Usuario usuario = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
+            deletar.DeletarUsuario(usuario.IdUsuario);
+            
             chamarTela.UsuarioConsultarExcluir();
             Close();
         }
@@ -39,8 +45,15 @@ namespace FrmLogin
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            chamarTela.UsuarioConsultarExcluir();
-            Close();
+
+            Consultar consultar = new Consultar();
+            dgvUsuario.DataSource = null;
+            dgvUsuario.DataSource = consultar.ConsultarUsuario(txtPesquisar.Text);
+            dgvUsuario.Refresh();
+            dgvUsuario.Update();
+            
+            //chamarTela.UsuarioConsultarExcluir();
+            //Close();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

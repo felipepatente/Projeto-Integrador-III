@@ -36,8 +36,14 @@
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvUsuario = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // btnFechar
@@ -145,20 +151,70 @@
             this.txtPesquisar.Size = new System.Drawing.Size(531, 20);
             this.txtPesquisar.TabIndex = 21;
             // 
-            // dataGridView1
+            // dgvUsuario
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 227);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(751, 219);
-            this.dataGridView1.TabIndex = 24;
+            this.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.Login,
+            this.Senha,
+            this.Nome,
+            this.TipoPerfil,
+            this.Ativo});
+            this.dgvUsuario.Location = new System.Drawing.Point(53, 227);
+            this.dgvUsuario.Name = "dgvUsuario";
+            this.dgvUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsuario.Size = new System.Drawing.Size(751, 219);
+            this.dgvUsuario.TabIndex = 24;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "idUsuario";
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // Login
+            // 
+            this.Login.DataPropertyName = "loginUsuario";
+            this.Login.HeaderText = "Login";
+            this.Login.Name = "Login";
+            this.Login.ReadOnly = true;
+            // 
+            // Senha
+            // 
+            this.Senha.DataPropertyName = "senhaUsuario";
+            this.Senha.HeaderText = "Senha";
+            this.Senha.Name = "Senha";
+            this.Senha.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "nomeUsuario";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // TipoPerfil
+            // 
+            this.TipoPerfil.DataPropertyName = "tipoPerfil";
+            this.TipoPerfil.HeaderText = "Tipo Perfil";
+            this.TipoPerfil.Name = "TipoPerfil";
+            this.TipoPerfil.ReadOnly = true;
+            // 
+            // Ativo
+            // 
+            this.Ativo.DataPropertyName = "usuarioAtivo";
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
             // 
             // FrmUsuarioConsultarExcluir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 455);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvUsuario);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPesquisar);
@@ -171,7 +227,7 @@
             this.Name = "FrmUsuarioConsultarExcluir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUsuarioAlterarExcluir";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +243,12 @@
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPesquisar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Senha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoPerfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ativo;
     }
 }

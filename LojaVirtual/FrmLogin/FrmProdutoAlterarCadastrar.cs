@@ -14,13 +14,13 @@ namespace FrmLogin
     public partial class FrmProdutoAlterarCadastrar : Form
     {
         private ChamarTela chamarTela;
-
+        
         public FrmProdutoAlterarCadastrar()
         {
             chamarTela = new ChamarTela();
             InitializeComponent();
         }
-
+      
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Close();
@@ -34,6 +34,19 @@ namespace FrmLogin
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+
+            Atualizar atualizar = new Atualizar();
+
+            string ativo = "0";
+            if (produtoAtivoSim.Checked)
+            {
+                ativo = "1";
+            }
+
+            atualizar.AtualizarProduto(txtNome.Text, txtDescricao.Text, Convert.ToInt32(txtQuantidade.Text), 
+                Convert.ToInt32(txtDesconto.Text), Convert.ToInt32(txtIdCategoria.Text),
+                ativo, Convert.ToInt32(txtIdUsuario.Text), Convert.ToInt32(txtQuantidade.Text), Convert.ToInt32(txtIdProduto.Text));
+
             chamarTela.ProdutoAlterarCadastrar();
             Close();
 
@@ -51,14 +64,13 @@ namespace FrmLogin
             string produtoAtivo = produtoAtivoSim.Checked ? "1" : "0";
 
             inserir.InserirProduto(txtNome.Text,txtDescricao.Text,
-                Convert.ToDecimal(txtPreco.Text), Convert.ToDecimal(txtDesconto.Text),1,produtoAtivo,
-                Convert.ToInt32(txtIdUsuario.Text),Convert.ToInt32(txtQuantidade.Text));        
+                Convert.ToDecimal(txtPreco.Text), Convert.ToDecimal(txtDesconto.Text),Convert.ToInt32(txtIdCategoria.Text),produtoAtivo,
+                3, Convert.ToInt32(txtQuantidade.Text));        
             chamarTela.ProdutoAlterarCadastrar();
             Close();
         }
+        
 
-        
-        
         private void menuProdutoAlterar_Click(object sender, EventArgs e)
         {
             chamarTela.ProdutoAlterarCadastrar();
@@ -88,5 +100,6 @@ namespace FrmLogin
             FrmCategoriaCrud frmCategoria = new FrmCategoriaCrud();
             frmCategoria.ShowDialog();
         }
+        
     }
 }

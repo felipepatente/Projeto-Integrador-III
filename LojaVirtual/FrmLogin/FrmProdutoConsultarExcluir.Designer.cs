@@ -32,15 +32,15 @@
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCategoria = new System.Windows.Forms.RadioButton();
             this.rdbPreco = new System.Windows.Forms.RadioButton();
-            this.dgvGrid = new System.Windows.Forms.DataGridView();
-            this.c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvProduto = new System.Windows.Forms.DataGridView();
+            this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescProm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,6 +65,7 @@
             // rdbNome
             // 
             this.rdbNome.AutoSize = true;
+            this.rdbNome.Checked = true;
             this.rdbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbNome.Location = new System.Drawing.Point(208, 154);
             this.rdbNome.Name = "rdbNome";
@@ -98,62 +99,85 @@
             this.rdbPreco.Text = "Preço";
             this.rdbPreco.UseVisualStyleBackColor = true;
             // 
-            // dgvGrid
+            // dgvProduto
             // 
-            this.dgvGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.c,
+            this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProduto,
             this.Nome,
             this.Descrição,
             this.Preço,
             this.DescProm,
             this.Categoria,
-            this.Quantidade,
-            this.Status});
-            this.dgvGrid.Location = new System.Drawing.Point(7, 247);
-            this.dgvGrid.Name = "dgvGrid";
-            this.dgvGrid.Size = new System.Drawing.Size(843, 256);
-            this.dgvGrid.TabIndex = 14;
+            this.Ativo,
+            this.Quantidade});
+            this.dgvProduto.Location = new System.Drawing.Point(7, 234);
+            this.dgvProduto.Name = "dgvProduto";
+            this.dgvProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProduto.Size = new System.Drawing.Size(843, 269);
+            this.dgvProduto.TabIndex = 14;
             // 
-            // c
+            // IdProduto
             // 
-            this.c.HeaderText = "ID";
-            this.c.Name = "c";
+            this.IdProduto.DataPropertyName = "idProduto";
+            this.IdProduto.HeaderText = "IdProduto";
+            this.IdProduto.Name = "IdProduto";
+            this.IdProduto.ReadOnly = true;
+            this.IdProduto.Width = 70;
             // 
             // Nome
             // 
-            this.Nome.HeaderText = "Nome";
+            this.Nome.DataPropertyName = "nomeProduto";
+            this.Nome.HeaderText = "Produto";
             this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
             // 
             // Descrição
             // 
+            this.Descrição.DataPropertyName = "descProduto";
             this.Descrição.HeaderText = "Descrição";
             this.Descrição.Name = "Descrição";
+            this.Descrição.ReadOnly = true;
+            this.Descrição.Width = 300;
             // 
             // Preço
             // 
+            this.Preço.DataPropertyName = "precProduto";
             this.Preço.HeaderText = "Preço";
             this.Preço.Name = "Preço";
+            this.Preço.ReadOnly = true;
+            this.Preço.Width = 50;
             // 
             // DescProm
             // 
-            this.DescProm.HeaderText = "Desc Prom";
+            this.DescProm.DataPropertyName = "descontoPromocao";
+            this.DescProm.HeaderText = "Desconto";
             this.DescProm.Name = "DescProm";
+            this.DescProm.ReadOnly = true;
+            this.DescProm.Width = 80;
             // 
             // Categoria
             // 
+            this.Categoria.DataPropertyName = "nomeCategoria";
             this.Categoria.HeaderText = "Categoria";
             this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            // 
+            // Ativo
+            // 
+            this.Ativo.DataPropertyName = "ativoProduto";
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
+            this.Ativo.Width = 50;
             // 
             // Quantidade
             // 
-            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.DataPropertyName = "qtdMinEstoque";
+            this.Quantidade.HeaderText = "Qtd Minima";
             this.Quantidade.Name = "Quantidade";
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
+            this.Quantidade.ReadOnly = true;
+            this.Quantidade.Width = 50;
             // 
             // txtPesquisar
             // 
@@ -268,7 +292,7 @@
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPesquisar);
-            this.Controls.Add(this.dgvGrid);
+            this.Controls.Add(this.dgvProduto);
             this.Controls.Add(this.rdbPreco);
             this.Controls.Add(this.rdbCategoria);
             this.Controls.Add(this.rdbNome);
@@ -282,7 +306,7 @@
             this.Name = "FrmProdutoConsultarExcluir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProdutoConsultarExcluir";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,17 +323,17 @@
         private System.Windows.Forms.RadioButton rdbNome;
         private System.Windows.Forms.RadioButton rdbCategoria;
         private System.Windows.Forms.RadioButton rdbPreco;
-        private System.Windows.Forms.DataGridView dgvGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn c;
+        private System.Windows.Forms.DataGridView dgvProduto;
+        private System.Windows.Forms.TextBox txtPesquisar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
         private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescProm;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.TextBox txtPesquisar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnPesquisar;
     }
 }

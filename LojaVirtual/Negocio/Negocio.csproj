@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Atualizar.cs" />
     <Compile Include="Consultar.cs" />
+    <Compile Include="Deletar.cs" />
     <Compile Include="Inserir.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -48,6 +50,10 @@
     <ProjectReference Include="..\Conexao\Conexao.csproj">
       <Project>{5418a4a7-daf5-48c6-9130-4526d2a3905e}</Project>
       <Name>Conexao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjetoTransferencia\ObjetoTransferencia.csproj">
+      <Project>{6bfa3148-666a-4e0f-9508-557f47b57af9}</Project>
+      <Name>ObjetoTransferencia</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

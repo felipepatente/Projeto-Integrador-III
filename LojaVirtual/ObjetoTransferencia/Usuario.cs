@@ -13,7 +13,7 @@ namespace ObjetoTransferencia
         private string senhaUsuario;
         private string nomeUsuario;
         private string tipoPerfil;
-        private int usuarioAtivo;
+        private string usuarioAtivo;
 
         public int IdUsuario {
 
@@ -83,7 +83,7 @@ namespace ObjetoTransferencia
 
         }
 
-        public int UsuarioAtivo {
+        public string UsuarioAtivo {
 
             get
             {

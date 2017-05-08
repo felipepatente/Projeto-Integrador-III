@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
+using ObjetoTransferencia;
 
 namespace FrmLogin
 {
@@ -27,6 +29,10 @@ namespace FrmLogin
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            Deletar deletar = new Deletar();
+            Produto produtoSelecionado = (dgvProduto.SelectedRows[0].DataBoundItem as Produto);
+            deletar.DeletarProduto(produtoSelecionado.IdProduto);
+
             chamarTela.ProdutoConsultarExcluir();
             Close();
         }
@@ -39,8 +45,33 @@ namespace FrmLogin
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            chamarTela.ProdutoConsultarExcluir();
-            Close();
+            Consultar consultar = new Consultar();
+            dgvProduto.AutoGenerateColumns = false;
+            dgvProduto.DataSource = null;
+
+            string opcao;
+
+            if (rdbNome.Checked)
+            {
+                opcao = "nomeProduto";
+            }else if (rdbCategoria.Checked)
+            {
+                opcao = "nomeCategoria";
+            }else
+            {
+                opcao = "precProduto";
+            }
+
+            if (txtPesquisar.Text == "")
+            {
+                txtPesquisar.Text = " ";
+            }
+
+            dgvProduto.DataSource = consultar.ConsultarProduto(opcao, txtPesquisar.Text);
+            dgvProduto.Refresh();
+            dgvProduto.Update();            
+            //chamarTela.ProdutoConsultarExcluir();
+            //Close();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
