@@ -29,23 +29,44 @@ namespace FrmLogin
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Deletar deletar = new Deletar();
-            Usuario usuario = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
-            deletar.DeletarUsuario(usuario.IdUsuario);
-            
-            chamarTela.UsuarioConsultarExcluir();
-            Close();
+            if (dgvUsuario.SelectedRows.Count != 0)
+            {
+                Deletar deletar = new Deletar();
+                Usuario usuario = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
+                int linhas = deletar.DeletarUsuario(usuario.IdUsuario);
+
+                if (linhas == 0)
+                {
+                    MessageBox.Show("Não é permitido excluir os 2 primeiros registros");
+                }
+                else
+                {
+                    MessageBox.Show("Dados exluidos com sucesso");
+                    chamarTela.UsuarioConsultarExcluir();
+                    Close();
+                }
+
+            }else
+            {
+                MessageBox.Show("Nenhuma linha selecionada");
+            }
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            
-            Usuario usuarioSelecionado = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
-            FrmUsuarioAlterarCadastrar frmUsuario = new FrmUsuarioAlterarCadastrar(usuarioSelecionado);
-            frmUsuario.MdiParent = MdiPrincipal.ActiveForm;
-            frmUsuario.Show();
-            //chamarTela.UsuarioAlterarCadastrar();
-            Close();
+
+            if (dgvUsuario.SelectedRows.Count != 0)
+            {
+                Usuario usuarioSelecionado = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
+                FrmUsuarioAlterarCadastrar frmUsuario = new FrmUsuarioAlterarCadastrar(usuarioSelecionado);
+                frmUsuario.MdiParent = MdiPrincipal.ActiveForm;
+                frmUsuario.Show();
+                //chamarTela.UsuarioAlterarCadastrar();
+                Close();
+            }else
+            {
+                MessageBox.Show("Nenhuma linha selecionada");
+            }
         }
         
         private void btnConsultar_Click(object sender, EventArgs e)

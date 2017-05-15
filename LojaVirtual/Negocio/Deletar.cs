@@ -41,10 +41,11 @@ namespace Negocio
             }
         }
 
-        public void DeletarUsuario(int idUsuario)
+        public int DeletarUsuario(int idUsuario)
         {
 
             conexao = conectar.GetConexao();
+            int linhas;
 
             try
             {
@@ -53,19 +54,23 @@ namespace Negocio
                 comando.CommandText = "DELETE FROM Usuario WHERE idUsuario = @idUsuario;";
                 conexao.Open();
                 int linhasAfetadas = comando.ExecuteNonQuery();
+                linhas = linhasAfetadas;
                 conexao.Close();
             }
             catch (Exception)
             {
-
-                throw;
+                linhas = 0;
+                //throw;
             }
+
+            return linhas;
         }
 
-        public void DeletarCategoria(int idCategoria)
+        public int DeletarCategoria(int idCategoria)
         {
 
             conexao = conectar.GetConexao();
+            int linhas = 0;
 
             try
             {
@@ -74,14 +79,16 @@ namespace Negocio
                 comando.CommandText = "DELETE FROM Categoria WHERE idCategoria = @idCategoria;";
                 conexao.Open();
                 int linhasAfetadas = comando.ExecuteNonQuery();
+                linhas = linhasAfetadas;
                 conexao.Close();
             }
             catch (Exception)
             {
-
-                throw;
+                linhas = 0;
+                //throw;
             }
 
+            return linhas;
         }
     }
 }

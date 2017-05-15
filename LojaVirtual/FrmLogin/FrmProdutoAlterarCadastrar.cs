@@ -37,17 +37,17 @@ namespace FrmLogin
         public FrmProdutoAlterarCadastrar(int id)
         {
             this.Construtor();
-            txtIdUsuario.Text = Convert.ToString(id);
+            txtIdCategoria.Text = Convert.ToString(id);
         }
 
         public void Set(string id)
         {
-            txtIdUsuario.Text = id; 
+            txtIdCategoria.Text = id; 
         }
 
         public string Get()
         {
-            return txtIdUsuario.Text;
+            return txtIdCategoria.Text;
         }
         // -------------------------------------------
 
@@ -71,9 +71,6 @@ namespace FrmLogin
 
         public void SetarProduto(Produto produto)
         {
-
-            /*string nomeProduto, string descProduto, decimal precProduto, decimal descontoPromocao,
-            int idCategoria, string ativoProduto, int idUsuario, int qtdMinEstoque, int idProduto);*/
 
             txtNome.Text = produto.NomeProduto;
             txtDescricao.Text = produto.DescProduto;
@@ -119,15 +116,17 @@ namespace FrmLogin
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Inserir inserir = new Inserir();
-            string produtoAtivo = produtoAtivoSim.Checked ? "1" : "0";
+            if (ValidarValores())
+            {
+                Inserir inserir = new Inserir();
+                string produtoAtivo = produtoAtivoSim.Checked ? "1" : "0";
 
-            inserir.InserirProduto(txtNome.Text,txtDescricao.Text,
-                Convert.ToDecimal(txtPreco.Text), Convert.ToDecimal(txtDesconto.Text),Convert.ToInt32(txtIdCategoria.Text),produtoAtivo,
-                3, Convert.ToInt32(txtQuantidade.Text));        
-            chamarTela.ProdutoAlterarCadastrar();
-            MessageBox.Show(" " + Get());
-            Close();
+                inserir.InserirProduto(txtNome.Text, txtDescricao.Text,
+                    Convert.ToDecimal(txtPreco.Text), Convert.ToDecimal(txtDesconto.Text), Convert.ToInt32(txtIdCategoria.Text), produtoAtivo,
+                    Dados.idUsuario, Convert.ToInt32(txtQuantidade.Text));
+                chamarTela.ProdutoAlterarCadastrar();
+                Close();
+            }
         }
         
 
@@ -152,7 +151,8 @@ namespace FrmLogin
 
         private void FrmProdutoAlterarCadastrar_Load(object sender, EventArgs e)
         {
-
+            txtIdUsuario.Text = Convert.ToString(Dados.idUsuario);
+            txtIdCategoria.Text = "1";        
         }
 
         private void btnPesquisarUsuario_Click(object sender, EventArgs e)
@@ -161,5 +161,79 @@ namespace FrmLogin
             frmCategoria.ShowDialog();
         }
         
+        private void txtNome_Click(object sender, EventArgs e)
+        {
+            if (Dados.idCategoria != 0)
+            {
+                txtIdCategoria.Text = Convert.ToString(Dados.idCategoria);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private bool ValidarValores()
+        {
+            bool estaValido = true;
+            
+            if (txtDesconto.Text == "")
+            {
+                txtDesconto.Text = "0";
+            }
+
+            if (txtDescricao.Text == "")
+            {
+                txtDescricao.Text = " ";
+            }
+
+            if (txtQuantidade.Text == "")
+            {
+                txtQuantidade.Text = "0";
+            }
+
+            if (txtPreco.Text == "" || txtNome.Text == "")
+            {
+                MessageBox.Show("Campos com * são obrigatórios");
+                estaValido = false;
+            }
+            
+            return estaValido;
+        }
+
+        private bool ValidarNumero(string numero)
+        {
+            bool eNumero = true;
+
+            try
+            {
+                decimal num = decimal.Parse(numero);
+            }
+            catch (Exception)
+            {
+
+                eNumero = false;
+            }
+
+            return eNumero;
+        }
+
+        private void txtPreco_TextChanged(object sender, EventArgs e)
+        {
+            if(!ValidarNumero(txtPreco.Text)){
+                MessageBox.Show("Só é permitida a entrada de números");
+                txtPreco.Text = "0";
+            }
+        }
+
+        private void txtDesconto_TextChanged(object sender, EventArgs e)
+        {
+            if (!ValidarNumero(txtDesconto.Text))
+            {
+                MessageBox.Show("Só é permitida a entrada de números");
+                txtDesconto.Text = "0";
+            }
+        }
     }
 }

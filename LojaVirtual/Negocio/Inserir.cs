@@ -53,10 +53,11 @@ namespace Negocio
             
         }
 
-        public void InserirUsuario(string loginUsuario, string senhaUsuario, string nomeUsuario,
+        public int InserirUsuario(string loginUsuario, string senhaUsuario, string nomeUsuario,
             string tipoPerfil, string usuarioAtivo)
         {
             conexao = conectar.GetConexao();
+            int linhas;
 
             try
             {
@@ -71,31 +72,18 @@ namespace Negocio
                 comando.Parameters.Add("@nomeUsuario", SqlDbType.NVarChar, 50).Value = nomeUsuario;
                 comando.Parameters.Add("@tipoPerfil", SqlDbType.Char, 1).Value = tipoPerfil;
                 comando.Parameters.Add("@usuarioAtivo", SqlDbType.Char, 1).Value = usuarioAtivo;
-                int linhas = comando.ExecuteNonQuery();
+                int linhasAfetadas = comando.ExecuteNonQuery();
+                linhas = linhasAfetadas;
                 conexao.Close();
 
             }
             catch (Exception)
             {
-
-                throw;
+                linhas = 0;
+                //throw;
             }
 
-            /*SqlCommand comando = conexao.CreateCommand();
-                comando.CommandText =
-                    "INSERT INTO Produto (nomeProduto, descProduto, precProduto,descontoPromocao,idCategoria,ativoProduto,idUsuario,qtdMinEstoque) " +
-                    "VALUES (@nomeProduto,@descProduto,@precProduto,@descontoPromocao,@idCategoria,@ativoProduto,@idUsuario,@qtdMinEstoque);";
-                conexao.Open();
-                comando.Parameters.Add("@nomeProduto", SqlDbType.NVarChar, 70).Value = nome;
-                comando.Parameters.Add("@descProduto", SqlDbType.NVarChar, 50).Value = descricao;
-                comando.Parameters.Add("@precProduto", SqlDbType.Decimal).Value = preco;
-                comando.Parameters.Add("@descontoPromocao", SqlDbType.Decimal).Value = desconto;
-                comando.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
-                comando.Parameters.Add("@ativoProduto", SqlDbType.NChar, 1).Value = ativoProduto;
-                comando.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
-                comando.Parameters.Add("@qtdMinEstoque", SqlDbType.Int).Value = quantidade;
-                comando.ExecuteNonQuery();
-                conexao.Close();*/
+            return linhas;
         }
 
 

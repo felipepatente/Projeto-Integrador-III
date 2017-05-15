@@ -59,11 +59,12 @@ namespace Negocio
             }
         }
 
-        public void AtualizarUsuario(string loginUsuario, string senhaUsuario, string nomeUsuario, string tipoPerfil,
+        public int AtualizarUsuario(string loginUsuario, string senhaUsuario, string nomeUsuario, string tipoPerfil,
             string usuarioAtivo, int idUsuario)
         {
 
             conexao = conectar.GetConexao();
+            int linhas;
 
             try
             {
@@ -82,13 +83,16 @@ namespace Negocio
 
                 conexao.Open();
                 int linhasAfetadas = comando.ExecuteNonQuery();
+                linhas = linhasAfetadas;
                 conexao.Close();
             }
             catch (Exception)
             {
-
-                throw;
+                linhas = 0;
+                //throw;
             }
+
+            return linhas;
             
         }
 

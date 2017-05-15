@@ -39,7 +39,10 @@ namespace FrmLogin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            chamarTela.CategoriaCrud();
+            //chamarTela.CategoriaCrud();
+            FrmCategoriaCrud frmCategoria = new FrmCategoriaCrud(false);
+            frmCategoria.MdiParent = MdiPrincipal.ActiveForm;
+            frmCategoria.Show();
         }
     }
 }

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChamarTela.cs" />
+    <Compile Include="Dados.cs" />
     <Compile Include="FrmCategoriaCrud.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -14,8 +14,6 @@ namespace FrmLogin
 {
     public partial class FrmLogin : Form
     {
-        //public int logando;
-
         public FrmLogin()
         {
             InitializeComponent();
@@ -26,11 +24,7 @@ namespace FrmLogin
             Consultar consultar = new Consultar();
             
             int linhas = consultar.ConsultarUsuarioLogin(txtLogin.Text, txtSenha.Text);
-            //MdiPrincipal principal = new MdiPrincipal(linhas.ToString());
-            //logando = linhas;
-            //MessageBox.Show(" " + logando);
-            //FrmProdutoAlterarCadastrar produto = new FrmProdutoAlterarCadastrar();
-            //produto.Set(linhas.ToString());
+            Dados.idUsuario = linhas;       
 
 
             if (linhas == 0)

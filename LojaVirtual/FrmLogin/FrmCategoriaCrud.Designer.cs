@@ -59,6 +59,7 @@
             this.NomeCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtvConsultarCategoria = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvConsultarCategoria)).BeginInit();
             this.SuspendLayout();
@@ -180,6 +181,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtPesquisar
             // 
@@ -379,6 +381,18 @@
             this.dtvConsultarCategoria.TabIndex = 26;
             this.dtvConsultarCategoria.SelectionChanged += new System.EventHandler(this.dtvConsultarCategoria_SelectionChanged);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(236, 148);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(18, 24);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "*";
+            // 
             // FrmCategoriaCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,6 +400,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(841, 530);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dtvConsultarCategoria);
             this.Controls.Add(this.txtDescricao);
@@ -449,5 +464,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridView dtvConsultarCategoria;
+        private System.Windows.Forms.Label label5;
     }
 }

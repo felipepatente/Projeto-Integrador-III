@@ -20,6 +20,12 @@ namespace FrmLogin
             InitializeComponent();
         }
 
+        public FrmCategoriaCrud(bool botaoLigado)
+        {
+            InitializeComponent();
+            btnSalvar.Enabled = botaoLigado;
+        }
+
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Close();
@@ -27,11 +33,17 @@ namespace FrmLogin
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Inserir inserir = new Inserir();
-            inserir.InserirCategoria(txtNome.Text, txtDescricao.Text);
+            if (txtNome.Text != "")
+            {
+                Inserir inserir = new Inserir();
+                inserir.InserirCategoria(txtNome.Text, txtDescricao.Text);
 
-            txtNome.Text = "";
-            txtDescricao.Text = "";
+                txtNome.Text = "";
+                txtDescricao.Text = "";
+            }else
+            {
+                MessageBox.Show("* Campos obrigatorios");
+            }
 
         }
 
@@ -47,17 +59,29 @@ namespace FrmLogin
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Categoria categoriaSelecionada =  (dtvConsultarCategoria.SelectedRows[0].DataBoundItem as Categoria);
-            FrmProdutoAlterarCadastrar produto = new FrmProdutoAlterarCadastrar();
-            MessageBox.Show("Id: " +categoriaSelecionada.IdCategoria);
-            this.Close();
+
+            if (dtvConsultarCategoria.SelectedRows.Count != 0)
+            {
+                Categoria categoriaSelecionada = (dtvConsultarCategoria.SelectedRows[0].DataBoundItem as Categoria);
+                Dados.idCategoria = categoriaSelecionada.IdCategoria;
+                this.Close();
+            }
+            
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Categoria categoriaSelecionado = (dtvConsultarCategoria.SelectedRows[0].DataBoundItem as Categoria);
-            Deletar deletar = new Deletar();
-            deletar.DeletarCategoria(categoriaSelecionado.IdCategoria);   
+            if (dtvConsultarCategoria.SelectedRows.Count != 0)
+            {
+                Categoria categoriaSelecionado = (dtvConsultarCategoria.SelectedRows[0].DataBoundItem as Categoria);
+                Deletar deletar = new Deletar();
+                int linhasAfetadas = deletar.DeletarCategoria(categoriaSelecionado.IdCategoria);
+                MessageBox.Show("Dados excluidos com sucessos");
+                dtvConsultarCategoria.DataSource = null;
+            }else
+            {
+                MessageBox.Show("Nenhuma linha selecionado");
+            }   
         }
 
         private void SetarCampos()
@@ -70,8 +94,16 @@ namespace FrmLogin
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Atualizar atualizar = new Atualizar();
-            atualizar.AtualizarCategoria(Convert.ToInt32(txtIdCategoria.Text),txtNome.Text, txtDescricao.Text);
+
+            if (dtvConsultarCategoria.SelectedRows.Count != 0)
+            {
+                Atualizar atualizar = new Atualizar();
+                atualizar.AtualizarCategoria(Convert.ToInt32(txtIdCategoria.Text), txtNome.Text, txtDescricao.Text);
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma linha selecionado");
+            }
         }
         
         private void dtvConsultarCategoria_SelectionChanged(object sender, EventArgs e)
@@ -82,6 +114,11 @@ namespace FrmLogin
                 SetarCampos();
             }
             
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

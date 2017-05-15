@@ -46,14 +46,28 @@ namespace FrmLogin
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Atualizar atualizar = new Atualizar();
-            string tipoPerfil =  sltTipoPerfil.Text.Equals("A") ? "A" : "E";
-            string status = rdbAtivado.Checked ? "1" : "0";
+            if (txtSenha.Text == "" || txtLogin.Text == "")
+            {
+                MessageBox.Show("* Preencha os campos obrigatórios");
+            }
+            else
+            {
+                Atualizar atualizar = new Atualizar();
+                string tipoPerfil = sltTipoPerfil.Text.Equals("A") ? "A" : "E";
+                string status = rdbAtivado.Checked ? "1" : "0";
 
-            atualizar.AtualizarUsuario(txtLogin.Text, txtSenha.Text, txtNome.Text, tipoPerfil, status, Convert.ToInt32(txtCodigo.Text));
+                int linhas = atualizar.AtualizarUsuario(txtLogin.Text, txtSenha.Text, txtNome.Text, tipoPerfil, status, Convert.ToInt32(txtCodigo.Text));
 
-            chamarTela.UsuarioAlterarCadastrar();
-            Close();
+                if (linhas == 0)
+                {
+                    MessageBox.Show("Não é permitido alterar os 2 primeiros registros");
+                }else
+                {
+                    MessageBox.Show("Dados atualizados com sucesso");
+                    chamarTela.UsuarioAlterarCadastrar();
+                    Close();
+                }
+            }
         }
 
         private void SetarUsuario(Usuario usuario)
@@ -64,7 +78,7 @@ namespace FrmLogin
             txtNome.Text = Convert.ToString(usuario.NomeUsuario);
             sltTipoPerfil.Text = usuario.TipoPerfil.Equals("A") ? "A" : "E";
             
-            if (usuario.UsuarioAtivo.Equals("1"))
+            if (usuario.UsuarioAtivo.Equals("True"))
             {
                 rdbAtivado.Checked = true;
             }
@@ -83,13 +97,28 @@ namespace FrmLogin
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Inserir inserir = new Inserir();
-            string tipoPerfil = sltTipoPerfil.Text.Equals("A") ? "A" : "E";
-            string status = rdbAtivado.Checked ? "1" : "0";
-            inserir.InserirUsuario(txtLogin.Text, txtSenha.Text, txtNome.Text,tipoPerfil,status);
+            if (txtLogin.Text == "" || txtSenha.Text == "")
+            {
+                MessageBox.Show("* Preencha os campos obrigatórios");
+            }
+            else
+            {
+                Inserir inserir = new Inserir();
+                string tipoPerfil = sltTipoPerfil.Text.Equals("A") ? "A" : "E";
+                string status = rdbAtivado.Checked ? "1" : "0";
+                int linhas = inserir.InserirUsuario(txtLogin.Text, txtSenha.Text, txtNome.Text, tipoPerfil, status);
 
-            chamarTela.UsuarioAlterarCadastrar();
-            Close();
+                if (linhas == 0)
+                {
+                    MessageBox.Show("Erro ao cadastrar usúario");
+                }else
+                {
+                    MessageBox.Show("Dados inseridos com sucesso");
+                    chamarTela.UsuarioAlterarCadastrar();
+                    Close();
+                }
+                
+            }
         }
     }
 }

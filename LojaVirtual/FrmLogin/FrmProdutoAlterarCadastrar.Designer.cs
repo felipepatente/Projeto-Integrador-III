@@ -60,8 +60,10 @@
             this.produtoAtivoNao = new System.Windows.Forms.RadioButton();
             this.btnPesquisarUsuario = new System.Windows.Forms.Button();
             this.txtIdCategoria = new System.Windows.Forms.TextBox();
-            this.txtIdProduto = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.txtIdProduto = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,6 +79,7 @@
             // txtIdUsuario
             // 
             this.txtIdUsuario.BackColor = System.Drawing.SystemColors.Control;
+            this.txtIdUsuario.Enabled = false;
             this.txtIdUsuario.Location = new System.Drawing.Point(408, 125);
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.Size = new System.Drawing.Size(55, 20);
@@ -89,6 +92,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(257, 20);
             this.txtNome.TabIndex = 11;
+            this.txtNome.Click += new System.EventHandler(this.txtNome_Click);
             // 
             // txtDescricao
             // 
@@ -105,6 +109,7 @@
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(257, 20);
             this.txtPreco.TabIndex = 13;
+            this.txtPreco.TextChanged += new System.EventHandler(this.txtPreco_TextChanged);
             // 
             // txtDesconto
             // 
@@ -113,11 +118,12 @@
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.Size = new System.Drawing.Size(257, 20);
             this.txtDesconto.TabIndex = 14;
+            this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
             // 
             // txtQuantidade
             // 
             this.txtQuantidade.BackColor = System.Drawing.SystemColors.Control;
-            this.txtQuantidade.Location = new System.Drawing.Point(555, 125);
+            this.txtQuantidade.Location = new System.Drawing.Point(408, 311);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(110, 20);
             this.txtQuantidade.TabIndex = 15;
@@ -176,7 +182,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(485, 126);
+            this.label7.Location = new System.Drawing.Point(323, 312);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 16);
             this.label7.TabIndex = 23;
@@ -188,7 +194,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(312, 359);
+            this.label8.Location = new System.Drawing.Point(478, 129);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 16);
             this.label8.TabIndex = 22;
@@ -221,6 +227,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
@@ -358,7 +365,7 @@
             this.produtoAtivoSim.Checked = true;
             this.produtoAtivoSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.produtoAtivoSim.ForeColor = System.Drawing.Color.White;
-            this.produtoAtivoSim.Location = new System.Drawing.Point(408, 303);
+            this.produtoAtivoSim.Location = new System.Drawing.Point(408, 347);
             this.produtoAtivoSim.Name = "produtoAtivoSim";
             this.produtoAtivoSim.Size = new System.Drawing.Size(52, 20);
             this.produtoAtivoSim.TabIndex = 30;
@@ -372,7 +379,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(287, 304);
+            this.label11.Location = new System.Drawing.Point(287, 348);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(101, 16);
             this.label11.TabIndex = 31;
@@ -384,7 +391,7 @@
             this.produtoAtivoNao.BackColor = System.Drawing.Color.Transparent;
             this.produtoAtivoNao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.produtoAtivoNao.ForeColor = System.Drawing.Color.White;
-            this.produtoAtivoNao.Location = new System.Drawing.Point(477, 303);
+            this.produtoAtivoNao.Location = new System.Drawing.Point(468, 347);
             this.produtoAtivoNao.Name = "produtoAtivoNao";
             this.produtoAtivoNao.Size = new System.Drawing.Size(55, 20);
             this.produtoAtivoNao.TabIndex = 32;
@@ -394,29 +401,26 @@
             // 
             // btnPesquisarUsuario
             // 
-            this.btnPesquisarUsuario.Location = new System.Drawing.Point(488, 352);
+            this.btnPesquisarUsuario.BackColor = System.Drawing.Color.Maroon;
+            this.btnPesquisarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPesquisarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisarUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnPesquisarUsuario.Location = new System.Drawing.Point(635, 125);
             this.btnPesquisarUsuario.Name = "btnPesquisarUsuario";
             this.btnPesquisarUsuario.Size = new System.Drawing.Size(30, 23);
             this.btnPesquisarUsuario.TabIndex = 33;
             this.btnPesquisarUsuario.Text = "...";
-            this.btnPesquisarUsuario.UseVisualStyleBackColor = true;
+            this.btnPesquisarUsuario.UseVisualStyleBackColor = false;
             this.btnPesquisarUsuario.Click += new System.EventHandler(this.btnPesquisarUsuario_Click);
             // 
             // txtIdCategoria
             // 
             this.txtIdCategoria.BackColor = System.Drawing.SystemColors.Control;
-            this.txtIdCategoria.Location = new System.Drawing.Point(408, 352);
+            this.txtIdCategoria.Enabled = false;
+            this.txtIdCategoria.Location = new System.Drawing.Point(567, 127);
             this.txtIdCategoria.Name = "txtIdCategoria";
             this.txtIdCategoria.Size = new System.Drawing.Size(55, 20);
             this.txtIdCategoria.TabIndex = 34;
-            // 
-            // txtIdProduto
-            // 
-            this.txtIdProduto.BackColor = System.Drawing.SystemColors.Control;
-            this.txtIdProduto.Location = new System.Drawing.Point(610, 349);
-            this.txtIdProduto.Name = "txtIdProduto";
-            this.txtIdProduto.Size = new System.Drawing.Size(55, 20);
-            this.txtIdProduto.TabIndex = 36;
             // 
             // label12
             // 
@@ -424,11 +428,44 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(532, 353);
+            this.label12.Location = new System.Drawing.Point(530, 316);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 16);
             this.label12.TabIndex = 35;
             this.label12.Text = "IdProduto";
+            // 
+            // txtIdProduto
+            // 
+            this.txtIdProduto.BackColor = System.Drawing.SystemColors.Control;
+            this.txtIdProduto.Enabled = false;
+            this.txtIdProduto.Location = new System.Drawing.Point(608, 312);
+            this.txtIdProduto.Name = "txtIdProduto";
+            this.txtIdProduto.Size = new System.Drawing.Size(55, 20);
+            this.txtIdProduto.TabIndex = 36;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(391, 169);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 20);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "*";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(390, 237);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(16, 20);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "*";
             // 
             // FrmProdutoAlterarCadastrar
             // 
@@ -437,6 +474,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(862, 504);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIdProduto);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtIdCategoria);
@@ -512,7 +551,9 @@
         private System.Windows.Forms.RadioButton produtoAtivoNao;
         private System.Windows.Forms.Button btnPesquisarUsuario;
         private System.Windows.Forms.TextBox txtIdCategoria;
-        private System.Windows.Forms.TextBox txtIdProduto;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtIdProduto;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label10;
     }
 }
