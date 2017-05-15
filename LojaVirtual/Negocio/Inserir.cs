@@ -99,6 +99,30 @@ namespace Negocio
         }
 
 
+        public void InserirCategoria(string nome, string descricao)
+        {
+
+            conexao = conectar.GetConexao();
+
+            try
+            {
+                SqlCommand comando = conexao.CreateCommand();
+                comando.CommandText = "INSERT INTO Categoria " +
+                    "(nomeCategoria, descCategoria) VALUES (@nomeCategoria, @descCategoria);";
+
+                conexao.Open();
+                comando.Parameters.Add("@nomeCategoria", SqlDbType.NVarChar, 50).Value = nome;
+                comando.Parameters.Add("@descCategoria", SqlDbType.NVarChar, 100).Value = descricao;
+                int linhas = comando.ExecuteNonQuery();
+                conexao.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
 
     }
 }

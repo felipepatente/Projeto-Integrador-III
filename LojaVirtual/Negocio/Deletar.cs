@@ -49,7 +49,7 @@ namespace Negocio
             try
             {
                 SqlCommand comando = conexao.CreateCommand();
-                comando.Parameters.Add("idUsuario", SqlDbType.Int).Value = idUsuario;
+                comando.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
                 comando.CommandText = "DELETE FROM Usuario WHERE idUsuario = @idUsuario;";
                 conexao.Open();
                 int linhasAfetadas = comando.ExecuteNonQuery();
@@ -60,6 +60,28 @@ namespace Negocio
 
                 throw;
             }
+        }
+
+        public void DeletarCategoria(int idCategoria)
+        {
+
+            conexao = conectar.GetConexao();
+
+            try
+            {
+                SqlCommand comando = conexao.CreateCommand();
+                comando.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
+                comando.CommandText = "DELETE FROM Categoria WHERE idCategoria = @idCategoria;";
+                conexao.Open();
+                int linhasAfetadas = comando.ExecuteNonQuery();
+                conexao.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }

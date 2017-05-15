@@ -161,7 +161,6 @@ namespace FrmLogin
 
         private void MdiPrincipal_Load(object sender, EventArgs e)
         {
-            
             chamarTela.Login();
         }
     }

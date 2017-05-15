@@ -64,24 +64,59 @@ namespace Negocio
         {
 
             conexao = conectar.GetConexao();
-            SqlCommand comando = conexao.CreateCommand();
 
-            comando.Parameters.Add("@loginUsuario", SqlDbType.NVarChar, 100).Value = loginUsuario;
-            comando.Parameters.Add("@senhaUsuario", SqlDbType.NVarChar, 64).Value = senhaUsuario;
-            comando.Parameters.Add("@nomeUsuario", SqlDbType.NVarChar, 50).Value = nomeUsuario;
-            comando.Parameters.Add("@tipoPerfil", SqlDbType.Char, 1).Value = tipoPerfil;
-            comando.Parameters.Add("@usuarioAtivo", SqlDbType.Char, 1).Value = usuarioAtivo;
-            comando.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
+            try
+            {
+                SqlCommand comando = conexao.CreateCommand();
 
-            comando.CommandText = "UPDATE Usuario SET loginUsuario = @loginUsuario, senhaUsuario = @senhaUsuario, " +
-                "nomeUsuario = @nomeUsuario, tipoPerfil = @tipoPerfil, usuarioAtivo = @usuarioAtivo " +
-                "WHERE idUsuario = @idUsuario";
+                comando.Parameters.Add("@loginUsuario", SqlDbType.NVarChar, 100).Value = loginUsuario;
+                comando.Parameters.Add("@senhaUsuario", SqlDbType.NVarChar, 64).Value = senhaUsuario;
+                comando.Parameters.Add("@nomeUsuario", SqlDbType.NVarChar, 50).Value = nomeUsuario;
+                comando.Parameters.Add("@tipoPerfil", SqlDbType.Char, 1).Value = tipoPerfil;
+                comando.Parameters.Add("@usuarioAtivo", SqlDbType.Char, 1).Value = usuarioAtivo;
+                comando.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
 
-            conexao.Open();
-            int linhasAfetadas = comando.ExecuteNonQuery();
-            conexao.Close();
+                comando.CommandText = "UPDATE Usuario SET loginUsuario = @loginUsuario, senhaUsuario = @senhaUsuario, " +
+                    "nomeUsuario = @nomeUsuario, tipoPerfil = @tipoPerfil, usuarioAtivo = @usuarioAtivo " +
+                    "WHERE idUsuario = @idUsuario";
+
+                conexao.Open();
+                int linhasAfetadas = comando.ExecuteNonQuery();
+                conexao.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             
         }
-        
+
+
+        public void AtualizarCategoria(int idCategoria, string nome, string descricao)
+        {
+
+            conexao = conectar.GetConexao();
+
+            try
+            {
+                SqlCommand comando = conexao.CreateCommand();
+
+                comando.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
+                comando.Parameters.Add("@nomeCategoria", SqlDbType.NVarChar, 50).Value = nome;
+                comando.Parameters.Add("@descCategoria", SqlDbType.NVarChar, 100).Value = descricao;
+                comando.CommandText = "UPDATE Categoria SET nomeCategoria = @nomeCategoria, descCategoria = @descCategoria " +
+                    "WHERE idCategoria = @idCategoria;";
+                conexao.Open();
+                int linhasAfetadas = comando.ExecuteNonQuery();
+                conexao.Close();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
