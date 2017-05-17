@@ -102,10 +102,25 @@ namespace FrmLogin
             {
                 ativo = "1";
             }
-            
-            atualizar.AtualizarProduto(txtNome.Text, txtDescricao.Text, Convert.ToDecimal(txtPreco.Text), 
-                Convert.ToDecimal(txtDesconto.Text), Convert.ToInt32(txtIdCategoria.Text), ativo, 
+
+            if (ValidarValores())
+            {
+                int linhas = atualizar.AtualizarProduto(txtNome.Text, txtDescricao.Text, Convert.ToDecimal(txtPreco.Text),
+                Convert.ToDecimal(txtDesconto.Text), Convert.ToInt32(txtIdCategoria.Text), ativo,
                 Convert.ToInt32(txtIdUsuario.Text), Convert.ToInt32(txtQuantidade.Text), Convert.ToInt32(txtIdProduto.Text));
+
+                if (linhas != 0)
+                {
+                    MessageBox.Show("Dados alterados com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show("Os 10 primeiros registros não pode ser alterados");
+                }
+            }
+
+            
+
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -121,11 +136,20 @@ namespace FrmLogin
                 Inserir inserir = new Inserir();
                 string produtoAtivo = produtoAtivoSim.Checked ? "1" : "0";
 
-                inserir.InserirProduto(txtNome.Text, txtDescricao.Text,
+                int linhas = inserir.InserirProduto(txtNome.Text, txtDescricao.Text,
                     Convert.ToDecimal(txtPreco.Text), Convert.ToDecimal(txtDesconto.Text), Convert.ToInt32(txtIdCategoria.Text), produtoAtivo,
                     Dados.idUsuario, Convert.ToInt32(txtQuantidade.Text));
-                chamarTela.ProdutoAlterarCadastrar();
-                Close();
+
+                if (linhas != 0)
+                {
+                    MessageBox.Show("Dados cadastrado com sucesso");
+                    chamarTela.ProdutoAlterarCadastrar();
+                    Close();
+                }else
+                {
+                    MessageBox.Show("Erro ao cadastro produto");
+                }
+
             }
         }
         
@@ -152,7 +176,6 @@ namespace FrmLogin
         private void FrmProdutoAlterarCadastrar_Load(object sender, EventArgs e)
         {
             txtIdUsuario.Text = Convert.ToString(Dados.idUsuario);
-            txtIdCategoria.Text = "1";        
         }
 
         private void btnPesquisarUsuario_Click(object sender, EventArgs e)
@@ -193,6 +216,11 @@ namespace FrmLogin
                 txtQuantidade.Text = "0";
             }
 
+            if (txtIdCategoria.Text == "")
+            {
+                txtIdCategoria.Text = "1";
+            }
+
             if (txtPreco.Text == "" || txtNome.Text == "")
             {
                 MessageBox.Show("Campos com * são obrigatórios");
@@ -221,7 +249,8 @@ namespace FrmLogin
 
         private void txtPreco_TextChanged(object sender, EventArgs e)
         {
-            if(!ValidarNumero(txtPreco.Text)){
+            if(!ValidarNumero(txtPreco.Text) && txtPreco.Text != "")
+            {
                 MessageBox.Show("Só é permitida a entrada de números");
                 txtPreco.Text = "0";
             }
@@ -229,10 +258,19 @@ namespace FrmLogin
 
         private void txtDesconto_TextChanged(object sender, EventArgs e)
         {
-            if (!ValidarNumero(txtDesconto.Text))
+            if (!ValidarNumero(txtDesconto.Text) && txtDesconto.Text != "")
             {
                 MessageBox.Show("Só é permitida a entrada de números");
                 txtDesconto.Text = "0";
+            }
+        }
+
+        private void txtQuantidade_TextChanged(object sender, EventArgs e)
+        {
+            if (!ValidarNumero(txtQuantidade.Text) && txtQuantidade.Text != "")
+            {
+                MessageBox.Show("Só é permitida a entrada de números");
+                txtQuantidade.Text = "0";
             }
         }
     }

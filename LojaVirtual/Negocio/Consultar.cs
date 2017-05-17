@@ -15,6 +15,7 @@ namespace Negocio
     {
         private Conectar conectar;
         private SqlConnection conexao;
+        private string tipoPerfil;
 
         public Consultar()
         {
@@ -70,7 +71,7 @@ namespace Negocio
                 SqlCommand comando = conexao.CreateCommand();
                 comando.Parameters.Add("@login", SqlDbType.NVarChar, 100).Value = login;
                 comando.Parameters.Add("@senha", SqlDbType.NVarChar, 64).Value = senha;
-                comando.CommandText = "SELECT loginUsuario, senhaUsuario, idUsuario " +
+                comando.CommandText = "SELECT loginUsuario, senhaUsuario, idUsuario, tipoPerfil " +
                     "FROM Usuario WHERE loginUsuario = @login AND senhaUsuario = @senha;";
                 conexao.Open();
 
@@ -83,6 +84,8 @@ namespace Negocio
                     usuario.IdUsuario = Convert.ToInt32(meuDataReader["idUsuario"]);
                     usuario.LoginUsuario = Convert.ToString(meuDataReader["loginUsuario"]);
                     usuario.SenhaUsuario = Convert.ToString(meuDataReader["senhaUsuario"]);
+                    usuario.TipoPerfil = Convert.ToString(meuDataReader["tipoPerfil"]);
+                    tipoPerfil = usuario.TipoPerfil;
                     linhas = usuario.IdUsuario;
                 }
                 
@@ -94,6 +97,11 @@ namespace Negocio
                 throw;
             }
 
+        }
+
+        public string GetTipoPerfil()
+        {
+            return tipoPerfil;
         }
 
        public ProdutoColecao ConsultarProduto(string tipoPesquisa, string pesquisa)
@@ -175,6 +183,41 @@ namespace Negocio
             catch (Exception)
             {
 
+                throw;
+            }
+        }
+
+       public EstoqueColecao ConsultarEstoque()
+        {
+            conexao = conectar.GetConexao();
+
+            try
+            {
+
+                EstoqueColecao estoqueColecao = new EstoqueColecao();
+                SqlCommand comando = conexao.CreateCommand();
+                comando.CommandText = "SELECT e.idProduto, nomeProduto, qtdProdutoDisponivel " +
+                                       "FROM estoque AS e " +
+                                        "INNER JOIN Produto AS p " +
+                                        "ON e.idProduto = p.idProduto";
+                conexao.Open();
+                SqlDataReader meuDataReader = comando.ExecuteReader();
+
+                while (meuDataReader.Read())
+                {
+                    Estoque estoque = new Estoque();
+                    estoque.Id = Convert.ToInt32(meuDataReader["idProduto"]);
+                    estoque.NomeProduto = Convert.ToString(meuDataReader["nomeProduto"]);
+                    estoque.Quantidade = Convert.ToInt32(meuDataReader["qtdProdutoDisponivel"]);
+                    estoqueColecao.Add(estoque);
+                }
+
+                return estoqueColecao;
+
+            }
+            catch (Exception)
+            {
+                //return null;
                 throw;
             }
         }

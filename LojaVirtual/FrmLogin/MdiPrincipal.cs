@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
 
 namespace FrmLogin
 {
@@ -161,7 +162,12 @@ namespace FrmLogin
 
         private void MdiPrincipal_Load(object sender, EventArgs e)
         {
-            chamarTela.Login();
+           chamarTela.Login();
+            if (Dados.tipoPerfil.Equals("E"))
+            {
+                tsmiProduto.Enabled = false;
+                tsmiUsuario.Enabled = false;
+            }
         }
     }
     }

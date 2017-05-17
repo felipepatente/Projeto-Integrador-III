@@ -21,10 +21,11 @@ namespace Negocio
             this.conexao = new SqlConnection();
         }
 
-        public void AtualizarProduto(string nomeProduto, string descProduto, decimal precProduto, decimal descontoPromocao,
+        public int AtualizarProduto(string nomeProduto, string descProduto, decimal precProduto, decimal descontoPromocao,
             int idCategoria, string ativoProduto, int idUsuario, int qtdMinEstoque, int idProduto)
         {
             conexao = conectar.GetConexao();
+            int linhas;
 
             try
             {
@@ -48,15 +49,17 @@ namespace Negocio
                 conexao.Open();
 
                 int linhasAfetadas = comando.ExecuteNonQuery();
-
+                linhas = linhasAfetadas;
                 conexao.Close();
 
             }
             catch (Exception)
             {
-
-                throw;
+                linhas = 0;
+                //throw;
             }
+
+            return linhas;
         }
 
         public int AtualizarUsuario(string loginUsuario, string senhaUsuario, string nomeUsuario, string tipoPerfil,
@@ -97,10 +100,11 @@ namespace Negocio
         }
 
 
-        public void AtualizarCategoria(int idCategoria, string nome, string descricao)
+        public int AtualizarCategoria(int idCategoria, string nome, string descricao)
         {
 
             conexao = conectar.GetConexao();
+            int linhasAfetadas;
 
             try
             {
@@ -112,15 +116,43 @@ namespace Negocio
                 comando.CommandText = "UPDATE Categoria SET nomeCategoria = @nomeCategoria, descCategoria = @descCategoria " +
                     "WHERE idCategoria = @idCategoria;";
                 conexao.Open();
-                int linhasAfetadas = comando.ExecuteNonQuery();
+                linhasAfetadas = comando.ExecuteNonQuery();
                 conexao.Close();
 
             }
             catch (Exception)
             {
-
-                throw;
+                linhasAfetadas = 0;
+                //throw;
             }
+
+            return linhasAfetadas;
         }
+
+        public int AtualizarEstoque(int idProduto, int quantidade)
+        {
+            conexao = conectar.GetConexao();
+            int linhasAfetadas;
+
+            try
+            {
+                SqlCommand comando = conexao.CreateCommand();
+                comando.Parameters.Add("@idProduto", SqlDbType.Int).Value = idProduto;
+                comando.Parameters.Add("@qtdProdutoDisponivel", SqlDbType.Int).Value = quantidade;
+                comando.CommandText = "UPDATE estoque SET qtdProdutoDisponivel = @qtdProdutoDisponivel " +
+                    "WHERE idProduto = @idProduto;";
+                conexao.Open();
+                linhasAfetadas = comando.ExecuteNonQuery();
+                conexao.Close();
+            }
+            catch (Exception)
+            {
+                linhasAfetadas = 0;
+                //throw;
+            }
+            
+            return linhasAfetadas;
+        }
+        
     }
 }

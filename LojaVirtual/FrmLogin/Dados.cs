@@ -10,5 +10,6 @@ namespace FrmLogin
     {
         public static int idUsuario;
         public static int idCategoria;
+        public static string tipoPerfil;
     }
 }

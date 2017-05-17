@@ -66,6 +66,10 @@ namespace FrmLogin
                 Dados.idCategoria = categoriaSelecionada.IdCategoria;
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Nenhuma linha selecionada");
+            }
             
         }
 
@@ -98,7 +102,18 @@ namespace FrmLogin
             if (dtvConsultarCategoria.SelectedRows.Count != 0)
             {
                 Atualizar atualizar = new Atualizar();
-                atualizar.AtualizarCategoria(Convert.ToInt32(txtIdCategoria.Text), txtNome.Text, txtDescricao.Text);
+                int linhas = atualizar.AtualizarCategoria(Convert.ToInt32(txtIdCategoria.Text), txtNome.Text, txtDescricao.Text);
+
+                if (linhas != 0)
+                {
+                    MessageBox.Show("Dados alterado com sucesso");
+                    txtDescricao.Text = "";
+                    txtNome.Text = "";
+                }else
+                {
+                    MessageBox.Show("Os 6 primeiros registros não pode ser alterado");
+                }
+
             }
             else
             {

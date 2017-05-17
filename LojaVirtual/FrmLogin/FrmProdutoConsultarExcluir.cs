@@ -29,22 +29,46 @@ namespace FrmLogin
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Deletar deletar = new Deletar();
-            Produto produtoSelecionado = (dgvProduto.SelectedRows[0].DataBoundItem as Produto);
-            deletar.DeletarProduto(produtoSelecionado.IdProduto);
+            
+            if (dgvProduto.SelectedRows.Count != 0)
+            {
+                Deletar deletar = new Deletar();
+                Produto produtoSelecionado = (dgvProduto.SelectedRows[0].DataBoundItem as Produto);
+                int linhas = deletar.DeletarProduto(produtoSelecionado.IdProduto);
 
-            chamarTela.ProdutoConsultarExcluir();
-            Close();
+                if (linhas != 0)
+                {
+                    MessageBox.Show("Dados excluidos com sucesso");
+                    chamarTela.ProdutoConsultarExcluir();
+                    Close();
+                }else
+                {
+                    MessageBox.Show("Não é permitido excluir os 10 primeiros registros");
+                }
+
+
+            }else
+            {
+                MessageBox.Show("Nenhuma linha selecionada");
+            }
+
+                
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Produto produtoSelecionado = (dgvProduto.SelectedRows[0].DataBoundItem as Produto);
-            FrmProdutoAlterarCadastrar frmProduto = new FrmProdutoAlterarCadastrar(produtoSelecionado);
-            frmProduto.MdiParent = MdiPrincipal.ActiveForm;
-            frmProduto.Show();
-            //chamarTela.ProdutoAlterarCadastrar();
-            Close();
+            if (dgvProduto.SelectedRows.Count != 0)
+            {
+                Produto produtoSelecionado = (dgvProduto.SelectedRows[0].DataBoundItem as Produto);
+                FrmProdutoAlterarCadastrar frmProduto = new FrmProdutoAlterarCadastrar(produtoSelecionado);
+                frmProduto.MdiParent = MdiPrincipal.ActiveForm;
+                frmProduto.Show();
+                //chamarTela.ProdutoAlterarCadastrar();
+                Close();
+            }else
+            {
+                MessageBox.Show("Nenhuma linha selecionada");
+            }
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)

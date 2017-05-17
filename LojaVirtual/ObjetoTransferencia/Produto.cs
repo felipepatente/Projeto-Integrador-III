@@ -18,6 +18,7 @@ namespace ObjetoTransferencia
         private int idUsuario;
         private int qtdMinEstoque;
         private string nomeCategoria;
+        private byte[] imagem;
 
         public int IdProduto
         {
@@ -137,6 +138,18 @@ namespace ObjetoTransferencia
             set
             {
                 this.nomeCategoria = value;
+            }
+        }
+        public byte[] Imagem
+        {
+            get
+            {
+                return this.imagem;
+            }
+
+            set
+            {
+                this.imagem = value;
             }
         }
 

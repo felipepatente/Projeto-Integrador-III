@@ -20,12 +20,13 @@ namespace Negocio
             conexao = new SqlConnection();
         }
 
-        public void InserirProduto(string nome, string descricao, decimal preco, decimal desconto, int idCategoria,
+        public int InserirProduto(string nome, string descricao, decimal preco, decimal desconto, int idCategoria,
             string ativoProduto,int idUsuario, int quantidade)
         {
             
             conexao = conectar.GetConexao();
-           
+            int linhasAfetadas;
+
             try
             {
                 
@@ -42,15 +43,15 @@ namespace Negocio
                 comando.Parameters.Add("@ativoProduto", SqlDbType.NChar, 1).Value = ativoProduto;
                 comando.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
                 comando.Parameters.Add("@qtdMinEstoque", SqlDbType.Int).Value = quantidade;
-                comando.ExecuteNonQuery();
+                linhasAfetadas = comando.ExecuteNonQuery();
                 conexao.Close();
             }
             catch (Exception)
             {
-
-                throw;
+                linhasAfetadas = 0;
+                //throw;
             }
-            
+            return linhasAfetadas;
         }
 
         public int InserirUsuario(string loginUsuario, string senhaUsuario, string nomeUsuario,

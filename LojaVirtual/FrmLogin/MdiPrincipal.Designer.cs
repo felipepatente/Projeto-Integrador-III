@@ -36,7 +36,7 @@
             this.tsmiCadastrarProduto = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConsultarProduto = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExcluirProduto = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAlterarUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCadastrarUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConsultarUsuario = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +53,7 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiProduto,
-            this.usuárioToolStripMenuItem,
+            this.tsmiUsuario,
             this.tsmiTelaInicial});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -76,67 +76,67 @@
             // tsmiAlterarProduto
             // 
             this.tsmiAlterarProduto.Name = "tsmiAlterarProduto";
-            this.tsmiAlterarProduto.Size = new System.Drawing.Size(125, 22);
+            this.tsmiAlterarProduto.Size = new System.Drawing.Size(152, 22);
             this.tsmiAlterarProduto.Text = "Alterar";
             this.tsmiAlterarProduto.Click += new System.EventHandler(this.tsmiAlterarProduto_Click);
             // 
             // tsmiCadastrarProduto
             // 
             this.tsmiCadastrarProduto.Name = "tsmiCadastrarProduto";
-            this.tsmiCadastrarProduto.Size = new System.Drawing.Size(125, 22);
+            this.tsmiCadastrarProduto.Size = new System.Drawing.Size(152, 22);
             this.tsmiCadastrarProduto.Text = "Cadastrar";
             this.tsmiCadastrarProduto.Click += new System.EventHandler(this.tsmiCadastrarProduto_Click);
             // 
             // tsmiConsultarProduto
             // 
             this.tsmiConsultarProduto.Name = "tsmiConsultarProduto";
-            this.tsmiConsultarProduto.Size = new System.Drawing.Size(125, 22);
+            this.tsmiConsultarProduto.Size = new System.Drawing.Size(152, 22);
             this.tsmiConsultarProduto.Text = "Consultar";
             this.tsmiConsultarProduto.Click += new System.EventHandler(this.tsmiConsultarProduto_Click);
             // 
             // tsmiExcluirProduto
             // 
             this.tsmiExcluirProduto.Name = "tsmiExcluirProduto";
-            this.tsmiExcluirProduto.Size = new System.Drawing.Size(125, 22);
+            this.tsmiExcluirProduto.Size = new System.Drawing.Size(152, 22);
             this.tsmiExcluirProduto.Text = "Excluir";
             this.tsmiExcluirProduto.Click += new System.EventHandler(this.tsmiExcluirProduto_Click);
             // 
-            // usuárioToolStripMenuItem
+            // tsmiUsuario
             // 
-            this.usuárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiUsuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiAlterarUsuario,
             this.tsmiCadastrarUsuario,
             this.tsmiConsultarUsuario,
             this.tsmiExcluirUsuario});
-            this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.usuárioToolStripMenuItem.Text = "Usuário";
+            this.tsmiUsuario.Name = "tsmiUsuario";
+            this.tsmiUsuario.Size = new System.Drawing.Size(59, 20);
+            this.tsmiUsuario.Text = "Usuário";
             // 
             // tsmiAlterarUsuario
             // 
             this.tsmiAlterarUsuario.Name = "tsmiAlterarUsuario";
-            this.tsmiAlterarUsuario.Size = new System.Drawing.Size(125, 22);
+            this.tsmiAlterarUsuario.Size = new System.Drawing.Size(152, 22);
             this.tsmiAlterarUsuario.Text = "Alterar";
             this.tsmiAlterarUsuario.Click += new System.EventHandler(this.tsmiAlterarUsuario_Click);
             // 
             // tsmiCadastrarUsuario
             // 
             this.tsmiCadastrarUsuario.Name = "tsmiCadastrarUsuario";
-            this.tsmiCadastrarUsuario.Size = new System.Drawing.Size(125, 22);
+            this.tsmiCadastrarUsuario.Size = new System.Drawing.Size(152, 22);
             this.tsmiCadastrarUsuario.Text = "Cadastrar";
             this.tsmiCadastrarUsuario.Click += new System.EventHandler(this.tsmiCadastrarUsuario_Click);
             // 
             // tsmiConsultarUsuario
             // 
             this.tsmiConsultarUsuario.Name = "tsmiConsultarUsuario";
-            this.tsmiConsultarUsuario.Size = new System.Drawing.Size(125, 22);
+            this.tsmiConsultarUsuario.Size = new System.Drawing.Size(152, 22);
             this.tsmiConsultarUsuario.Text = "Consultar";
             this.tsmiConsultarUsuario.Click += new System.EventHandler(this.tsmiConsultarUsuario_Click);
             // 
             // tsmiExcluirUsuario
             // 
             this.tsmiExcluirUsuario.Name = "tsmiExcluirUsuario";
-            this.tsmiExcluirUsuario.Size = new System.Drawing.Size(125, 22);
+            this.tsmiExcluirUsuario.Size = new System.Drawing.Size(152, 22);
             this.tsmiExcluirUsuario.Text = "Excluir";
             this.tsmiExcluirUsuario.Click += new System.EventHandler(this.tsmiExcluirUsuario_Click);
             // 
@@ -200,7 +200,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCadastrarProduto;
         private System.Windows.Forms.ToolStripMenuItem tsmiConsultarProduto;
         private System.Windows.Forms.ToolStripMenuItem tsmiExcluirProduto;
-        private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUsuario;
         private System.Windows.Forms.ToolStripMenuItem tsmiAlterarUsuario;
         private System.Windows.Forms.ToolStripMenuItem tsmiCadastrarUsuario;
         private System.Windows.Forms.ToolStripMenuItem tsmiConsultarUsuario;

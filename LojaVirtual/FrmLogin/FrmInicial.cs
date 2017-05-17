@@ -31,10 +31,15 @@ namespace FrmLogin
             chamarTela.UsuarioConsultarExcluir();
             
         }
-
+        
         private void FrmInicial_Load(object sender, EventArgs e)
         {
-            
+            if (Dados.tipoPerfil.Equals("E"))
+            {
+                btnCategoria.Enabled = false;
+                btnProduto.Enabled = false;
+                btnUsuario.Enabled = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,6 +48,14 @@ namespace FrmLogin
             FrmCategoriaCrud frmCategoria = new FrmCategoriaCrud(false);
             frmCategoria.MdiParent = MdiPrincipal.ActiveForm;
             frmCategoria.Show();
+        }
+
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            Estoque estoque = new Estoque();
+            estoque.MdiParent = MdiPrincipal.ActiveForm;
+            estoque.Show();
+            this.Close();
         }
     }
 }

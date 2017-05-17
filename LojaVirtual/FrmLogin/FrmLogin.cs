@@ -25,8 +25,7 @@ namespace FrmLogin
             
             int linhas = consultar.ConsultarUsuarioLogin(txtLogin.Text, txtSenha.Text);
             Dados.idUsuario = linhas;       
-
-
+            
             if (linhas == 0)
             {
                 MessageBox.Show("Senha ou Login incorretos");
@@ -34,6 +33,7 @@ namespace FrmLogin
                 txtSenha.Text = "";
             }else
             {
+                Dados.tipoPerfil = consultar.GetTipoPerfil();
                 Close();
             }
         }
@@ -42,6 +42,7 @@ namespace FrmLogin
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            Dados.tipoPerfil = "E";
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)

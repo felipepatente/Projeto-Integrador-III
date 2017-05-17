@@ -20,9 +20,10 @@ namespace Negocio
             this.conectar = new Conectar();
         }
 
-        public void DeletarProduto(int idProduto)
+        public int DeletarProduto(int idProduto)
         {
             conexao = conectar.GetConexao();
+            int linhas;
 
             try
             {
@@ -32,13 +33,16 @@ namespace Negocio
                 conexao.Open();
 
                 int linhasAfetadas = comando.ExecuteNonQuery();
+                linhas = linhasAfetadas;
 
             }
             catch (Exception)
             {
-
-                throw;
+                linhas = 0;
+                //throw;
             }
+
+            return linhas;
         }
 
         public int DeletarUsuario(int idUsuario)
@@ -89,6 +93,29 @@ namespace Negocio
             }
 
             return linhas;
+        }
+
+        public int DeletarEstoque(int idEstoque)
+        {
+            conexao = conectar.GetConexao();
+            int linhasAfetadas;
+
+            try
+            {
+                SqlCommand comando = conexao.CreateCommand();
+                comando.Parameters.Add("@idProduto", SqlDbType.Int).Value = idEstoque;
+                comando.CommandText = "DELETE FROM estoque WHERE idProduto = @idProduto;";
+                conexao.Open();
+                linhasAfetadas = comando.ExecuteNonQuery();
+                conexao.Close();
+            }
+            catch (Exception)
+            {
+                linhasAfetadas = 0;
+                //throw;
+            }
+
+            return linhasAfetadas;
         }
     }
 }

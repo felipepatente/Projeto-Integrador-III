@@ -108,3 +108,4 @@ C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\D
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\Negocio.pdb
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\ObjetoTransferencia.dll
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\ObjetoTransferencia.pdb
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.Estoque.resources
