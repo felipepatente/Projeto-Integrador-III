@@ -112,13 +112,18 @@ namespace Negocio
             try
             {
                 SqlCommand comando = conexao.CreateCommand();
+                comando.Parameters.Add("@tipoPesquisa", SqlDbType.NVarChar, 50).Value = tipoPesquisa;
+                comando.Parameters.Add("@pesquisa", SqlDbType.NVarChar, 50).Value = pesquisa;
                 
-                comando.CommandText = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, " +
-                    "nomeCategoria, c.idCategoria, ativoProduto, idUsuario, qtdMinEstoque " +
+                string sql = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, " +
+                    "nomeCategoria, c.idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem " +
                     "FROM Produto AS p " +
                     "INNER JOIN Categoria AS c " +
                     "ON c.idCategoria = p.idCategoria " +
-                    "WHERE "+ tipoPesquisa +" LIKE '%"+ pesquisa +"%'; ";
+                    "WHERE " + tipoPesquisa  +" LIKE '%' + @pesquisa + '%';";
+
+                
+                comando.CommandText = sql;
                 conexao.Open();
 
                 SqlDataReader meuDataReader = comando.ExecuteReader();
@@ -136,6 +141,15 @@ namespace Negocio
                     produto.AtivoProduto = Convert.ToString(meuDataReader["ativoProduto"]);
                     produto.IdUsuario = Convert.ToInt32(meuDataReader["idUsuario"]);
                     produto.QtdMinEstoque = Convert.ToInt32(meuDataReader["qtdMinEstoque"]);
+                    if (meuDataReader["imagem"] != DBNull.Value)
+                    {
+                        produto.Imagem = (byte[])meuDataReader["imagem"];
+                    }
+                    else
+                    {
+                        produto.Imagem = new byte[0];
+                    }
+
                     proColecao.Add(produto);
                 }
 

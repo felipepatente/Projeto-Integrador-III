@@ -31,21 +31,25 @@ namespace FrmLogin
         {
             if (dgvUsuario.SelectedRows.Count != 0)
             {
-                Deletar deletar = new Deletar();
-                Usuario usuario = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
-                int linhas = deletar.DeletarUsuario(usuario.IdUsuario);
+                DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (linhas == 0)
+                if (resultado != DialogResult.No)
                 {
-                    MessageBox.Show("Não é permitido excluir os 2 primeiros registros");
-                }
-                else
-                {
-                    MessageBox.Show("Dados exluidos com sucesso");
-                    chamarTela.UsuarioConsultarExcluir();
-                    Close();
-                }
+                    Deletar deletar = new Deletar();
+                    Usuario usuario = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
+                    int linhas = deletar.DeletarUsuario(usuario.IdUsuario);
 
+                    if (linhas == 0)
+                    {
+                        MessageBox.Show("Não é permitido excluir os 2 primeiros registros");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Dados exluidos com sucesso");
+                        chamarTela.UsuarioConsultarExcluir();
+                        Close();
+                    }
+                }
             }else
             {
                 MessageBox.Show("Nenhuma linha selecionada");

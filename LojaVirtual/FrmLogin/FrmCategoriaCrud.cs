@@ -77,11 +77,26 @@ namespace FrmLogin
         {
             if (dtvConsultarCategoria.SelectedRows.Count != 0)
             {
-                Categoria categoriaSelecionado = (dtvConsultarCategoria.SelectedRows[0].DataBoundItem as Categoria);
-                Deletar deletar = new Deletar();
-                int linhasAfetadas = deletar.DeletarCategoria(categoriaSelecionado.IdCategoria);
-                MessageBox.Show("Dados excluidos com sucessos");
-                dtvConsultarCategoria.DataSource = null;
+
+                DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado != DialogResult.No)
+                {
+                    Categoria categoriaSelecionado = (dtvConsultarCategoria.SelectedRows[0].DataBoundItem as Categoria);
+                    Deletar deletar = new Deletar();
+                    int linhasAfetadas = deletar.DeletarCategoria(categoriaSelecionado.IdCategoria);
+
+                    if (linhasAfetadas > 0)
+                    {
+                        MessageBox.Show("Dados excluidos com sucessos");
+                        dtvConsultarCategoria.DataSource = null;
+                    }else
+                    {
+                        MessageBox.Show("Erro ao exluir os dados");
+                    }
+                    
+                }
+                
             }else
             {
                 MessageBox.Show("Nenhuma linha selecionado");

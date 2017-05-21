@@ -21,7 +21,7 @@ namespace Negocio
         }
 
         public int InserirProduto(string nome, string descricao, decimal preco, decimal desconto, int idCategoria,
-            string ativoProduto,int idUsuario, int quantidade)
+            string ativoProduto,int idUsuario, int quantidade, byte[] imagem)
         {
             
             conexao = conectar.GetConexao();
@@ -32,8 +32,8 @@ namespace Negocio
                 
                 SqlCommand comando = conexao.CreateCommand();
                 comando.CommandText =
-                    "INSERT INTO Produto (nomeProduto, descProduto, precProduto,descontoPromocao,idCategoria,ativoProduto,idUsuario,qtdMinEstoque) " +
-                    "VALUES (@nomeProduto,@descProduto,@precProduto,@descontoPromocao,@idCategoria,@ativoProduto,@idUsuario,@qtdMinEstoque);";
+                    "INSERT INTO Produto (nomeProduto, descProduto, precProduto,descontoPromocao,idCategoria,ativoProduto,idUsuario,qtdMinEstoque, imagem) " +
+                    "VALUES (@nomeProduto,@descProduto,@precProduto,@descontoPromocao,@idCategoria,@ativoProduto,@idUsuario,@qtdMinEstoque, @imagem);";
                 conexao.Open();
                 comando.Parameters.Add("@nomeProduto", SqlDbType.NVarChar, 70).Value = nome;
                 comando.Parameters.Add("@descProduto", SqlDbType.NVarChar, 50).Value = descricao;
@@ -43,13 +43,14 @@ namespace Negocio
                 comando.Parameters.Add("@ativoProduto", SqlDbType.NChar, 1).Value = ativoProduto;
                 comando.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
                 comando.Parameters.Add("@qtdMinEstoque", SqlDbType.Int).Value = quantidade;
+                comando.Parameters.Add("@imagem", SqlDbType.Image, 50).Value = imagem;
                 linhasAfetadas = comando.ExecuteNonQuery();
                 conexao.Close();
             }
             catch (Exception)
             {
                 linhasAfetadas = 0;
-                //throw;
+                throw;
             }
             return linhasAfetadas;
         }

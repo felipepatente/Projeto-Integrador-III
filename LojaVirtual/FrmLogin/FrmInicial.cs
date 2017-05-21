@@ -24,12 +24,14 @@ namespace FrmLogin
         private void btnProduto_Click(object sender, EventArgs e)
         {
             chamarTela.ProdutoConsultarExcluir();
+            this.Close();
         }
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
             chamarTela.UsuarioConsultarExcluir();
-            
+            this.Close();
+
         }
         
         private void FrmInicial_Load(object sender, EventArgs e)
@@ -48,6 +50,7 @@ namespace FrmLogin
             FrmCategoriaCrud frmCategoria = new FrmCategoriaCrud(false);
             frmCategoria.MdiParent = MdiPrincipal.ActiveForm;
             frmCategoria.Show();
+            this.Close();
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)

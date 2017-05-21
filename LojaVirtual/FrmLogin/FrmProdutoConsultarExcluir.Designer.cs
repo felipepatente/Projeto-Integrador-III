@@ -32,8 +32,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCategoria = new System.Windows.Forms.RadioButton();
-            this.rdbPreco = new System.Windows.Forms.RadioButton();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.pbProduto = new System.Windows.Forms.PictureBox();
             this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,14 +50,9 @@
             this.idCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.Imagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,20 +96,6 @@
             this.rdbCategoria.Text = "Categoria";
             this.rdbCategoria.UseVisualStyleBackColor = false;
             // 
-            // rdbPreco
-            // 
-            this.rdbPreco.AutoSize = true;
-            this.rdbPreco.BackColor = System.Drawing.Color.Transparent;
-            this.rdbPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbPreco.ForeColor = System.Drawing.Color.White;
-            this.rdbPreco.Location = new System.Drawing.Point(448, 155);
-            this.rdbPreco.Name = "rdbPreco";
-            this.rdbPreco.Size = new System.Drawing.Size(67, 20);
-            this.rdbPreco.TabIndex = 13;
-            this.rdbPreco.TabStop = true;
-            this.rdbPreco.Text = "Preço";
-            this.rdbPreco.UseVisualStyleBackColor = false;
-            // 
             // dgvProduto
             // 
             this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -120,87 +108,19 @@
             this.Categoria,
             this.idCategoria,
             this.Ativo,
-            this.Quantidade});
+            this.Quantidade,
+            this.Imagem});
             this.dgvProduto.Location = new System.Drawing.Point(12, 234);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduto.Size = new System.Drawing.Size(843, 269);
+            this.dgvProduto.Size = new System.Drawing.Size(613, 269);
             this.dgvProduto.TabIndex = 14;
-            // 
-            // IdProduto
-            // 
-            this.IdProduto.DataPropertyName = "idProduto";
-            this.IdProduto.HeaderText = "IdProduto";
-            this.IdProduto.Name = "IdProduto";
-            this.IdProduto.ReadOnly = true;
-            this.IdProduto.Width = 70;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "nomeProduto";
-            this.Nome.HeaderText = "Produto";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Descrição
-            // 
-            this.Descrição.DataPropertyName = "descProduto";
-            this.Descrição.HeaderText = "Descrição";
-            this.Descrição.Name = "Descrição";
-            this.Descrição.ReadOnly = true;
-            this.Descrição.Width = 300;
-            // 
-            // Preço
-            // 
-            this.Preço.DataPropertyName = "precProduto";
-            this.Preço.HeaderText = "Preço";
-            this.Preço.Name = "Preço";
-            this.Preço.ReadOnly = true;
-            this.Preço.Width = 50;
-            // 
-            // DescProm
-            // 
-            this.DescProm.DataPropertyName = "descontoPromocao";
-            this.DescProm.HeaderText = "Desconto";
-            this.DescProm.Name = "DescProm";
-            this.DescProm.ReadOnly = true;
-            this.DescProm.Width = 80;
-            // 
-            // Categoria
-            // 
-            this.Categoria.DataPropertyName = "nomeCategoria";
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            // 
-            // idCategoria
-            // 
-            this.idCategoria.DataPropertyName = "idCategoria";
-            this.idCategoria.HeaderText = "idCategoria";
-            this.idCategoria.Name = "idCategoria";
-            this.idCategoria.ReadOnly = true;
-            this.idCategoria.Width = 70;
-            // 
-            // Ativo
-            // 
-            this.Ativo.DataPropertyName = "ativoProduto";
-            this.Ativo.HeaderText = "Ativo";
-            this.Ativo.Name = "Ativo";
-            this.Ativo.ReadOnly = true;
-            this.Ativo.Width = 50;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.DataPropertyName = "qtdMinEstoque";
-            this.Quantidade.HeaderText = "Qtd Minima";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
-            this.Quantidade.Width = 50;
+            this.dgvProduto.SelectionChanged += new System.EventHandler(this.dgvProduto_SelectionChanged);
             // 
             // txtPesquisar
             // 
             this.txtPesquisar.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPesquisar.Location = new System.Drawing.Point(133, 196);
+            this.txtPesquisar.Location = new System.Drawing.Point(94, 196);
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(531, 20);
             this.txtPesquisar.TabIndex = 15;
@@ -211,7 +131,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(49, 197);
+            this.label2.Location = new System.Drawing.Point(10, 197);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 16;
@@ -302,6 +222,92 @@
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
+            // pbProduto
+            // 
+            this.pbProduto.Location = new System.Drawing.Point(647, 197);
+            this.pbProduto.Name = "pbProduto";
+            this.pbProduto.Size = new System.Drawing.Size(203, 306);
+            this.pbProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProduto.TabIndex = 17;
+            this.pbProduto.TabStop = false;
+            // 
+            // IdProduto
+            // 
+            this.IdProduto.DataPropertyName = "idProduto";
+            this.IdProduto.HeaderText = "IdProduto";
+            this.IdProduto.Name = "IdProduto";
+            this.IdProduto.ReadOnly = true;
+            this.IdProduto.Width = 70;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "nomeProduto";
+            this.Nome.HeaderText = "Produto";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Descrição
+            // 
+            this.Descrição.DataPropertyName = "descProduto";
+            this.Descrição.HeaderText = "Descrição";
+            this.Descrição.Name = "Descrição";
+            this.Descrição.ReadOnly = true;
+            this.Descrição.Width = 300;
+            // 
+            // Preço
+            // 
+            this.Preço.DataPropertyName = "precProduto";
+            this.Preço.HeaderText = "Preço";
+            this.Preço.Name = "Preço";
+            this.Preço.ReadOnly = true;
+            this.Preço.Width = 50;
+            // 
+            // DescProm
+            // 
+            this.DescProm.DataPropertyName = "descontoPromocao";
+            this.DescProm.HeaderText = "Desconto";
+            this.DescProm.Name = "DescProm";
+            this.DescProm.ReadOnly = true;
+            this.DescProm.Width = 80;
+            // 
+            // Categoria
+            // 
+            this.Categoria.DataPropertyName = "nomeCategoria";
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            // 
+            // idCategoria
+            // 
+            this.idCategoria.DataPropertyName = "idCategoria";
+            this.idCategoria.HeaderText = "idCategoria";
+            this.idCategoria.Name = "idCategoria";
+            this.idCategoria.ReadOnly = true;
+            this.idCategoria.Width = 70;
+            // 
+            // Ativo
+            // 
+            this.Ativo.DataPropertyName = "ativoProduto";
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
+            this.Ativo.Width = 50;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "qtdMinEstoque";
+            this.Quantidade.HeaderText = "Qtd Minima";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            this.Quantidade.Width = 50;
+            // 
+            // Imagem
+            // 
+            this.Imagem.DataPropertyName = "imagem";
+            this.Imagem.HeaderText = "Imagem";
+            this.Imagem.Name = "Imagem";
+            this.Imagem.ReadOnly = true;
+            // 
             // FrmProdutoConsultarExcluir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,10 +315,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(862, 515);
+            this.Controls.Add(this.pbProduto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.dgvProduto);
-            this.Controls.Add(this.rdbPreco);
             this.Controls.Add(this.rdbCategoria);
             this.Controls.Add(this.rdbNome);
             this.Controls.Add(this.label1);
@@ -328,6 +334,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProdutoConsultarExcluir";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,10 +350,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rdbNome;
         private System.Windows.Forms.RadioButton rdbCategoria;
-        private System.Windows.Forms.RadioButton rdbPreco;
         private System.Windows.Forms.DataGridView dgvProduto;
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pbProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
@@ -356,5 +363,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Imagem;
     }
 }

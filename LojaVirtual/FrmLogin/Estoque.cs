@@ -72,18 +72,23 @@ namespace FrmLogin
         {
             if (dgvEstoque.SelectedRows.Count != 0)
             {
-                Deletar deletar = new Deletar();
-                int linhas = deletar.DeletarEstoque(Convert.ToInt32(txtIdProduto.Text));
+                DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (linhas != 0)
+                if (resultado != DialogResult.No)
                 {
-                    MessageBox.Show("Dados excluidos com sucesso");
-                    dgvEstoque.DataSource = null;
-                }else
-                {
-                    MessageBox.Show("Erro ao excluir dados");
+                    Deletar deletar = new Deletar();
+                    int linhas = deletar.DeletarEstoque(Convert.ToInt32(txtIdProduto.Text));
+
+                    if (linhas != 0)
+                    {
+                        MessageBox.Show("Dados excluidos com sucesso");
+                        dgvEstoque.DataSource = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao excluir dados");
+                    }
                 }
-
             }else
             {
                 MessageBox.Show("Nenhuma linha selecionada");
@@ -96,6 +101,11 @@ namespace FrmLogin
             {
                 btnDeletar.Enabled = false;
             }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

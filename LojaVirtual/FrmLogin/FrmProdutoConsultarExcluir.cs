@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 using ObjetoTransferencia;
+using System.IO;
 
 namespace FrmLogin
 {
     public partial class FrmProdutoConsultarExcluir : Form
     {
         private ChamarTela chamarTela;
+        private byte[] imagem;
 
         public FrmProdutoConsultarExcluir()
         {
@@ -32,21 +34,27 @@ namespace FrmLogin
             
             if (dgvProduto.SelectedRows.Count != 0)
             {
-                Deletar deletar = new Deletar();
-                Produto produtoSelecionado = (dgvProduto.SelectedRows[0].DataBoundItem as Produto);
-                int linhas = deletar.DeletarProduto(produtoSelecionado.IdProduto);
+                
+                DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (linhas != 0)
+                if (resultado != DialogResult.No)
                 {
-                    MessageBox.Show("Dados excluidos com sucesso");
-                    chamarTela.ProdutoConsultarExcluir();
-                    Close();
-                }else
-                {
-                    MessageBox.Show("Não é permitido excluir os 10 primeiros registros");
+                    Deletar deletar = new Deletar();
+                    Produto produtoSelecionado = (dgvProduto.SelectedRows[0].DataBoundItem as Produto);
+                    int linhas = deletar.DeletarProduto(produtoSelecionado.IdProduto);
+
+                    if (linhas != 0)
+                    {
+                        MessageBox.Show("Dados excluidos com sucesso");
+                        chamarTela.ProdutoConsultarExcluir();
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não é permitido excluir os 10 primeiros registros");
+                    }
                 }
-
-
+                
             }else
             {
                 MessageBox.Show("Nenhuma linha selecionada");
@@ -79,20 +87,12 @@ namespace FrmLogin
 
             string opcao;
 
-            if (rdbNome.Checked)
+            if(rdbNome.Checked)
             {
                 opcao = "nomeProduto";
-            }else if (rdbCategoria.Checked)
-            {
-                opcao = "nomeCategoria";
             }else
             {
-                opcao = "precProduto";
-            }
-
-            if (txtPesquisar.Text == "")
-            {
-                txtPesquisar.Text = " ";
+                opcao = "nomeCategoria";
             }
 
             dgvProduto.DataSource = consultar.ConsultarProduto(opcao, txtPesquisar.Text);
@@ -107,6 +107,45 @@ namespace FrmLogin
             chamarTela.ProdutoAlterarCadastrar();
             Close();
         }
-       
+
+        private void dgvProduto_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvProduto.SelectedRows.Count != 0)
+            {
+                if (dgvProduto.SelectedRows[0].Cells["imagem"].Value != null)
+                {
+                    imagem = new byte[0];
+                    imagem = (byte[])(dgvProduto.SelectedRows[0].Cells["imagem"].Value);
+                    MostrarFoto(imagem);
+                }
+            }
+        }
+
+        private void MostrarFoto(byte[] dados)
+        {
+            if (dados.Length > 0)
+            {
+                MemoryStream mem = new MemoryStream(this.imagem);
+                pbProduto.Image = Image.FromStream(mem);
+            }else
+            {
+                pbProduto.Image = null;
+            }
+        }
+
+        public void MostrarFoto2(byte[] dados)
+        {
+            if (dados.Length > 0)
+            {
+                Image img;
+                MemoryStream ms = new MemoryStream(dados, 0, dados.Length);
+                ms.Write(dados, 0, dados.Length);
+                img = Image.FromStream(ms, true);
+                pbProduto.Image = img;
+            }else
+            {
+                pbProduto.Image = null;
+            }
+        }
     }
 }

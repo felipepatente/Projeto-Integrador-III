@@ -9,13 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 using ObjetoTransferencia;
+using System.IO;
 
 namespace FrmLogin
 {
+    
     public partial class FrmProdutoAlterarCadastrar : Form
     {
         private ChamarTela chamarTela;
-        
+        private byte[] imagem;
+
         public void Construtor()
         {
             chamarTela = new ChamarTela();
@@ -91,7 +94,41 @@ namespace FrmLogin
             txtIdUsuario.Text = Convert.ToString(produto.IdUsuario);
             txtQuantidade.Text = Convert.ToString(produto.QtdMinEstoque);
             txtIdProduto.Text = Convert.ToString(produto.IdProduto);
+            if (produto.Imagem.Length > 0)
+            {
+                MemoryStream mem = new MemoryStream(produto.Imagem);
+                pbProduto.Image = Image.FromStream(mem);
+                this.imagem = produto.Imagem;
+            }
+            else
+            {
+                pbProduto.Image = null;
+            }
+            
         }
+
+        private byte[] TratarImagem()
+        {
+            byte[] bytes;
+            if (pbProduto.Image != null)
+            {
+                Image img = pbProduto.Image as Image;
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    bytes = ms.ToArray();
+                }
+            }
+            else
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    bytes = ms.ToArray();
+                }
+            }
+            return bytes;
+        }
+
 
         private void AtualizarProduto()
         {
@@ -105,9 +142,11 @@ namespace FrmLogin
 
             if (ValidarValores())
             {
+
+                this.imagem = TratarImagem();
                 int linhas = atualizar.AtualizarProduto(txtNome.Text, txtDescricao.Text, Convert.ToDecimal(txtPreco.Text),
                 Convert.ToDecimal(txtDesconto.Text), Convert.ToInt32(txtIdCategoria.Text), ativo,
-                Convert.ToInt32(txtIdUsuario.Text), Convert.ToInt32(txtQuantidade.Text), Convert.ToInt32(txtIdProduto.Text));
+                Convert.ToInt32(txtIdUsuario.Text), Convert.ToInt32(txtQuantidade.Text), Convert.ToInt32(txtIdProduto.Text), this.imagem);
 
                 if (linhas != 0)
                 {
@@ -135,10 +174,10 @@ namespace FrmLogin
             {
                 Inserir inserir = new Inserir();
                 string produtoAtivo = produtoAtivoSim.Checked ? "1" : "0";
-
+                this.imagem = TratarImagem();
                 int linhas = inserir.InserirProduto(txtNome.Text, txtDescricao.Text,
                     Convert.ToDecimal(txtPreco.Text), Convert.ToDecimal(txtDesconto.Text), Convert.ToInt32(txtIdCategoria.Text), produtoAtivo,
-                    Dados.idUsuario, Convert.ToInt32(txtQuantidade.Text));
+                    Dados.idUsuario, Convert.ToInt32(txtQuantidade.Text),this.imagem);
 
                 if (linhas != 0)
                 {
@@ -272,6 +311,47 @@ namespace FrmLogin
                 MessageBox.Show("Só é permitida a entrada de números");
                 txtQuantidade.Text = "0";
             }
+        }
+
+        private void btnFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            //ofd.Filter = "Arquivos de imagem (*.jpg)|*.jpg";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                if (ofd.CheckFileExists)
+                {
+                    this.imagem = File.ReadAllBytes(ofd.FileName);
+                    MostrarFoto(imagem);
+                }else
+                {
+                    this.imagem = new byte[0];
+                    MessageBox.Show("Arquivo Inválido! Tente novamente...");
+                }
+            }
+        }
+
+        private void MostrarFoto(byte[] dados)
+        {
+            if (this.imagem.Length > 0)
+            {
+                MemoryStream mem = new MemoryStream(this.imagem);
+                pbProduto.Image = Image.FromStream(mem);
+            }
+            else
+            {
+                pbProduto.Image = null;
+            }
+        }
+
+        private void pegar()
+        {
+            /*Image img = pictureEdit1.EditValue as Image; // or use the PictureEdit.Image property
+using(MemoryStream ms = new MemoryStream()) {
+    img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+    byte[] bytes = ms.ToArray();
+}
+             */
         }
     }
 }
