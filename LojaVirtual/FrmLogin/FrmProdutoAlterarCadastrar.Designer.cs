@@ -518,7 +518,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmProdutoAlterarCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmProdutoAlterarCadastro";
+            this.Text = "Produto";
             this.Load += new System.EventHandler(this.FrmProdutoAlterarCadastrar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).EndInit();
             this.ResumeLayout(false);

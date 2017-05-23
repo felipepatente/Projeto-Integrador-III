@@ -229,7 +229,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmUsuarioConsultarExcluir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmUsuarioAlterarExcluir";
+            this.Text = "Usuario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

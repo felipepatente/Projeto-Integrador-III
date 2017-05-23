@@ -385,7 +385,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmUsuarioAlterarCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmUsuarioCadastrarConsultar";
+            this.Text = "Usuario";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

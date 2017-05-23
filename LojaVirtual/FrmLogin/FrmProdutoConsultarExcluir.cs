@@ -41,9 +41,10 @@ namespace FrmLogin
                 {
                     Deletar deletar = new Deletar();
                     Produto produtoSelecionado = (dgvProduto.SelectedRows[0].DataBoundItem as Produto);
+                    int linhasEstoque = deletar.DeletarEstoque(produtoSelecionado.IdProduto);
                     int linhas = deletar.DeletarProduto(produtoSelecionado.IdProduto);
 
-                    if (linhas != 0)
+                    if (linhas != 0 || linhasEstoque != 0)
                     {
                         MessageBox.Show("Dados excluidos com sucesso");
                         chamarTela.ProdutoConsultarExcluir();
@@ -95,11 +96,19 @@ namespace FrmLogin
                 opcao = "nomeCategoria";
             }
 
-            dgvProduto.DataSource = consultar.ConsultarProduto(opcao, txtPesquisar.Text);
-            dgvProduto.Refresh();
-            dgvProduto.Update();            
-            //chamarTela.ProdutoConsultarExcluir();
-            //Close();
+            if (consultar.ConsultarProduto(opcao, txtPesquisar.Text) != null)
+            {
+                dgvProduto.DataSource = consultar.ConsultarProduto(opcao, txtPesquisar.Text);
+                dgvProduto.Refresh();
+                dgvProduto.Update();
+                //chamarTela.ProdutoConsultarExcluir();
+                //Close();
+            }
+            else
+            {
+                MessageBox.Show("Tempo esgotado. Tente novamente");
+            }
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

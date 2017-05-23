@@ -43,7 +43,7 @@ namespace Negocio
                 comando.Parameters.Add("@ativoProduto", SqlDbType.NChar, 1).Value = ativoProduto;
                 comando.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
                 comando.Parameters.Add("@qtdMinEstoque", SqlDbType.Int).Value = quantidade;
-                comando.Parameters.Add("@imagem", SqlDbType.Image, 50).Value = imagem;
+                comando.Parameters.Add("@imagem", SqlDbType.Image, imagem.Length).Value = imagem;
                 linhasAfetadas = comando.ExecuteNonQuery();
                 conexao.Close();
             }

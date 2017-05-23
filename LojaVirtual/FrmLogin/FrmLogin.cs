@@ -31,6 +31,9 @@ namespace FrmLogin
                 MessageBox.Show("Senha ou Login incorretos");
                 txtLogin.Text = "";
                 txtSenha.Text = "";
+            }else if(linhas == -1)
+            {
+                MessageBox.Show("Tempo de conexão esgotado. Tente novamente");
             }else
             {
                 Dados.tipoPerfil = consultar.GetTipoPerfil();

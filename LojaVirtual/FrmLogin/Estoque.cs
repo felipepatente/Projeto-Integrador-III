@@ -107,5 +107,28 @@ namespace FrmLogin
         {
             this.Close();
         }
+
+        private void txtQuantidade_TextChanged(object sender, EventArgs e)
+        {
+            if (!ValidarNumero(txtQuantidade.Text) && txtQuantidade.Text != "")
+            {
+                MessageBox.Show("Só é permitida a entrada de números");
+                txtQuantidade.Text = "0";
+            }
+        }
+
+        public bool ValidarNumero(string num)
+        {
+            try
+            {
+                int numero = Convert.ToInt32(num);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
     }
 }

@@ -33,14 +33,6 @@
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.rdbCategoria = new System.Windows.Forms.RadioButton();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.pbProduto = new System.Windows.Forms.PictureBox();
             this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +43,14 @@
             this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Imagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.pbProduto = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).BeginInit();
             this.SuspendLayout();
@@ -116,6 +116,83 @@
             this.dgvProduto.Size = new System.Drawing.Size(613, 269);
             this.dgvProduto.TabIndex = 14;
             this.dgvProduto.SelectionChanged += new System.EventHandler(this.dgvProduto_SelectionChanged);
+            // 
+            // IdProduto
+            // 
+            this.IdProduto.DataPropertyName = "idProduto";
+            this.IdProduto.HeaderText = "IdProduto";
+            this.IdProduto.Name = "IdProduto";
+            this.IdProduto.ReadOnly = true;
+            this.IdProduto.Width = 70;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "nomeProduto";
+            this.Nome.HeaderText = "Produto";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Descrição
+            // 
+            this.Descrição.DataPropertyName = "descProduto";
+            this.Descrição.HeaderText = "Descrição";
+            this.Descrição.Name = "Descrição";
+            this.Descrição.ReadOnly = true;
+            this.Descrição.Width = 300;
+            // 
+            // Preço
+            // 
+            this.Preço.DataPropertyName = "precProduto";
+            this.Preço.HeaderText = "Preço";
+            this.Preço.Name = "Preço";
+            this.Preço.ReadOnly = true;
+            this.Preço.Width = 50;
+            // 
+            // DescProm
+            // 
+            this.DescProm.DataPropertyName = "descontoPromocao";
+            this.DescProm.HeaderText = "Desconto";
+            this.DescProm.Name = "DescProm";
+            this.DescProm.ReadOnly = true;
+            this.DescProm.Width = 80;
+            // 
+            // Categoria
+            // 
+            this.Categoria.DataPropertyName = "nomeCategoria";
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            // 
+            // idCategoria
+            // 
+            this.idCategoria.DataPropertyName = "idCategoria";
+            this.idCategoria.HeaderText = "idCategoria";
+            this.idCategoria.Name = "idCategoria";
+            this.idCategoria.ReadOnly = true;
+            this.idCategoria.Width = 70;
+            // 
+            // Ativo
+            // 
+            this.Ativo.DataPropertyName = "ativoProduto";
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
+            this.Ativo.Width = 50;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "qtdMinEstoque";
+            this.Quantidade.HeaderText = "Qtd Minima";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            this.Quantidade.Width = 50;
+            // 
+            // Imagem
+            // 
+            this.Imagem.DataPropertyName = "imagem";
+            this.Imagem.HeaderText = "Imagem";
+            this.Imagem.Name = "Imagem";
+            this.Imagem.ReadOnly = true;
             // 
             // txtPesquisar
             // 
@@ -231,83 +308,6 @@
             this.pbProduto.TabIndex = 17;
             this.pbProduto.TabStop = false;
             // 
-            // IdProduto
-            // 
-            this.IdProduto.DataPropertyName = "idProduto";
-            this.IdProduto.HeaderText = "IdProduto";
-            this.IdProduto.Name = "IdProduto";
-            this.IdProduto.ReadOnly = true;
-            this.IdProduto.Width = 70;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "nomeProduto";
-            this.Nome.HeaderText = "Produto";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Descrição
-            // 
-            this.Descrição.DataPropertyName = "descProduto";
-            this.Descrição.HeaderText = "Descrição";
-            this.Descrição.Name = "Descrição";
-            this.Descrição.ReadOnly = true;
-            this.Descrição.Width = 300;
-            // 
-            // Preço
-            // 
-            this.Preço.DataPropertyName = "precProduto";
-            this.Preço.HeaderText = "Preço";
-            this.Preço.Name = "Preço";
-            this.Preço.ReadOnly = true;
-            this.Preço.Width = 50;
-            // 
-            // DescProm
-            // 
-            this.DescProm.DataPropertyName = "descontoPromocao";
-            this.DescProm.HeaderText = "Desconto";
-            this.DescProm.Name = "DescProm";
-            this.DescProm.ReadOnly = true;
-            this.DescProm.Width = 80;
-            // 
-            // Categoria
-            // 
-            this.Categoria.DataPropertyName = "nomeCategoria";
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            // 
-            // idCategoria
-            // 
-            this.idCategoria.DataPropertyName = "idCategoria";
-            this.idCategoria.HeaderText = "idCategoria";
-            this.idCategoria.Name = "idCategoria";
-            this.idCategoria.ReadOnly = true;
-            this.idCategoria.Width = 70;
-            // 
-            // Ativo
-            // 
-            this.Ativo.DataPropertyName = "ativoProduto";
-            this.Ativo.HeaderText = "Ativo";
-            this.Ativo.Name = "Ativo";
-            this.Ativo.ReadOnly = true;
-            this.Ativo.Width = 50;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.DataPropertyName = "qtdMinEstoque";
-            this.Quantidade.HeaderText = "Qtd Minima";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
-            this.Quantidade.Width = 50;
-            // 
-            // Imagem
-            // 
-            this.Imagem.DataPropertyName = "imagem";
-            this.Imagem.HeaderText = "Imagem";
-            this.Imagem.Name = "Imagem";
-            this.Imagem.ReadOnly = true;
-            // 
             // FrmProdutoConsultarExcluir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,7 +332,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmProdutoConsultarExcluir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmProdutoConsultarExcluir";
+            this.Text = "Produto";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).EndInit();
             this.ResumeLayout(false);

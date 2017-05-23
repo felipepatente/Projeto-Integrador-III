@@ -93,8 +93,8 @@ namespace Negocio
             }
             catch (Exception)
             {
-
-                throw;
+                return -1;
+                //throw;
             }
 
         }
@@ -115,14 +115,14 @@ namespace Negocio
                 comando.Parameters.Add("@tipoPesquisa", SqlDbType.NVarChar, 50).Value = tipoPesquisa;
                 comando.Parameters.Add("@pesquisa", SqlDbType.NVarChar, 50).Value = pesquisa;
                 
-                string sql = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, " +
+                string sql = "SELECT top 20 idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, " +
                     "nomeCategoria, c.idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem " +
                     "FROM Produto AS p " +
                     "INNER JOIN Categoria AS c " +
                     "ON c.idCategoria = p.idCategoria " +
-                    "WHERE " + tipoPesquisa  +" LIKE '%' + @pesquisa + '%';";
+                    "WHERE nomeProduto LIKE '%' + @pesquisa + '%';";
+                //"WHERE " + tipoPesquisa + " LIKE '%' + @pesquisa + '%';";
 
-                
                 comando.CommandText = sql;
                 conexao.Open();
 
@@ -139,8 +139,18 @@ namespace Negocio
                     produto.NomeCategoria = Convert.ToString(meuDataReader["nomeCategoria"]);
                     produto.IdCategoria = Convert.ToInt32(meuDataReader["idCategoria"]);
                     produto.AtivoProduto = Convert.ToString(meuDataReader["ativoProduto"]);
-                    produto.IdUsuario = Convert.ToInt32(meuDataReader["idUsuario"]);
+
+                    if (meuDataReader["idUsuario"] != DBNull.Value)
+                    {
+                        produto.IdUsuario = Convert.ToInt32(meuDataReader["idUsuario"]);
+                    }else
+                    {
+                        produto.IdUsuario = 1;
+                    }
+
                     produto.QtdMinEstoque = Convert.ToInt32(meuDataReader["qtdMinEstoque"]);
+                   // produto.Imagem = (byte[])(meuDataReader["imagem"]);
+
                     if (meuDataReader["imagem"] != DBNull.Value)
                     {
                         produto.Imagem = (byte[])meuDataReader["imagem"];
@@ -158,7 +168,7 @@ namespace Negocio
             }
             catch (Exception)
             {
-
+                //return null;
                 throw;
             }
             
