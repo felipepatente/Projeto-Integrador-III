@@ -22,7 +22,7 @@ namespace Negocio
         }
 
         public int AtualizarProduto(string nomeProduto, string descProduto, decimal precProduto, decimal descontoPromocao,
-            int idCategoria, string ativoProduto, int idUsuario, int qtdMinEstoque, int idProduto, byte[] bytes)
+            int idCategoria, string ativoProduto, int idUsuario, int qtdMinEstoque, int idProduto, byte[] imagem)
         {
             conexao = conectar.GetConexao();
             int linhas;
@@ -41,7 +41,7 @@ namespace Negocio
                 comando.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
                 comando.Parameters.Add("@qtdMinEstoque", SqlDbType.Int).Value = qtdMinEstoque;
                 comando.Parameters.Add("@idProduto", SqlDbType.Int).Value = idProduto;
-                comando.Parameters.Add("@imagem", SqlDbType.Image, 50).Value = bytes;
+                comando.Parameters.Add("@imagem", SqlDbType.Image, imagem.Length).Value = imagem;
 
                 comando.CommandText = "UPDATE Produto SET nomeProduto = @nomeProduto, descProduto = @descProduto, precProduto = @precProduto, " + 
                     "descontoPromocao = @descontoPromocao, idCategoria = @idCategoria, ativoProduto = @ativoProduto, idUsuario = @idUsuario, qtdMinEstoque = @qtdMinEstoque, imagem = @imagem " +

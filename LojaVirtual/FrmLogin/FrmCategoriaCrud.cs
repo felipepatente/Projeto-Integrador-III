@@ -37,7 +37,7 @@ namespace FrmLogin
             {
                 Inserir inserir = new Inserir();
                 inserir.InserirCategoria(txtNome.Text, txtDescricao.Text);
-
+                AtualizarGrid();
                 txtNome.Text = "";
                 txtDescricao.Text = "";
             }else
@@ -89,8 +89,9 @@ namespace FrmLogin
                     if (linhasAfetadas > 0)
                     {
                         MessageBox.Show("Dados excluidos com sucessos");
-                        dtvConsultarCategoria.DataSource = null;
-                    }else
+                        AtualizarGrid();
+                    }
+                    else
                     {
                         MessageBox.Show("Erro ao exluir os dados");
                     }
@@ -122,6 +123,7 @@ namespace FrmLogin
                 if (linhas != 0)
                 {
                     MessageBox.Show("Dados alterado com sucesso");
+                    AtualizarGrid();
                     txtDescricao.Text = "";
                     txtNome.Text = "";
                 }else
@@ -149,6 +151,24 @@ namespace FrmLogin
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AtualizarGrid()
+        {
+            Consultar consultar = new Consultar();
+            dtvConsultarCategoria.AutoGenerateColumns = false;
+            dtvConsultarCategoria.DataSource = null;
+
+            if (consultar.ConsultarCategoria("") != null)
+            {
+                dtvConsultarCategoria.DataSource = consultar.ConsultarCategoria("");
+                dtvConsultarCategoria.Update();
+                dtvConsultarCategoria.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Tempo de conexão esgotado. Tente novamente");
+            }
         }
     }
 }

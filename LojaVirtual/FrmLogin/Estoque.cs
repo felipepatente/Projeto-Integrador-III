@@ -40,8 +40,9 @@ namespace FrmLogin
                 if (linhas != 0)
                 {
                     MessageBox.Show("Dados Atualizados com sucesso");
-                    dgvEstoque.DataSource = null;
-                }else
+                    AtualizarGrid();
+                }
+                else
                 {
                     MessageBox.Show("Erro ao atualizar dados");
                 }
@@ -82,7 +83,7 @@ namespace FrmLogin
                     if (linhas != 0)
                     {
                         MessageBox.Show("Dados excluidos com sucesso");
-                        dgvEstoque.DataSource = null;
+                        AtualizarGrid();
                     }
                     else
                     {
@@ -128,6 +129,24 @@ namespace FrmLogin
             {
 
                 return false;
+            }
+        }
+
+        private void AtualizarGrid()
+        {
+            Consultar consultar = new Consultar();
+            dgvEstoque.AutoGenerateColumns = false;
+            dgvEstoque.DataSource = null;
+
+            if (consultar.ConsultarEstoque() != null)
+            {
+                dgvEstoque.DataSource = consultar.ConsultarEstoque();
+                dgvEstoque.Update();
+                dgvEstoque.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Tempo de conexão esgotado. Tente novamente");
             }
         }
     }

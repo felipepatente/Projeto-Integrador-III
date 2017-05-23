@@ -109,52 +109,8 @@ namespace FrmLogin
         {
 
         }
-
-        private void tsmiAlterarProduto_Click(object sender, EventArgs e)
-        {
-            chamarTela.ProdutoAlterarCadastrar();
-        }
-
-        private void tsmiCadastrarProduto_Click(object sender, EventArgs e)
-        {
-            //FrmLogin login = new FrmLogin();
-            //Convert.ToInt32(idUsuario)
-            //FrmProdutoAlterarCadastrar produto = new FrmProdutoAlterarCadastrar(4);
-            //produto.MdiParent = MdiPrincipal.ActiveForm;
-            //produto.Show();
-            chamarTela.ProdutoAlterarCadastrar();
-        }
-
-        private void tsmiConsultarProduto_Click(object sender, EventArgs e)
-        {
-            chamarTela.ProdutoConsultarExcluir();
-        }
-
-        private void tsmiExcluirProduto_Click(object sender, EventArgs e)
-        {
-            chamarTela.ProdutoConsultarExcluir();
-        }
-
-        private void tsmiAlterarUsuario_Click(object sender, EventArgs e)
-        {
-            chamarTela.UsuarioAlterarCadastrar();
-        }
-
-        private void tsmiCadastrarUsuario_Click(object sender, EventArgs e)
-        {
-            chamarTela.UsuarioAlterarCadastrar();
-        }
-
-        private void tsmiConsultarUsuario_Click(object sender, EventArgs e)
-        {
-            chamarTela.UsuarioConsultarExcluir();
-        }
-
-        private void tsmiExcluirUsuario_Click(object sender, EventArgs e)
-        {
-            chamarTela.UsuarioConsultarExcluir();
-        }
-
+        
+        
         private void tsmiTelaInicial_Click(object sender, EventArgs e)
         {
             chamarTela.Inicial();
@@ -168,6 +124,39 @@ namespace FrmLogin
                 tsmiProduto.Enabled = false;
                 tsmiUsuario.Enabled = false;
             }
+        }
+
+        private void tsmiProduto_Click(object sender, EventArgs e)
+        {
+            Produtos produto = new Produtos();
+            produto.MdiParent = MdiPrincipal.ActiveForm;
+            produto.Show();
+        }
+
+        private void tsmiSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void tsmiUsuario_Click(object sender, EventArgs e)
+        {
+            Usuarios usuario = new Usuarios();
+            usuario.MdiParent = MdiPrincipal.ActiveForm;
+            usuario.Show();
+        }
+
+        private void tsmiEstoque_Click(object sender, EventArgs e)
+        {
+            Estoque estoque = new Estoque();
+            estoque.MdiParent = MdiPrincipal.ActiveForm;
+            estoque.Show();
+        }
+
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCategoriaCrud categoria = new FrmCategoriaCrud(false);
+            categoria.MdiParent = MdiPrincipal.ActiveForm;
+            categoria.Show();
         }
     }
     }

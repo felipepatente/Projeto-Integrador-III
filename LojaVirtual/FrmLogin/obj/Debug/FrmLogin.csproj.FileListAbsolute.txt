@@ -95,10 +95,6 @@ C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\D
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmCategoriaCrud.resources
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmInicial.resources
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmLogin.resources
-C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoAlterarCadastrar.resources
-C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmProdutoConsultarExcluir.resources
-C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioConsultarExcluir.resources
-C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.FrmUsuarioAlterarCadastrar.resources
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.MdiPrincipal.resources
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.Properties.Resources.resources
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.csproj.GenerateResource.Cache
@@ -109,3 +105,5 @@ C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\D
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\ObjetoTransferencia.dll
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\bin\Debug\ObjetoTransferencia.pdb
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.Estoque.resources
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.Produtos.resources
+C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\FrmLogin\obj\Debug\FrmLogin.Usuarios.resources

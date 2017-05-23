@@ -120,9 +120,8 @@ namespace Negocio
                     "FROM Produto AS p " +
                     "INNER JOIN Categoria AS c " +
                     "ON c.idCategoria = p.idCategoria " +
-                    "WHERE nomeProduto LIKE '%' + @pesquisa + '%';";
-                //"WHERE " + tipoPesquisa + " LIKE '%' + @pesquisa + '%';";
-
+                    "WHERE " + tipoPesquisa + " LIKE '%' + @pesquisa + '%';";
+                
                 comando.CommandText = sql;
                 conexao.Open();
 
@@ -168,8 +167,8 @@ namespace Negocio
             }
             catch (Exception)
             {
-                //return null;
-                throw;
+                return null;
+                //throw;
             }
             
         }
@@ -241,8 +240,8 @@ namespace Negocio
             }
             catch (Exception)
             {
-                //return null;
-                throw;
+                return null;
+                //throw;
             }
         }
 

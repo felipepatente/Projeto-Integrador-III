@@ -72,29 +72,17 @@
     <Compile Include="FrmInicial.Designer.cs">
       <DependentUpon>FrmInicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmProdutoAlterarCadastrar.cs">
+    <Compile Include="Produtos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmProdutoAlterarCadastrar.Designer.cs">
-      <DependentUpon>FrmProdutoAlterarCadastrar.cs</DependentUpon>
+    <Compile Include="Produtos.Designer.cs">
+      <DependentUpon>Produtos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmProdutoConsultarExcluir.cs">
+    <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmProdutoConsultarExcluir.Designer.cs">
-      <DependentUpon>FrmProdutoConsultarExcluir.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmUsuarioConsultarExcluir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmUsuarioConsultarExcluir.Designer.cs">
-      <DependentUpon>FrmUsuarioConsultarExcluir.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmUsuarioAlterarCadastrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmUsuarioAlterarCadastrar.Designer.cs">
-      <DependentUpon>FrmUsuarioAlterarCadastrar.cs</DependentUpon>
+    <Compile Include="Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="MdiPrincipal.cs">
       <SubType>Form</SubType>
@@ -116,17 +104,11 @@
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmProdutoAlterarCadastrar.resx">
-      <DependentUpon>FrmProdutoAlterarCadastrar.cs</DependentUpon>
+    <EmbeddedResource Include="Produtos.resx">
+      <DependentUpon>Produtos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmProdutoConsultarExcluir.resx">
-      <DependentUpon>FrmProdutoConsultarExcluir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmUsuarioConsultarExcluir.resx">
-      <DependentUpon>FrmUsuarioConsultarExcluir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmUsuarioAlterarCadastrar.resx">
-      <DependentUpon>FrmUsuarioAlterarCadastrar.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MdiPrincipal.resx">
       <DependentUpon>MdiPrincipal.cs</DependentUpon>

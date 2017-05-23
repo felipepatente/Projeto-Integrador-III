@@ -26,8 +26,7 @@ namespace Conexao.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=hippo-pi.database.windows.net;Initial Catalog=hippo;User ID=TSI;Passw" +
-            "ord=SistemasInternet123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GGJN75H;Initial Catalog=Kanino;Integrated Security=True")]
         public string stringConexao {
             get {
                 return ((string)(this["stringConexao"]));

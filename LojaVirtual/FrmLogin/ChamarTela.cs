@@ -9,28 +9,20 @@ namespace FrmLogin
     public class ChamarTela
     {
 
-        // chmando a tela Categoria
         public void CategoriaCrud()
         {
             FrmCategoriaCrud frmCategoriaCrud = new FrmCategoriaCrud();
             frmCategoriaCrud.MdiParent = MdiPrincipal.ActiveForm;
             frmCategoriaCrud.Show();
         }
-        // fim da tela Categoria
 
-
-
-        // chamando a tela iniciar
         public void Inicial()
         {
             FrmInicial frmInicial = new FrmInicial();
             frmInicial.MdiParent = MdiPrincipal.ActiveForm;
             frmInicial.Show();
         }
-        //fim da iniciar
 
-
-        // chamando a tela Login
         public void Login()
         {
             FrmLogin frmLogin = new FrmLogin();
@@ -38,40 +30,19 @@ namespace FrmLogin
             frmLogin.ShowDialog();
             
         }
-        //fim da Login
-
-
-
-        // chamando as telas Produtos
-        public void ProdutoAlterarCadastrar()
-        {
-            FrmProdutoAlterarCadastrar frmProdutoAlterarCadastrar = new FrmProdutoAlterarCadastrar();
-            frmProdutoAlterarCadastrar.MdiParent = MdiPrincipal.ActiveForm;
-            frmProdutoAlterarCadastrar.Show();
-        }
-
+        
         public void ProdutoConsultarExcluir()
         {
-            FrmProdutoConsultarExcluir frmProdutoConsultarExcluir = new FrmProdutoConsultarExcluir();
+            Produtos frmProdutoConsultarExcluir = new Produtos();
             frmProdutoConsultarExcluir.MdiParent = MdiPrincipal.ActiveForm;
             frmProdutoConsultarExcluir.Show();
         }
-        // fim das telas Produtos
-
-        // chamando as telas Usuario
-        public void UsuarioAlterarCadastrar()
-        {
-            FrmUsuarioAlterarCadastrar frmUsuarioAlterarCadastrar = new FrmUsuarioAlterarCadastrar();
-            frmUsuarioAlterarCadastrar.MdiParent = MdiPrincipal.ActiveForm;
-            frmUsuarioAlterarCadastrar.Show();
-        }
-
+        
         public void UsuarioConsultarExcluir()
         {
-            FrmUsuarioConsultarExcluir frmUsuarioConsultarExcluir = new FrmUsuarioConsultarExcluir();
+            Usuarios frmUsuarioConsultarExcluir = new Usuarios();
             frmUsuarioConsultarExcluir.MdiParent = MdiPrincipal.ActiveForm;
             frmUsuarioConsultarExcluir.Show();
         }
-        // fim das telas Usuario
     }
 }

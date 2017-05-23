@@ -50,8 +50,9 @@ namespace Negocio
             catch (Exception)
             {
                 linhasAfetadas = 0;
-                throw;
+                //throw;
             }
+
             return linhasAfetadas;
         }
 
@@ -109,7 +110,7 @@ namespace Negocio
             catch (Exception)
             {
 
-                throw;
+                //throw;
             }
 
         }
