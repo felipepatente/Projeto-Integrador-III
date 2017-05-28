@@ -143,10 +143,10 @@ namespace FrmLogin
         {
             Consultar consultar = new Consultar();
             dgvEstoque.AutoGenerateColumns = false;
-            dgvEstoque.DataSource = null;
-
+            
             if (consultar.ConsultarEstoque() != null)
             {
+                dgvEstoque.DataSource = null;
                 dgvEstoque.DataSource = consultar.ConsultarEstoque();
                 dgvEstoque.Update();
                 dgvEstoque.Refresh();

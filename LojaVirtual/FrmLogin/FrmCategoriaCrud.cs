@@ -171,10 +171,10 @@ namespace FrmLogin
         {
             Consultar consultar = new Consultar();
             dtvConsultarCategoria.AutoGenerateColumns = false;
-            dtvConsultarCategoria.DataSource = null;
-
+            
             if (consultar.ConsultarCategoria("") != null)
             {
+                dtvConsultarCategoria.DataSource = null;
                 dtvConsultarCategoria.DataSource = consultar.ConsultarCategoria("");
                 dtvConsultarCategoria.Update();
                 dtvConsultarCategoria.Refresh();

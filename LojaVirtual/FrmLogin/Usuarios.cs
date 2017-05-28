@@ -78,7 +78,7 @@ namespace FrmLogin
                     }
                     else
                     {
-                        MessageBox.Show("Não é permitido alterar os 2 primeiros registros");
+                        MessageBox.Show("Não é permitido alterar o 1 primeiro registro");
                     }
                 }
             }else
@@ -91,10 +91,10 @@ namespace FrmLogin
         {
             Consultar consultar = new Consultar();
             dgvUsuario.AutoGenerateColumns = false;
-            dgvUsuario.DataSource = null;
-
+            
             if (consultar.ConsultarUsuario("") != null)
             {
+                dgvUsuario.DataSource = null;
                 dgvUsuario.DataSource = consultar.ConsultarUsuario("");
                 dgvUsuario.Update();
                 dgvUsuario.Refresh();
