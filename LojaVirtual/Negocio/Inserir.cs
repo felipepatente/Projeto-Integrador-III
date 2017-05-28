@@ -18,13 +18,14 @@ namespace Negocio
         {
             conectar = new Conectar();
             conexao = new SqlConnection();
+            conexao = conectar.GetConexao();
         }
 
         public int InserirProduto(string nome, string descricao, decimal preco, decimal desconto, int idCategoria,
             string ativoProduto,int idUsuario, int quantidade, byte[] imagem)
         {
             
-            conexao = conectar.GetConexao();
+            
             int linhasAfetadas;
 
             try
@@ -46,6 +47,7 @@ namespace Negocio
                 comando.Parameters.Add("@imagem", SqlDbType.Image, imagem.Length).Value = imagem;
                 linhasAfetadas = comando.ExecuteNonQuery();
                 conexao.Close();
+                conexao.Dispose();
             }
             catch (Exception)
             {
@@ -59,7 +61,7 @@ namespace Negocio
         public int InserirUsuario(string loginUsuario, string senhaUsuario, string nomeUsuario,
             string tipoPerfil, string usuarioAtivo)
         {
-            conexao = conectar.GetConexao();
+
             int linhas;
 
             try
@@ -75,9 +77,9 @@ namespace Negocio
                 comando.Parameters.Add("@nomeUsuario", SqlDbType.NVarChar, 50).Value = nomeUsuario;
                 comando.Parameters.Add("@tipoPerfil", SqlDbType.Char, 1).Value = tipoPerfil;
                 comando.Parameters.Add("@usuarioAtivo", SqlDbType.Char, 1).Value = usuarioAtivo;
-                int linhasAfetadas = comando.ExecuteNonQuery();
-                linhas = linhasAfetadas;
+                linhas = comando.ExecuteNonQuery();
                 conexao.Close();
+                conexao.Dispose();
 
             }
             catch (Exception)
@@ -90,11 +92,10 @@ namespace Negocio
         }
 
 
-        public void InserirCategoria(string nome, string descricao)
+        public int InserirCategoria(string nome, string descricao)
         {
-
-            conexao = conectar.GetConexao();
-
+            int linhas;
+            
             try
             {
                 SqlCommand comando = conexao.CreateCommand();
@@ -104,15 +105,16 @@ namespace Negocio
                 conexao.Open();
                 comando.Parameters.Add("@nomeCategoria", SqlDbType.NVarChar, 50).Value = nome;
                 comando.Parameters.Add("@descCategoria", SqlDbType.NVarChar, 100).Value = descricao;
-                int linhas = comando.ExecuteNonQuery();
+                linhas = comando.ExecuteNonQuery();
                 conexao.Close();
+                conexao.Dispose();
             }
             catch (Exception)
             {
-
+                linhas = 0;
                 //throw;
             }
-
+            return linhas;
         }
 
     }

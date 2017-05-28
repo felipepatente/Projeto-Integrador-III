@@ -37,14 +37,14 @@ namespace FrmLogin
                     Usuario usuario = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
                     int linhas = deletar.DeletarUsuario(usuario.IdUsuario);
 
-                    if (linhas == 0)
-                    {
-                        MessageBox.Show("Não é permitido excluir o 1 primeiro registro");
-                    }
-                    else
+                    if (linhas != 0)
                     {
                         MessageBox.Show("Dados exluidos com sucesso");
                         AtualizarGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não é permitido excluir o 1 primeiro registro");
                     }
                 }
             }else
@@ -71,14 +71,14 @@ namespace FrmLogin
 
                     int linhas = atualizar.AtualizarUsuario(txtLogin.Text, txtSenha.Text, txtNome.Text, tipoPerfil, status, Convert.ToInt32(txtCodigo.Text));
 
-                    if (linhas == 0)
-                    {
-                        MessageBox.Show("Não é permitido alterar os 2 primeiros registros");
-                    }
-                    else
+                    if (linhas != 0)
                     {
                         MessageBox.Show("Dados atualizados com sucesso");
                         AtualizarGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não é permitido alterar os 2 primeiros registros");
                     }
                 }
             }else
@@ -133,14 +133,14 @@ namespace FrmLogin
                 string status = rdbAtivado.Checked ? "1" : "0";
                 int linhas = inserir.InserirUsuario(txtLogin.Text, txtSenha.Text, txtNome.Text, tipoPerfil, status);
 
-                if (linhas == 0)
-                {
-                    MessageBox.Show("Erro ao cadastrar usúario");
-                }
-                else
+                if (linhas != 0)
                 {
                     MessageBox.Show("Dados inseridos com sucesso");
                     LimparCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao cadastrar usúario");
                 }
 
             }

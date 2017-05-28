@@ -19,18 +19,17 @@ namespace Negocio
         {
             this.conectar = new Conectar();
             this.conexao = new SqlConnection();
+            conexao = conectar.GetConexao();
         }
 
         public int AtualizarProduto(string nomeProduto, string descProduto, decimal precProduto, decimal descontoPromocao,
             int idCategoria, string ativoProduto, int idUsuario, int qtdMinEstoque, int idProduto, byte[] imagem)
         {
-            conexao = conectar.GetConexao();
             int linhas;
 
             try
             {
                 SqlCommand comando = conexao.CreateCommand();
-
                 
                 comando.Parameters.Add("@nomeProduto", SqlDbType.NVarChar, 70).Value = nomeProduto;
                 comando.Parameters.Add("@descProduto", SqlDbType.NVarChar, 500).Value = descProduto;
@@ -52,7 +51,7 @@ namespace Negocio
                 int linhasAfetadas = comando.ExecuteNonQuery();
                 linhas = linhasAfetadas;
                 conexao.Close();
-
+                conexao.Dispose();
             }
             catch (Exception)
             {
@@ -66,8 +65,6 @@ namespace Negocio
         public int AtualizarUsuario(string loginUsuario, string senhaUsuario, string nomeUsuario, string tipoPerfil,
             string usuarioAtivo, int idUsuario)
         {
-
-            conexao = conectar.GetConexao();
             int linhas;
 
             try
@@ -89,6 +86,7 @@ namespace Negocio
                 int linhasAfetadas = comando.ExecuteNonQuery();
                 linhas = linhasAfetadas;
                 conexao.Close();
+                conexao.Dispose();
             }
             catch (Exception)
             {
@@ -103,8 +101,6 @@ namespace Negocio
 
         public int AtualizarCategoria(int idCategoria, string nome, string descricao)
         {
-
-            conexao = conectar.GetConexao();
             int linhasAfetadas;
 
             try
@@ -119,6 +115,7 @@ namespace Negocio
                 conexao.Open();
                 linhasAfetadas = comando.ExecuteNonQuery();
                 conexao.Close();
+                conexao.Dispose();
 
             }
             catch (Exception)
@@ -132,9 +129,7 @@ namespace Negocio
 
         public int AtualizarEstoque(int idProduto, int quantidade)
         {
-            conexao = conectar.GetConexao();
             int linhasAfetadas;
-
             try
             {
                 SqlCommand comando = conexao.CreateCommand();
@@ -145,6 +140,7 @@ namespace Negocio
                 conexao.Open();
                 linhasAfetadas = comando.ExecuteNonQuery();
                 conexao.Close();
+                conexao.Dispose();
             }
             catch (Exception)
             {

@@ -26,12 +26,10 @@ namespace Negocio
 
        public CategoriaColecao ConsultarCategoria(string nome)
         {
-            conexao = conectar.GetConexao();
-            CategoriaColecao catColecao = new CategoriaColecao();
-            
-
             try
             {
+                CategoriaColecao catColecao = new CategoriaColecao();
+                conexao = conectar.GetConexao();
                 SqlCommand comando = conexao.CreateCommand();
                 comando.Parameters.Add("@nomeCategoria", SqlDbType.NVarChar, 50).Value = nome;
                 comando.CommandText = "SELECT idCategoria, nomeCategoria, descCategoria FROM categoria "+
@@ -51,23 +49,25 @@ namespace Negocio
                     catColecao.Add(cat);
                 }
 
+                conexao.Close();
+                conexao.Dispose();
+
                 return catColecao;
                 
             }
             catch (Exception)
             {
-
-                throw;
+                return null;
+                //throw;
             }
         } 
        
        public int ConsultarUsuarioLogin(string login, string senha)
         {
-            conexao = conectar.GetConexao();
-            UsuarioColecao usuColecao = new UsuarioColecao();
-
             try
             {
+                UsuarioColecao usuColecao = new UsuarioColecao();
+                conexao = conectar.GetConexao();
                 SqlCommand comando = conexao.CreateCommand();
                 comando.Parameters.Add("@login", SqlDbType.NVarChar, 100).Value = login;
                 comando.Parameters.Add("@senha", SqlDbType.NVarChar, 64).Value = senha;
@@ -88,7 +88,9 @@ namespace Negocio
                     tipoPerfil = usuario.TipoPerfil;
                     linhas = usuario.IdUsuario;
                 }
-                
+
+                conexao.Close();
+                conexao.Dispose();
                 return linhas;
             }
             catch (Exception)
@@ -106,16 +108,15 @@ namespace Negocio
 
        public ProdutoColecao ConsultarProduto(string tipoPesquisa, string pesquisa)
         {
-            conexao = conectar.GetConexao();
-            ProdutoColecao proColecao = new ProdutoColecao();
-
             try
             {
+                ProdutoColecao proColecao = new ProdutoColecao();
+                conexao = conectar.GetConexao();
                 SqlCommand comando = conexao.CreateCommand();
                 comando.Parameters.Add("@tipoPesquisa", SqlDbType.NVarChar, 50).Value = tipoPesquisa;
                 comando.Parameters.Add("@pesquisa", SqlDbType.NVarChar, 50).Value = pesquisa;
                 
-                string sql = "SELECT top 20 idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, " +
+                string sql = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, " +
                     "nomeCategoria, c.idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem " +
                     "FROM Produto AS p " +
                     "INNER JOIN Categoria AS c " +
@@ -163,6 +164,8 @@ namespace Negocio
                 }
 
                 conexao.Close();
+                conexao.Dispose();
+
                 return proColecao;
             }
             catch (Exception)
@@ -170,16 +173,15 @@ namespace Negocio
                 return null;
                 //throw;
             }
-            
+
         }
 
        public UsuarioColecao ConsultarUsuario(string nome)
         {
-            conexao = conectar.GetConexao();
-            UsuarioColecao usuColecao = new UsuarioColecao();
-
             try
             {
+                UsuarioColecao usuColecao = new UsuarioColecao();
+                conexao = conectar.GetConexao();
                 SqlCommand comando = conexao.CreateCommand();
                 comando.Parameters.Add("@nomeUsuario", SqlDbType.NVarChar, 50).Value = nome;
                 comando.CommandText = "SELECT idUsuario, loginUsuario, senhaUsuario, nomeUsuario, tipoPerfil, usuarioAtivo " +
@@ -201,23 +203,23 @@ namespace Negocio
                     usuColecao.Add(usu);
                 }
 
+                conexao.Close();
+                conexao.Dispose();
                 return usuColecao;
             }
             catch (Exception)
             {
-
-                throw;
+                return null;
+                //throw;
             }
         }
 
        public EstoqueColecao ConsultarEstoque()
         {
-            conexao = conectar.GetConexao();
-
             try
             {
-
                 EstoqueColecao estoqueColecao = new EstoqueColecao();
+                conexao = conectar.GetConexao();
                 SqlCommand comando = conexao.CreateCommand();
                 comando.CommandText = "SELECT e.idProduto, nomeProduto, qtdProdutoDisponivel " +
                                        "FROM estoque AS e " +
@@ -235,6 +237,8 @@ namespace Negocio
                     estoqueColecao.Add(estoque);
                 }
 
+                conexao.Close();
+                conexao.Dispose();
                 return estoqueColecao;
 
             }

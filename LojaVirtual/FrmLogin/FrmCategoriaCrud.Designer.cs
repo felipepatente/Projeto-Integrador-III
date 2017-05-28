@@ -45,22 +45,11 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.produtoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastrarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.excluirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastrarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.excluirToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtvConsultarCategoria = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvConsultarCategoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -265,84 +254,11 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.produtoToolStripMenuItem1,
-            this.usuárioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(841, 24);
             this.menuStrip1.TabIndex = 27;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // produtoToolStripMenuItem1
-            // 
-            this.produtoToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alterarToolStripMenuItem1,
-            this.cadastrarToolStripMenuItem2,
-            this.consultarToolStripMenuItem1,
-            this.excluirToolStripMenuItem1});
-            this.produtoToolStripMenuItem1.Name = "produtoToolStripMenuItem1";
-            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(62, 20);
-            this.produtoToolStripMenuItem1.Text = "Produto";
-            // 
-            // alterarToolStripMenuItem1
-            // 
-            this.alterarToolStripMenuItem1.Name = "alterarToolStripMenuItem1";
-            this.alterarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
-            this.alterarToolStripMenuItem1.Text = "Alterar";
-            // 
-            // cadastrarToolStripMenuItem2
-            // 
-            this.cadastrarToolStripMenuItem2.Name = "cadastrarToolStripMenuItem2";
-            this.cadastrarToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
-            this.cadastrarToolStripMenuItem2.Text = "Cadastrar";
-            // 
-            // consultarToolStripMenuItem1
-            // 
-            this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
-            this.consultarToolStripMenuItem1.Text = "Consultar";
-            // 
-            // excluirToolStripMenuItem1
-            // 
-            this.excluirToolStripMenuItem1.Name = "excluirToolStripMenuItem1";
-            this.excluirToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
-            this.excluirToolStripMenuItem1.Text = "Excluir";
-            // 
-            // usuárioToolStripMenuItem
-            // 
-            this.usuárioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alterarToolStripMenuItem2,
-            this.cadastrarToolStripMenuItem3,
-            this.consultarToolStripMenuItem2,
-            this.excluirToolStripMenuItem2});
-            this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.usuárioToolStripMenuItem.Text = "Usuário";
-            // 
-            // alterarToolStripMenuItem2
-            // 
-            this.alterarToolStripMenuItem2.Name = "alterarToolStripMenuItem2";
-            this.alterarToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
-            this.alterarToolStripMenuItem2.Text = "Alterar";
-            // 
-            // cadastrarToolStripMenuItem3
-            // 
-            this.cadastrarToolStripMenuItem3.Name = "cadastrarToolStripMenuItem3";
-            this.cadastrarToolStripMenuItem3.Size = new System.Drawing.Size(125, 22);
-            this.cadastrarToolStripMenuItem3.Text = "Cadastrar";
-            // 
-            // consultarToolStripMenuItem2
-            // 
-            this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
-            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
-            this.consultarToolStripMenuItem2.Text = "Consultar";
-            // 
-            // excluirToolStripMenuItem2
-            // 
-            this.excluirToolStripMenuItem2.Name = "excluirToolStripMenuItem2";
-            this.excluirToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
-            this.excluirToolStripMenuItem2.Text = "Excluir";
             // 
             // Descricao
             // 
@@ -424,8 +340,6 @@
             this.Name = "FrmCategoriaCrud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categoria";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvConsultarCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -450,16 +364,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;

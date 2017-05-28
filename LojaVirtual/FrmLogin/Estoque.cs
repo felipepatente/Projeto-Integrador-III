@@ -22,11 +22,18 @@ namespace FrmLogin
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             Consultar consultar = new Consultar();
-            dgvEstoque.AutoGenerateColumns = false;
-            dgvEstoque.DataSource = null;
-            dgvEstoque.DataSource = consultar.ConsultarEstoque();
-            dgvEstoque.Refresh();
-            dgvEstoque.Update();
+            if (consultar.ConsultarEstoque() != null)
+            {
+                dgvEstoque.AutoGenerateColumns = false;
+                dgvEstoque.DataSource = null;
+                dgvEstoque.DataSource = consultar.ConsultarEstoque();
+                dgvEstoque.Refresh();
+                dgvEstoque.Update();
+            }else
+            {
+                MessageBox.Show("Tempo de conexão esgotado. Tente novamente");
+            }
+
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)

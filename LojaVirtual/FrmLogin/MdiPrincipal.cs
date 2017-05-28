@@ -123,6 +123,7 @@ namespace FrmLogin
             {
                 tsmiProduto.Enabled = false;
                 tsmiUsuario.Enabled = false;
+                tsmiCategoria.Enabled = false;
             }
         }
 

@@ -34,12 +34,12 @@
             this.tsmiProduto = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEstoque = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCategoria = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiTelaInicial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSair = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -49,8 +49,8 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiProduto,
             this.tsmiUsuario,
+            this.tsmiCategoria,
             this.tsmiEstoque,
-            this.categoriaToolStripMenuItem,
             this.tsmiTelaInicial,
             this.tsmiSair});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
@@ -81,6 +81,13 @@
             this.tsmiEstoque.Text = "Estoque";
             this.tsmiEstoque.Click += new System.EventHandler(this.tsmiEstoque_Click);
             // 
+            // tsmiCategoria
+            // 
+            this.tsmiCategoria.Name = "tsmiCategoria";
+            this.tsmiCategoria.Size = new System.Drawing.Size(70, 20);
+            this.tsmiCategoria.Text = "Categoria";
+            this.tsmiCategoria.Click += new System.EventHandler(this.categoriaToolStripMenuItem_Click);
+            // 
             // tsmiTelaInicial
             // 
             this.tsmiTelaInicial.Name = "tsmiTelaInicial";
@@ -110,13 +117,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // categoriaToolStripMenuItem
-            // 
-            this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.categoriaToolStripMenuItem.Text = "Categoria";
-            this.categoriaToolStripMenuItem.Click += new System.EventHandler(this.categoriaToolStripMenuItem_Click);
             // 
             // MdiPrincipal
             // 
@@ -155,7 +155,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiTelaInicial;
         private System.Windows.Forms.ToolStripMenuItem tsmiEstoque;
         private System.Windows.Forms.ToolStripMenuItem tsmiSair;
-        private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCategoria;
     }
 }
 

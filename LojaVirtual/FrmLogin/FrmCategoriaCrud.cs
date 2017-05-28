@@ -36,10 +36,19 @@ namespace FrmLogin
             if (txtNome.Text != "")
             {
                 Inserir inserir = new Inserir();
-                inserir.InserirCategoria(txtNome.Text, txtDescricao.Text);
-                AtualizarGrid();
-                txtNome.Text = "";
-                txtDescricao.Text = "";
+                int linhas = inserir.InserirCategoria(txtNome.Text, txtDescricao.Text);
+                if (linhas != 0)
+                {
+                    AtualizarGrid();
+                    txtNome.Text = "";
+                    txtDescricao.Text = "";
+                    MessageBox.Show("Dados Cadastrados com sucesso");
+                }else
+                {
+                    txtNome.Text = "";
+                    txtDescricao.Text = "";
+                    MessageBox.Show("Error ao cadastrar categoria");
+                }
             }else
             {
                 MessageBox.Show("* Campos obrigatorios");
@@ -50,11 +59,17 @@ namespace FrmLogin
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             Consultar consultar = new Consultar();
-            dtvConsultarCategoria.AutoGenerateColumns = false;
-            dtvConsultarCategoria.DataSource = null;
-            dtvConsultarCategoria.DataSource = consultar.ConsultarCategoria(txtPesquisar.Text);
-            dtvConsultarCategoria.Refresh();
-            dtvConsultarCategoria.Update();
+            if (consultar.ConsultarCategoria(txtPesquisar.Text) != null)
+            {
+                dtvConsultarCategoria.AutoGenerateColumns = false;
+                dtvConsultarCategoria.DataSource = null;
+                dtvConsultarCategoria.DataSource = consultar.ConsultarCategoria(txtPesquisar.Text);
+                dtvConsultarCategoria.Refresh();
+                dtvConsultarCategoria.Update();
+            }else
+            {
+                MessageBox.Show("Tempo de conexão esgotado. Tente novamente");
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -86,16 +101,15 @@ namespace FrmLogin
                     Deletar deletar = new Deletar();
                     int linhasAfetadas = deletar.DeletarCategoria(categoriaSelecionado.IdCategoria);
 
-                    if (linhasAfetadas > 0)
+                    if (linhasAfetadas != 0)
                     {
                         MessageBox.Show("Dados excluidos com sucessos");
                         AtualizarGrid();
                     }
                     else
                     {
-                        MessageBox.Show("Erro ao exluir os dados");
+                        MessageBox.Show("Não é permitido exluir os 6 primeiros registros");
                     }
-                    
                 }
                 
             }else

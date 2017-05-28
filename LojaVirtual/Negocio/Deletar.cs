@@ -18,11 +18,12 @@ namespace Negocio
         {
             this.conexao = new SqlConnection();
             this.conectar = new Conectar();
+            conexao = conectar.GetConexao();
         }
 
         public int DeletarProduto(int idProduto)
         {
-            conexao = conectar.GetConexao();
+            
             int linhas;
 
             try
@@ -31,10 +32,9 @@ namespace Negocio
                 comando.Parameters.Add("@idProduto", SqlDbType.Int).Value = idProduto;
                 comando.CommandText = "DELETE FROM Produto WHERE idProduto = @idProduto;";
                 conexao.Open();
-
-                int linhasAfetadas = comando.ExecuteNonQuery();
-                linhas = linhasAfetadas;
-
+                linhas = comando.ExecuteNonQuery();
+                conexao.Close();
+                conexao.Dispose();
             }
             catch (Exception)
             {
@@ -47,8 +47,6 @@ namespace Negocio
 
         public int DeletarUsuario(int idUsuario)
         {
-
-            conexao = conectar.GetConexao();
             int linhas;
 
             try
@@ -60,6 +58,7 @@ namespace Negocio
                 int linhasAfetadas = comando.ExecuteNonQuery();
                 linhas = linhasAfetadas;
                 conexao.Close();
+                conexao.Dispose();
             }
             catch (Exception)
             {
@@ -72,10 +71,7 @@ namespace Negocio
 
         public int DeletarCategoria(int idCategoria)
         {
-
-            conexao = conectar.GetConexao();
             int linhas = 0;
-
             try
             {
                 SqlCommand comando = conexao.CreateCommand();
@@ -85,6 +81,7 @@ namespace Negocio
                 int linhasAfetadas = comando.ExecuteNonQuery();
                 linhas = linhasAfetadas;
                 conexao.Close();
+                conexao.Dispose();
             }
             catch (Exception)
             {
@@ -97,9 +94,7 @@ namespace Negocio
 
         public int DeletarEstoque(int idEstoque)
         {
-            conexao = conectar.GetConexao();
             int linhasAfetadas;
-
             try
             {
                 SqlCommand comando = conexao.CreateCommand();

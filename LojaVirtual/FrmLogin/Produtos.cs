@@ -139,7 +139,7 @@ namespace FrmLogin
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao cadastro produto");
+                    MessageBox.Show("Erro ao cadastrar produto");
                 }
 
             }
@@ -215,6 +215,7 @@ namespace FrmLogin
             }
         }
         
+        //Pesquisar Categoria
         private void btnPesquisarUsuario_Click(object sender, EventArgs e)
         {
             FrmCategoriaCrud frmCategoria = new FrmCategoriaCrud();
