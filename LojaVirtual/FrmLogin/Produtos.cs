@@ -74,13 +74,9 @@ namespace FrmLogin
 
         private string VerOpcao()
         {
-            string opcao;
+            string opcao = "nomeProduto";
 
-            if (rdbNome.Checked)
-            {
-                opcao = "nomeProduto";
-            }
-            else
+            if (rdbCategoria.Checked)
             {
                 opcao = "nomeCategoria";
             }
@@ -92,12 +88,12 @@ namespace FrmLogin
         {
             Consultar consultar = new Consultar();
             dgvProduto.AutoGenerateColumns = false;
-            dgvProduto.DataSource = null;
-
+            
             string opcao = VerOpcao();
             
             if (consultar.ConsultarProduto(opcao, txtPesquisar.Text) != null)
             {
+                dgvProduto.DataSource = null;
                 dgvProduto.DataSource = consultar.ConsultarProduto(opcao, txtPesquisar.Text);
             }
             else
@@ -106,19 +102,26 @@ namespace FrmLogin
             }
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        private void SetarRadios()
         {
-            ConsultarProduto();
-            if (VerOpcao().Equals("nomeProduto"))
-            {
-                rdbNome.Checked = true;
-            }else if(VerOpcao().Equals("nomeCategoria"))
+            if (VerOpcao().Equals("nomeCategoria"))
             {
                 rdbCategoria.Checked = true;
-            }else
+            }
+            else if (VerOpcao().Equals("nomeProduto"))
             {
                 rdbNome.Checked = true;
             }
+            else
+            {
+                rdbNome.Checked = true;
+            }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            ConsultarProduto();
+            SetarRadios();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -155,6 +158,7 @@ namespace FrmLogin
                     imagem = (byte[])(dgvProduto.SelectedRows[0].Cells["imagem"].Value);
                     Produto produtoSelecionado = (dgvProduto.SelectedRows[0].DataBoundItem as Produto);
                     SetarProduto(produtoSelecionado);
+                    SetarRadios();
                 }
             }
         }
@@ -168,6 +172,7 @@ namespace FrmLogin
             txtDesconto.Text = Convert.ToString(produto.DescontoPromocao);
             txtIdCategoria.Text = Convert.ToString(produto.IdCategoria);
             txtQuantidade.Text = Convert.ToString(produto.QtdMinEstoque);
+
 
             if (produto.AtivoProduto.Equals("1"))
             {
@@ -226,10 +231,13 @@ namespace FrmLogin
         {
             Atualizar atualizar = new Atualizar();
 
-            string ativo = "0";
+            string ativo;
             if (produtoAtivoSim.Checked)
             {
                 ativo = "1";
+            }else
+            {
+                ativo = "0";
             }
 
             if (ValidarValores())
@@ -413,6 +421,5 @@ namespace FrmLogin
             dgvProduto.Update();
             dgvProduto.Refresh();
         }
-
     }
 }

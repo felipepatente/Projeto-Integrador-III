@@ -7,3 +7,12 @@ C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\obj\De
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\bin\Debug\ObjetoTransferencia.dll
 C:\Users\Felipe\Documents\Visual Studio 2015\Projects\LojaVirtual\Negocio\bin\Debug\ObjetoTransferencia.pdb
+C:\Users\felipe.apatente\Documents\Visual Studio 2015\Projects\Projeto-Integrador-III-master\LojaVirtual\Negocio\bin\Debug\Negocio.dll
+C:\Users\felipe.apatente\Documents\Visual Studio 2015\Projects\Projeto-Integrador-III-master\LojaVirtual\Negocio\bin\Debug\Negocio.pdb
+C:\Users\felipe.apatente\Documents\Visual Studio 2015\Projects\Projeto-Integrador-III-master\LojaVirtual\Negocio\bin\Debug\Conexao.dll
+C:\Users\felipe.apatente\Documents\Visual Studio 2015\Projects\Projeto-Integrador-III-master\LojaVirtual\Negocio\bin\Debug\ObjetoTransferencia.dll
+C:\Users\felipe.apatente\Documents\Visual Studio 2015\Projects\Projeto-Integrador-III-master\LojaVirtual\Negocio\bin\Debug\Conexao.pdb
+C:\Users\felipe.apatente\Documents\Visual Studio 2015\Projects\Projeto-Integrador-III-master\LojaVirtual\Negocio\bin\Debug\ObjetoTransferencia.pdb
+C:\Users\felipe.apatente\Documents\Visual Studio 2015\Projects\Projeto-Integrador-III-master\LojaVirtual\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\felipe.apatente\Documents\Visual Studio 2015\Projects\Projeto-Integrador-III-master\LojaVirtual\Negocio\obj\Debug\Negocio.dll
+C:\Users\felipe.apatente\Documents\Visual Studio 2015\Projects\Projeto-Integrador-III-master\LojaVirtual\Negocio\obj\Debug\Negocio.pdb

@@ -58,9 +58,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtIdCategoria = new System.Windows.Forms.TextBox();
             this.btnPesquisarUsuario = new System.Windows.Forms.Button();
-            this.produtoAtivoNao = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
-            this.produtoAtivoSim = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -75,9 +73,15 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.produtoAtivoNao = new System.Windows.Forms.RadioButton();
+            this.produtoAtivoSim = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -99,7 +103,7 @@
             this.rdbNome.Checked = true;
             this.rdbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbNome.ForeColor = System.Drawing.Color.White;
-            this.rdbNome.Location = new System.Drawing.Point(578, 122);
+            this.rdbNome.Location = new System.Drawing.Point(7, 5);
             this.rdbNome.Name = "rdbNome";
             this.rdbNome.Size = new System.Drawing.Size(67, 20);
             this.rdbNome.TabIndex = 11;
@@ -113,11 +117,10 @@
             this.rdbCategoria.BackColor = System.Drawing.Color.Transparent;
             this.rdbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbCategoria.ForeColor = System.Drawing.Color.White;
-            this.rdbCategoria.Location = new System.Drawing.Point(700, 124);
+            this.rdbCategoria.Location = new System.Drawing.Point(95, 5);
             this.rdbCategoria.Name = "rdbCategoria";
             this.rdbCategoria.Size = new System.Drawing.Size(94, 20);
             this.rdbCategoria.TabIndex = 12;
-            this.rdbCategoria.TabStop = true;
             this.rdbCategoria.Text = "Categoria";
             this.rdbCategoria.UseVisualStyleBackColor = false;
             // 
@@ -416,20 +419,6 @@
             this.btnPesquisarUsuario.UseVisualStyleBackColor = false;
             this.btnPesquisarUsuario.Click += new System.EventHandler(this.btnPesquisarUsuario_Click);
             // 
-            // produtoAtivoNao
-            // 
-            this.produtoAtivoNao.AutoSize = true;
-            this.produtoAtivoNao.BackColor = System.Drawing.Color.Transparent;
-            this.produtoAtivoNao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.produtoAtivoNao.ForeColor = System.Drawing.Color.White;
-            this.produtoAtivoNao.Location = new System.Drawing.Point(196, 399);
-            this.produtoAtivoNao.Name = "produtoAtivoNao";
-            this.produtoAtivoNao.Size = new System.Drawing.Size(55, 20);
-            this.produtoAtivoNao.TabIndex = 57;
-            this.produtoAtivoNao.TabStop = true;
-            this.produtoAtivoNao.Text = "Não";
-            this.produtoAtivoNao.UseVisualStyleBackColor = false;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -441,21 +430,6 @@
             this.label11.Size = new System.Drawing.Size(101, 16);
             this.label11.TabIndex = 56;
             this.label11.Text = "Produto Ativo";
-            // 
-            // produtoAtivoSim
-            // 
-            this.produtoAtivoSim.AutoSize = true;
-            this.produtoAtivoSim.BackColor = System.Drawing.Color.Transparent;
-            this.produtoAtivoSim.Checked = true;
-            this.produtoAtivoSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.produtoAtivoSim.ForeColor = System.Drawing.Color.White;
-            this.produtoAtivoSim.Location = new System.Drawing.Point(136, 399);
-            this.produtoAtivoSim.Name = "produtoAtivoSim";
-            this.produtoAtivoSim.Size = new System.Drawing.Size(52, 20);
-            this.produtoAtivoSim.TabIndex = 55;
-            this.produtoAtivoSim.TabStop = true;
-            this.produtoAtivoSim.Text = "Sim";
-            this.produtoAtivoSim.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
@@ -604,6 +578,54 @@
             this.pictureBox1.TabIndex = 66;
             this.pictureBox1.TabStop = false;
             // 
+            // produtoAtivoNao
+            // 
+            this.produtoAtivoNao.AutoSize = true;
+            this.produtoAtivoNao.BackColor = System.Drawing.Color.Transparent;
+            this.produtoAtivoNao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.produtoAtivoNao.ForeColor = System.Drawing.Color.White;
+            this.produtoAtivoNao.Location = new System.Drawing.Point(68, 5);
+            this.produtoAtivoNao.Name = "produtoAtivoNao";
+            this.produtoAtivoNao.Size = new System.Drawing.Size(55, 20);
+            this.produtoAtivoNao.TabIndex = 57;
+            this.produtoAtivoNao.Text = "Não";
+            this.produtoAtivoNao.UseVisualStyleBackColor = false;
+            // 
+            // produtoAtivoSim
+            // 
+            this.produtoAtivoSim.AutoSize = true;
+            this.produtoAtivoSim.BackColor = System.Drawing.Color.Transparent;
+            this.produtoAtivoSim.Checked = true;
+            this.produtoAtivoSim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.produtoAtivoSim.ForeColor = System.Drawing.Color.White;
+            this.produtoAtivoSim.Location = new System.Drawing.Point(8, 5);
+            this.produtoAtivoSim.Name = "produtoAtivoSim";
+            this.produtoAtivoSim.Size = new System.Drawing.Size(52, 20);
+            this.produtoAtivoSim.TabIndex = 55;
+            this.produtoAtivoSim.TabStop = true;
+            this.produtoAtivoSim.Text = "Sim";
+            this.produtoAtivoSim.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.rdbCategoria);
+            this.panel1.Controls.Add(this.rdbNome);
+            this.panel1.Location = new System.Drawing.Point(557, 115);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 28);
+            this.panel1.TabIndex = 67;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.produtoAtivoNao);
+            this.panel2.Controls.Add(this.produtoAtivoSim);
+            this.panel2.Location = new System.Drawing.Point(136, 400);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(135, 28);
+            this.panel2.TabIndex = 68;
+            // 
             // Produtos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,6 +633,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1249, 459);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnFoto);
             this.Controls.Add(this.label10);
@@ -619,9 +643,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtIdCategoria);
             this.Controls.Add(this.btnPesquisarUsuario);
-            this.Controls.Add(this.produtoAtivoNao);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.produtoAtivoSim);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -639,8 +661,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.dgvProduto);
-            this.Controls.Add(this.rdbCategoria);
-            this.Controls.Add(this.rdbNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnExcluir);
@@ -656,6 +676,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -692,9 +716,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtIdCategoria;
         private System.Windows.Forms.Button btnPesquisarUsuario;
-        private System.Windows.Forms.RadioButton produtoAtivoNao;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.RadioButton produtoAtivoSim;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -709,5 +731,9 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton produtoAtivoNao;
+        private System.Windows.Forms.RadioButton produtoAtivoSim;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
