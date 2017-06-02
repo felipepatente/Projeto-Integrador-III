@@ -134,10 +134,30 @@ namespace Negocio
                     produto.IdProduto = Convert.ToInt32(meuDataReader["idProduto"]);
                     produto.NomeProduto = Convert.ToString(meuDataReader["nomeProduto"]);
                     produto.DescProduto = Convert.ToString(meuDataReader["descProduto"]);
-                    produto.PrecProduto = Convert.ToDecimal(meuDataReader["precProduto"]);
-                    produto.DescontoPromocao = Convert.ToDecimal(meuDataReader["descontoPromocao"]);
+                
+                    if (meuDataReader["precProduto"] != DBNull.Value)
+                    {
+                        produto.PrecProduto = Convert.ToDecimal(meuDataReader["precProduto"]);
+                    }else
+                    {
+                        produto.PrecProduto = 0;
+                    }
+                    
                     produto.NomeCategoria = Convert.ToString(meuDataReader["nomeCategoria"]);
-                    produto.IdCategoria = Convert.ToInt32(meuDataReader["idCategoria"]);
+
+                    if (meuDataReader["descontoPromocao"] != DBNull.Value)
+                    {
+                          produto.DescontoPromocao = Convert.ToDecimal(meuDataReader["descontoPromocao"]);
+                    }
+
+                    if (meuDataReader["idCategoria"] != DBNull.Value)
+                    {
+                        produto.IdCategoria = Convert.ToInt32(meuDataReader["idCategoria"]);
+                    }else
+                    {
+                        produto.IdCategoria = 1;
+                    }
+
                     produto.AtivoProduto = Convert.ToString(meuDataReader["ativoProduto"]);
 
                     if (meuDataReader["idUsuario"] != DBNull.Value)
@@ -148,7 +168,15 @@ namespace Negocio
                         produto.IdUsuario = 1;
                     }
 
-                    produto.QtdMinEstoque = Convert.ToInt32(meuDataReader["qtdMinEstoque"]);
+                    if (meuDataReader["qtdMinEstoque"] != DBNull.Value)
+                    {
+                        produto.QtdMinEstoque = Convert.ToInt32(meuDataReader["qtdMinEstoque"]);
+                    }
+                    else
+                    {
+                        produto.QtdMinEstoque = 0;
+                    }
+
                    // produto.Imagem = (byte[])(meuDataReader["imagem"]);
 
                     if (meuDataReader["imagem"] != DBNull.Value)
@@ -167,7 +195,7 @@ namespace Negocio
                 conexao.Dispose();
 
                 return proColecao;
-            }
+        }
             catch (Exception)
             {
                 return null;
