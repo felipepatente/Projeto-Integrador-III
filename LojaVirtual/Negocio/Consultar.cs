@@ -148,6 +148,9 @@ namespace Negocio
                     if (meuDataReader["descontoPromocao"] != DBNull.Value)
                     {
                           produto.DescontoPromocao = Convert.ToDecimal(meuDataReader["descontoPromocao"]);
+                    }else
+                    {
+                        produto.DescontoPromocao = 0;
                     }
 
                     if (meuDataReader["idCategoria"] != DBNull.Value)
@@ -195,7 +198,7 @@ namespace Negocio
                 conexao.Dispose();
 
                 return proColecao;
-        }
+            }
             catch (Exception)
             {
                 return null;
