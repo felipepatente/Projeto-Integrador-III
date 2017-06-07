@@ -36,10 +36,13 @@ namespace Negocio
                 conexao.Close();
                 conexao.Dispose();
             }
+            catch (SqlException ex)
+            {
+                linhas = ex.Number;
+            }
             catch (Exception)
             {
-                linhas = 0;
-                //throw;
+                linhas = -1;
             }
 
             return linhas;
@@ -60,11 +63,15 @@ namespace Negocio
                 conexao.Close();
                 conexao.Dispose();
             }
+            catch (SqlException ex)
+            {
+                linhas = ex.Number;
+            }
             catch (Exception)
             {
-                linhas = 0;
-                //throw;
+                linhas = -1;
             }
+
 
             return linhas;
         }
@@ -83,10 +90,13 @@ namespace Negocio
                 conexao.Close();
                 conexao.Dispose();
             }
+            catch (SqlException ex)
+            {
+                linhas = ex.Number;
+            }
             catch (Exception)
             {
-                linhas = 0;
-                //throw;
+                linhas = -1;
             }
 
             return linhas;
@@ -104,10 +114,13 @@ namespace Negocio
                 linhasAfetadas = comando.ExecuteNonQuery();
                 conexao.Close();
             }
+            catch (SqlException ex)
+            {
+                linhasAfetadas = ex.Number;
+            }
             catch (Exception)
             {
-                linhasAfetadas = 0;
-                //throw;
+                linhasAfetadas = -1;
             }
 
             return linhasAfetadas;

@@ -101,14 +101,16 @@ namespace FrmLogin
                     Deletar deletar = new Deletar();
                     int linhasAfetadas = deletar.DeletarCategoria(categoriaSelecionado.IdCategoria);
 
-                    if (linhasAfetadas != 0)
+                    Mensagem mensagem = new Mensagem(linhasAfetadas,"categoria");
+                    string tipoMensagem = mensagem.GetMensagem();
+
+                    if (tipoMensagem.Equals("d"))
                     {
-                        MessageBox.Show("Dados excluidos com sucessos");
+                        MessageBox.Show("Dado excluido com sucesso");
                         AtualizarGrid();
-                    }
-                    else
+                    }else
                     {
-                        MessageBox.Show("Não é permitido exluir os 6 primeiros registros");
+                        MessageBox.Show(tipoMensagem);
                     }
                 }
                 
@@ -154,10 +156,13 @@ namespace FrmLogin
         
         private void dtvConsultarCategoria_SelectionChanged(object sender, EventArgs e)
         {
-            
-            if (dtvConsultarCategoria.SelectedRows[0].Cells[0].Value != null)
+
+            if (dtvConsultarCategoria.SelectedRows.Count != 0)
             {
-                SetarCampos();
+                if (dtvConsultarCategoria.SelectedRows[0].Cells[0].Value != null)
+                {
+                    SetarCampos();
+                }
             }
             
         }

@@ -29,33 +29,43 @@ namespace FrmLogin
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            
-            if (dgvProduto.SelectedRows.Count != 0)
+
+            if (dgvProduto.SelectedRows[0].Cells[0].Value != null)
             {
-                
-                DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (resultado != DialogResult.No)
+                if (dgvProduto.SelectedRows.Count != 0)
                 {
-                    Deletar deletar = new Deletar();
-                    Produto produtoSelecionado = (dgvProduto.SelectedRows[0].DataBoundItem as Produto);
-                    int linhasEstoque = deletar.DeletarEstoque(produtoSelecionado.IdProduto);
-                    int linhas = deletar.DeletarProduto(produtoSelecionado.IdProduto);
 
-                    if (linhas != 0)
+                    DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    int linhas;
+                    if (resultado != DialogResult.No)
                     {
-                        MessageBox.Show("Dados excluidos com sucesso");
-                        AtualizarGrid();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Não é permitido excluir os 10 primeiros registros");
+                        Deletar deletar = new Deletar();
+                        Produto produtoSelecionado = (dgvProduto.SelectedRows[0].DataBoundItem as Produto);
+                        int linhasEstoque = deletar.DeletarEstoque(produtoSelecionado.IdProduto);
+                        linhas = deletar.DeletarProduto(produtoSelecionado.IdProduto);
+
+                        Mensagem mensagem = new Mensagem(linhas, "produto");
+                        string tipoMensagem = mensagem.GetMensagem();
+
+                        if (tipoMensagem.Equals("d"))
+                        {
+                            MessageBox.Show("Dado excluido com sucesso");
+                            AtualizarGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show(tipoMensagem);
+                        }
                     }
                 }
-                
+                else
+                {
+                    MessageBox.Show("Nenhuma linha selecionada");
+                }
             }else
             {
-                MessageBox.Show("Nenhuma linha selecionada");
+                MessageBox.Show("Linha selecionada esta sem valores. Sem exclusão");
             }
         }
 
@@ -134,8 +144,12 @@ namespace FrmLogin
                 int linhas = inserir.InserirProduto(txtNome.Text, txtDescricao.Text,
                     Convert.ToDecimal(txtPreco.Text), Convert.ToDecimal(txtDesconto.Text), Convert.ToInt32(txtIdCategoria.Text), produtoAtivo,
                     Dados.idUsuario, Convert.ToInt32(txtQuantidade.Text), this.imagem);
-
-                if (linhas != 0)
+                
+                if (linhas == 3609)
+                {
+                    MessageBox.Show("Falha na hora de cadastrar. A imagem excedeu o limite de tamanho de 300kb");
+                }
+                else if(linhas > 0)
                 {
                     MessageBox.Show("Dados cadastrado com sucesso");
                     LimparCampos();
@@ -144,7 +158,6 @@ namespace FrmLogin
                 {
                     MessageBox.Show("Erro ao cadastrar produto");
                 }
-
             }
         }
 
@@ -248,15 +261,19 @@ namespace FrmLogin
                 Convert.ToDecimal(txtDesconto.Text), Convert.ToInt32(txtIdCategoria.Text), ativo,
                 Convert.ToInt32(txtIdUsuario.Text), Convert.ToInt32(txtQuantidade.Text), Convert.ToInt32(txtIdProduto.Text), this.imagem);
 
-                if (linhas != 0)
+                if (linhas == 3609)
+                {
+                    MessageBox.Show("Falha na hora de atualizar. A imagem excedeu o limite de tamanho de 300kb ou\n" +
+                       "esse registro não pode ser alterado");
+                }else if(linhas > 0)
                 {
                     MessageBox.Show("Dados alterados com sucesso");
                     LimparCampos();
-                }
-                else
+                }else
                 {
-                    MessageBox.Show("Os 10 primeiros registros não pode ser alterados");
+                    MessageBox.Show("Error ao atualizar produtos");
                 }
+                
             }
             
         }

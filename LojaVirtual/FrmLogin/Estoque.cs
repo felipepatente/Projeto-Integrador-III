@@ -63,9 +63,12 @@ namespace FrmLogin
 
         private void dgvEstoque_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvEstoque.SelectedRows[0].Cells[0].Value != null)
+            if (dgvEstoque.SelectedRows.Count != 0)
             {
-                SetarCampos();
+                if (dgvEstoque.SelectedRows[0].Cells[0].Value != null)
+                {
+                    SetarCampos();
+                }
             }
         }
         
@@ -87,14 +90,17 @@ namespace FrmLogin
                     Deletar deletar = new Deletar();
                     int linhas = deletar.DeletarEstoque(Convert.ToInt32(txtIdProduto.Text));
 
-                    if (linhas != 0)
+                    Mensagem mensagem = new Mensagem(linhas, "estoque");
+                    string tipoMensagem = mensagem.GetMensagem();
+
+                    if (tipoMensagem.Equals("d"))
                     {
-                        MessageBox.Show("Dados excluidos com sucesso");
+                        MessageBox.Show("Dado excluido com sucesso");
                         AtualizarGrid();
                     }
                     else
                     {
-                        MessageBox.Show("Erro ao excluir dados");
+                        MessageBox.Show(tipoMensagem);
                     }
                 }
             }else

@@ -30,7 +30,7 @@ namespace Negocio
 
             try
             {
-                
+
                 SqlCommand comando = conexao.CreateCommand();
                 comando.CommandText =
                     "INSERT INTO Produto (nomeProduto, descProduto, precProduto,descontoPromocao,idCategoria,ativoProduto,idUsuario,qtdMinEstoque, imagem) " +
@@ -49,9 +49,13 @@ namespace Negocio
                 conexao.Close();
                 conexao.Dispose();
             }
+            catch (SqlException ex)
+            {
+                linhasAfetadas = ex.Number;
+            }
             catch (Exception)
             {
-                linhasAfetadas = 0;
+                linhasAfetadas = -1;
                 //throw;
             }
 

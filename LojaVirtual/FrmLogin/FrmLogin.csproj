@@ -72,6 +72,7 @@
     <Compile Include="FrmInicial.Designer.cs">
       <DependentUpon>FrmInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mensagem.cs" />
     <Compile Include="Produtos.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -53,12 +53,15 @@ namespace Negocio
                 conexao.Close();
                 conexao.Dispose();
             }
+            catch (SqlException ex)
+            {
+                linhas = ex.Number;
+            }
             catch (Exception)
             {
-                linhas = 0;
-                //throw;
+                linhas = -1;
             }
-
+            
             return linhas;
         }
 

@@ -37,15 +37,20 @@ namespace FrmLogin
                     Usuario usuario = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
                     int linhas = deletar.DeletarUsuario(usuario.IdUsuario);
 
-                    if (linhas != 0)
+                    Mensagem mensagem = new Mensagem(linhas, "usuario");
+                    string tipoMensagem = mensagem.GetMensagem();
+
+                    if (tipoMensagem.Equals("d"))
                     {
-                        MessageBox.Show("Dados exluidos com sucesso");
+                        MessageBox.Show("Dado excluido com sucesso");
                         AtualizarGrid();
                     }
                     else
                     {
-                        MessageBox.Show("Não é permitido excluir o 1 primeiro registro");
+                        MessageBox.Show(tipoMensagem);
                     }
+
+
                 }
             }else
             {
@@ -148,10 +153,13 @@ namespace FrmLogin
         
         private void dgvUsuario_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvUsuario.SelectedRows[0].Cells[0].Value != null)
+            if (dgvUsuario.SelectedRows.Count != 0)
             {
-                Usuario usuarioSelecionado = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
-                SetarUsuario(usuarioSelecionado);
+                if (dgvUsuario.SelectedRows[0].Cells[0].Value != null)
+                {
+                    Usuario usuarioSelecionado = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
+                    SetarUsuario(usuarioSelecionado);
+                }
             }
         }
 
