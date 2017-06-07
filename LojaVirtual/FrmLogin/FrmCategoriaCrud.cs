@@ -155,7 +155,7 @@ namespace FrmLogin
         private void dtvConsultarCategoria_SelectionChanged(object sender, EventArgs e)
         {
             
-            if (dtvConsultarCategoria.SelectedRows.Count != 0)
+            if (dtvConsultarCategoria.SelectedRows[0].Cells[0].Value != null)
             {
                 SetarCampos();
             }

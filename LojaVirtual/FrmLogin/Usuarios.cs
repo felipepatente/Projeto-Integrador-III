@@ -148,7 +148,7 @@ namespace FrmLogin
         
         private void dgvUsuario_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvUsuario.SelectedRows.Count > 0)
+            if (dgvUsuario.SelectedRows[0].Cells[0].Value != null)
             {
                 Usuario usuarioSelecionado = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
                 SetarUsuario(usuarioSelecionado);

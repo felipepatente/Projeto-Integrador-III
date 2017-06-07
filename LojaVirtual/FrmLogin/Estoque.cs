@@ -63,7 +63,7 @@ namespace FrmLogin
 
         private void dgvEstoque_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvEstoque.SelectedRows.Count != 0)
+            if (dgvEstoque.SelectedRows[0].Cells[0].Value != null)
             {
                 SetarCampos();
             }
