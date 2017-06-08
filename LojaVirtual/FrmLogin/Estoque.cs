@@ -41,19 +41,25 @@ namespace FrmLogin
             
             if (dgvEstoque.SelectedRows.Count != 0)
             {
-                Atualizar atualizar = new Atualizar();
-                int linhas =  atualizar.AtualizarEstoque(Convert.ToInt32(txtIdProduto.Text), Convert.ToInt32(txtQuantidade.Text));
 
-                if (linhas != 0)
+                if (dgvEstoque.SelectedRows[0].Cells[0].Value != null)
                 {
-                    MessageBox.Show("Dados Atualizados com sucesso");
-                    AtualizarGrid();
-                }
-                else
-                {
-                    MessageBox.Show("Erro ao atualizar dados");
-                }
+                    Atualizar atualizar = new Atualizar();
+                    int linhas = atualizar.AtualizarEstoque(Convert.ToInt32(txtIdProduto.Text), Convert.ToInt32(txtQuantidade.Text));
 
+                    if (linhas != 0)
+                    {
+                        MessageBox.Show("Dados Atualizados com sucesso");
+                        AtualizarGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao atualizar dados");
+                    }
+                }else
+                {
+                    MessageBox.Show("A linha selecionada esta sem conteudo");
+                }
             }
             else
             {
@@ -83,26 +89,35 @@ namespace FrmLogin
         {
             if (dgvEstoque.SelectedRows.Count != 0)
             {
-                DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (resultado != DialogResult.No)
+                if (dgvEstoque.SelectedRows[0].Cells[0].Value != null)
                 {
-                    Deletar deletar = new Deletar();
-                    int linhas = deletar.DeletarEstoque(Convert.ToInt32(txtIdProduto.Text));
+                    DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    Mensagem mensagem = new Mensagem(linhas, "estoque");
-                    string tipoMensagem = mensagem.GetMensagem();
+                    if (resultado != DialogResult.No)
+                    {
+                        Deletar deletar = new Deletar();
+                        int linhas = deletar.DeletarEstoque(Convert.ToInt32(txtIdProduto.Text));
 
-                    if (tipoMensagem.Equals("d"))
-                    {
-                        MessageBox.Show("Dado excluido com sucesso");
-                        AtualizarGrid();
+                        Mensagem mensagem = new Mensagem(linhas, "estoque");
+                        string tipoMensagem = mensagem.GetMensagem();
+
+                        if (tipoMensagem.Equals("d"))
+                        {
+                            MessageBox.Show("Dado excluido com sucesso");
+                            AtualizarGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show(tipoMensagem);
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show(tipoMensagem);
-                    }
+
                 }
+                else
+                {
+                    MessageBox.Show("A linha selecionada esta sem conteudo");
+                }
+
             }else
             {
                 MessageBox.Show("Nenhuma linha selecionada");

@@ -11,11 +11,13 @@ using Negocio;
 using ObjetoTransferencia;
 using System.IO;
 
+
 namespace FrmLogin
 {
     public partial class Produtos : Form
     {
         private byte[] imagem;
+        private int idCategorias;
 
         public Produtos()
         {
@@ -29,10 +31,10 @@ namespace FrmLogin
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-
-            if (dgvProduto.SelectedRows[0].Cells[0].Value != null)
+            
+            if (dgvProduto.SelectedRows.Count != 0)
             {
-                if (dgvProduto.SelectedRows.Count != 0)
+                if (dgvProduto.SelectedRows[0].Cells[0].Value != null)
                 {
 
                     DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -61,11 +63,11 @@ namespace FrmLogin
                 }
                 else
                 {
-                    MessageBox.Show("Nenhuma linha selecionada");
+                    MessageBox.Show("A linha selecionada esta sem valores. Sem exclusão");
                 }
             }else
             {
-                MessageBox.Show("Linha selecionada esta sem valores. Sem exclusão");
+                MessageBox.Show("Nenhuma linha selecionada");
             }
         }
 
@@ -142,7 +144,7 @@ namespace FrmLogin
                 string produtoAtivo = produtoAtivoSim.Checked ? "1" : "0";
                 this.imagem = TratarImagem();
                 int linhas = inserir.InserirProduto(txtNome.Text, txtDescricao.Text,
-                    Convert.ToDecimal(txtPreco.Text), Convert.ToDecimal(txtDesconto.Text), Convert.ToInt32(txtIdCategoria.Text), produtoAtivo,
+                    Convert.ToDecimal(txtPreco.Text), Convert.ToDecimal(txtDesconto.Text), this.idCategorias, produtoAtivo,
                     Dados.idUsuario, Convert.ToInt32(txtQuantidade.Text), this.imagem);
                 
                 if (linhas == 3609)
@@ -183,10 +185,9 @@ namespace FrmLogin
             txtDescricao.Text = produto.DescProduto;
             txtPreco.Text = Convert.ToString(produto.PrecProduto);
             txtDesconto.Text = Convert.ToString(produto.DescontoPromocao);
-            txtIdCategoria.Text = Convert.ToString(produto.IdCategoria);
+            cbCategoria.Text = produto.NomeCategoria;
             txtQuantidade.Text = Convert.ToString(produto.QtdMinEstoque);
-
-
+            
             if (produto.AtivoProduto.Equals("1"))
             {
                 produtoAtivoSim.Checked = true;
@@ -258,7 +259,7 @@ namespace FrmLogin
 
                 this.imagem = TratarImagem();
                 int linhas = atualizar.AtualizarProduto(txtNome.Text, txtDescricao.Text, Convert.ToDecimal(txtPreco.Text),
-                Convert.ToDecimal(txtDesconto.Text), Convert.ToInt32(txtIdCategoria.Text), ativo,
+                Convert.ToDecimal(txtDesconto.Text), this.idCategorias, ativo,
                 Convert.ToInt32(txtIdUsuario.Text), Convert.ToInt32(txtQuantidade.Text), Convert.ToInt32(txtIdProduto.Text), this.imagem);
 
                 if (linhas == 3609)
@@ -319,11 +320,19 @@ namespace FrmLogin
                 txtQuantidade.Text = "0";
             }
 
-            if (txtIdCategoria.Text == "")
+            
+            if (cbCategoria.SelectedValue == null)
             {
-                txtIdCategoria.Text = "1";
+                this.idCategorias = 1;
             }
-
+            else if (cbCategoria.SelectedValue != null)
+            {
+                this.idCategorias = Convert.ToInt32(cbCategoria.SelectedValue);
+            }else
+            {
+                estaValido = false;
+            }
+            
             if (txtPreco.Text == "" || txtNome.Text == "")
             {
                 MessageBox.Show("Campos com * são obrigatórios");
@@ -392,14 +401,6 @@ namespace FrmLogin
             }
         }
 
-        private void txtNome_TextChanged(object sender, EventArgs e)
-        {
-            if (Dados.idCategoria != 0)
-            {
-                txtIdCategoria.Text = Convert.ToString(Dados.idCategoria);
-            }
-        }
-
         private void btnFoto_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -428,7 +429,6 @@ namespace FrmLogin
             txtDesconto.Text = null;
             txtQuantidade.Text = null;
             txtIdProduto.Text = null;
-            txtIdCategoria.Text = null;
             pbProduto.Image = null;
         }
 
@@ -437,6 +437,22 @@ namespace FrmLogin
             ConsultarProduto();
             dgvProduto.Update();
             dgvProduto.Refresh();
+        }
+
+        private void cbCategoria_Click(object sender, EventArgs e)
+        {
+            Consultar consultar = new Consultar();
+            DataTable dt = new DataTable();
+            dt.Load(consultar.ConsultarCategoriaNome());
+            
+            cbCategoria.ValueMember = "idCategoria";
+            cbCategoria.DisplayMember = "nomeCategoria";            
+            cbCategoria.DataSource = dt;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(cbCategoria.SelectedValue);
         }
     }
 }

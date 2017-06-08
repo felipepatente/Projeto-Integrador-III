@@ -19,13 +19,7 @@ namespace FrmLogin
         {
             InitializeComponent();
         }
-
-        public FrmCategoriaCrud(bool botaoLigado)
-        {
-            InitializeComponent();
-            btnSalvar.Enabled = botaoLigado;
-        }
-
+        
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Close();
@@ -92,26 +86,32 @@ namespace FrmLogin
         {
             if (dtvConsultarCategoria.SelectedRows.Count != 0)
             {
-
-                DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (resultado != DialogResult.No)
+                if (dtvConsultarCategoria.SelectedRows[0].Cells[0].Value != null)
                 {
-                    Categoria categoriaSelecionado = (dtvConsultarCategoria.SelectedRows[0].DataBoundItem as Categoria);
-                    Deletar deletar = new Deletar();
-                    int linhasAfetadas = deletar.DeletarCategoria(categoriaSelecionado.IdCategoria);
+                    DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    Mensagem mensagem = new Mensagem(linhasAfetadas,"categoria");
-                    string tipoMensagem = mensagem.GetMensagem();
+                    if (resultado != DialogResult.No)
+                    {
+                        Categoria categoriaSelecionado = (dtvConsultarCategoria.SelectedRows[0].DataBoundItem as Categoria);
+                        Deletar deletar = new Deletar();
+                        int linhasAfetadas = deletar.DeletarCategoria(categoriaSelecionado.IdCategoria);
 
-                    if (tipoMensagem.Equals("d"))
-                    {
-                        MessageBox.Show("Dado excluido com sucesso");
-                        AtualizarGrid();
-                    }else
-                    {
-                        MessageBox.Show(tipoMensagem);
+                        Mensagem mensagem = new Mensagem(linhasAfetadas, "categoria");
+                        string tipoMensagem = mensagem.GetMensagem();
+
+                        if (tipoMensagem.Equals("d"))
+                        {
+                            MessageBox.Show("Dado excluido com sucesso");
+                            AtualizarGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show(tipoMensagem);
+                        }
                     }
+                }else
+                {
+                    MessageBox.Show("A linha selecionada não tem conteudo");
                 }
                 
             }else
@@ -133,24 +133,31 @@ namespace FrmLogin
 
             if (dtvConsultarCategoria.SelectedRows.Count != 0)
             {
-                Atualizar atualizar = new Atualizar();
-                int linhas = atualizar.AtualizarCategoria(Convert.ToInt32(txtIdCategoria.Text), txtNome.Text, txtDescricao.Text);
+                if (dtvConsultarCategoria.SelectedRows[0].Cells[0].Value != null)
+                {
+                    Atualizar atualizar = new Atualizar();
+                    int linhas = atualizar.AtualizarCategoria(Convert.ToInt32(txtIdCategoria.Text), txtNome.Text, txtDescricao.Text);
 
-                if (linhas != 0)
-                {
-                    MessageBox.Show("Dados alterado com sucesso");
-                    AtualizarGrid();
-                    txtDescricao.Text = "";
-                    txtNome.Text = "";
-                }else
-                {
-                    MessageBox.Show("Os 6 primeiros registros não pode ser alterado");
+                    if (linhas != 0)
+                    {
+                        MessageBox.Show("Dados alterado com sucesso");
+                        AtualizarGrid();
+                        txtDescricao.Text = "";
+                        txtNome.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Os 6 primeiros registros não pode ser alterado");
+                    }
                 }
-
+                else
+                {
+                    MessageBox.Show("A linha selecionada não tem conteudo");
+                }
             }
             else
             {
-                MessageBox.Show("Nenhuma linha selecionado");
+                MessageBox.Show("Nenhuma linha da tabela esta selecionada");
             }
         }
         

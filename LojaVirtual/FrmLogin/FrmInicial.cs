@@ -36,7 +36,7 @@ namespace FrmLogin
         
         private void FrmInicial_Load(object sender, EventArgs e)
         {
-            if (Dados.tipoPerfil.Equals("E"))
+            if (!(Dados.tipoPerfil.Equals("A")))
             {
                 btnCategoria.Enabled = false;
                 btnProduto.Enabled = false;
@@ -47,7 +47,7 @@ namespace FrmLogin
         private void button1_Click(object sender, EventArgs e)
         {
             //chamarTela.CategoriaCrud();
-            FrmCategoriaCrud frmCategoria = new FrmCategoriaCrud(false);
+            FrmCategoriaCrud frmCategoria = new FrmCategoriaCrud();
             frmCategoria.MdiParent = MdiPrincipal.ActiveForm;
             frmCategoria.Show();
             this.Close();

@@ -29,28 +29,32 @@ namespace FrmLogin
         {
             if (dgvUsuario.SelectedRows.Count != 0)
             {
-                DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (resultado != DialogResult.No)
+                if (dgvUsuario.SelectedRows[0].Cells[0].Value != null)
                 {
-                    Deletar deletar = new Deletar();
-                    Usuario usuario = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
-                    int linhas = deletar.DeletarUsuario(usuario.IdUsuario);
+                    DialogResult resultado = MessageBox.Show("Tem certeza que deseja excluir os dados?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    Mensagem mensagem = new Mensagem(linhas, "usuario");
-                    string tipoMensagem = mensagem.GetMensagem();
-
-                    if (tipoMensagem.Equals("d"))
+                    if (resultado != DialogResult.No)
                     {
-                        MessageBox.Show("Dado excluido com sucesso");
-                        AtualizarGrid();
-                    }
-                    else
-                    {
-                        MessageBox.Show(tipoMensagem);
-                    }
+                        Deletar deletar = new Deletar();
+                        Usuario usuario = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
+                        int linhas = deletar.DeletarUsuario(usuario.IdUsuario);
 
+                        Mensagem mensagem = new Mensagem(linhas, "usuario");
+                        string tipoMensagem = mensagem.GetMensagem();
 
+                        if (tipoMensagem.Equals("d"))
+                        {
+                            MessageBox.Show("Dado excluido com sucesso");
+                            AtualizarGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show(tipoMensagem);
+                        }
+                    }
+                }else
+                {
+                    MessageBox.Show("Linha selecionada não tem conteúdo");
                 }
             }else
             {
@@ -64,9 +68,13 @@ namespace FrmLogin
             if (dgvUsuario.SelectedRows.Count != 0)
             {
                 Usuario usuarioSelecionado = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
+
                 if (txtSenha.Text == "" || txtLogin.Text == "")
                 {
                     MessageBox.Show("* Preencha os campos obrigatórios");
+                }else if (txtCodigo.Text == "")
+                {
+                    MessageBox.Show("É necessario fazer uma consultar e escolher um usuario.");
                 }
                 else
                 {

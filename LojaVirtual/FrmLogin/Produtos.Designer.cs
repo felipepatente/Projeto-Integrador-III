@@ -56,8 +56,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtIdProduto = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtIdCategoria = new System.Windows.Forms.TextBox();
-            this.btnPesquisarUsuario = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -77,6 +75,7 @@
             this.produtoAtivoSim = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -396,29 +395,6 @@
             this.label12.TabIndex = 60;
             this.label12.Text = "IdProduto";
             // 
-            // txtIdCategoria
-            // 
-            this.txtIdCategoria.BackColor = System.Drawing.SystemColors.Control;
-            this.txtIdCategoria.Enabled = false;
-            this.txtIdCategoria.Location = new System.Drawing.Point(295, 193);
-            this.txtIdCategoria.Name = "txtIdCategoria";
-            this.txtIdCategoria.Size = new System.Drawing.Size(55, 20);
-            this.txtIdCategoria.TabIndex = 59;
-            // 
-            // btnPesquisarUsuario
-            // 
-            this.btnPesquisarUsuario.BackColor = System.Drawing.Color.Maroon;
-            this.btnPesquisarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPesquisarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnPesquisarUsuario.Location = new System.Drawing.Point(363, 191);
-            this.btnPesquisarUsuario.Name = "btnPesquisarUsuario";
-            this.btnPesquisarUsuario.Size = new System.Drawing.Size(30, 23);
-            this.btnPesquisarUsuario.TabIndex = 58;
-            this.btnPesquisarUsuario.Text = "...";
-            this.btnPesquisarUsuario.UseVisualStyleBackColor = false;
-            this.btnPesquisarUsuario.Click += new System.EventHandler(this.btnPesquisarUsuario_Click);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -449,7 +425,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(206, 195);
+            this.label8.Location = new System.Drawing.Point(195, 192);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 16);
             this.label8.TabIndex = 52;
@@ -557,7 +533,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(257, 20);
             this.txtNome.TabIndex = 42;
-            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // txtIdUsuario
             // 
@@ -626,6 +601,15 @@
             this.panel2.Size = new System.Drawing.Size(135, 28);
             this.panel2.TabIndex = 68;
             // 
+            // cbCategoria
+            // 
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(272, 192);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cbCategoria.TabIndex = 69;
+            this.cbCategoria.Click += new System.EventHandler(this.cbCategoria_Click);
+            // 
             // Produtos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -633,6 +617,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1249, 459);
+            this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -641,8 +626,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtIdProduto);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtIdCategoria);
-            this.Controls.Add(this.btnPesquisarUsuario);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
@@ -714,8 +697,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtIdProduto;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtIdCategoria;
-        private System.Windows.Forms.Button btnPesquisarUsuario;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -735,5 +716,6 @@
         private System.Windows.Forms.RadioButton produtoAtivoSim;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cbCategoria;
     }
 }

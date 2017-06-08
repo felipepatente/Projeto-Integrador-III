@@ -280,5 +280,26 @@ namespace Negocio
             }
         }
 
+        public SqlDataReader ConsultarCategoriaNome()
+        {
+            CategoriaColecao categoriaColecao = new CategoriaColecao();
+
+            try
+            {
+                conexao = conectar.GetConexao();
+                SqlCommand comando = conexao.CreateCommand();
+                comando.CommandText = "SELECT idCategoria, nomeCategoria " +
+                                      "FROM Categoria";
+                conexao.Open();
+                SqlDataReader meuDataReader = comando.ExecuteReader();
+                return meuDataReader;
+            }
+            catch (Exception)
+            {
+                return null;
+                //throw;
+            }
+        }
+        
     }
 }

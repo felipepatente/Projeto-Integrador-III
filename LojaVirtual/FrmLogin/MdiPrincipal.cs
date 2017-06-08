@@ -119,7 +119,7 @@ namespace FrmLogin
         private void MdiPrincipal_Load(object sender, EventArgs e)
         {
            chamarTela.Login();
-            if (Dados.tipoPerfil.Equals("E"))
+            if (!(Dados.tipoPerfil.Equals("A")))
             {
                 tsmiProduto.Enabled = false;
                 tsmiUsuario.Enabled = false;
@@ -155,7 +155,7 @@ namespace FrmLogin
 
         private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmCategoriaCrud categoria = new FrmCategoriaCrud(false);
+            FrmCategoriaCrud categoria = new FrmCategoriaCrud();
             categoria.MdiParent = MdiPrincipal.ActiveForm;
             categoria.Show();
         }
