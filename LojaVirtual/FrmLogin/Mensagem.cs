@@ -9,12 +9,14 @@ namespace FrmLogin
     public class Mensagem
     {
         private int numero;
-        private string tipo;
+        private string localTabela;
+        private string ondeTabela;
 
-        public Mensagem(int numero, string tipo)
+        public Mensagem(int numero, string localTabela, string ondeTabela)
         {
             this.numero = numero;
-            this.tipo = tipo;
+            this.localTabela = localTabela;
+            this.ondeTabela = ondeTabela;
         }
 
         public string GetMensagem()
@@ -26,7 +28,7 @@ namespace FrmLogin
             }
             else if (numero == 547)
             {
-                mensagem = "Exclusão negada. Esta(e) " + tipo +" esta sendo usado(a) em um dos produtos";
+                mensagem = "Exclusão negada. Esta(e) " + this.localTabela + " esta sendo usado(a) em um dos " + this.ondeTabela;
             }
             else if (numero > 0)
             {
@@ -34,7 +36,7 @@ namespace FrmLogin
             }
             else
             {
-                mensagem = "Error ao excluir " + tipo;
+                mensagem = "Error ao excluir " + this.localTabela;
             }
             return mensagem;
         }

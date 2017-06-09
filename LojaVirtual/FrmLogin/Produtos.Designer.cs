@@ -603,6 +603,7 @@
             // 
             // cbCategoria
             // 
+            this.cbCategoria.BackColor = System.Drawing.SystemColors.Control;
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(272, 192);
             this.cbCategoria.Name = "cbCategoria";
@@ -656,6 +657,7 @@
             this.Name = "Produtos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produto";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Produtos_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

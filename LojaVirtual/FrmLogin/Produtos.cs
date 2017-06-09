@@ -26,6 +26,7 @@ namespace FrmLogin
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
+            QtdResultado.top = 0;
             Close();
         }
 
@@ -47,7 +48,7 @@ namespace FrmLogin
                         int linhasEstoque = deletar.DeletarEstoque(produtoSelecionado.IdProduto);
                         linhas = deletar.DeletarProduto(produtoSelecionado.IdProduto);
 
-                        Mensagem mensagem = new Mensagem(linhas, "produto");
+                        Mensagem mensagem = new Mensagem(linhas, "produto","pedidos");
                         string tipoMensagem = mensagem.GetMensagem();
 
                         if (tipoMensagem.Equals("d"))
@@ -98,13 +99,14 @@ namespace FrmLogin
 
         private void ConsultarProduto()
         {
+            
             Consultar consultar = new Consultar();
             dgvProduto.AutoGenerateColumns = false;
             
             string opcao = VerOpcao();
             
             if (consultar.ConsultarProduto(opcao, txtPesquisar.Text) != null)
-            {
+            {                
                 dgvProduto.DataSource = null;
                 dgvProduto.DataSource = consultar.ConsultarProduto(opcao, txtPesquisar.Text);
             }
@@ -132,6 +134,7 @@ namespace FrmLogin
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
+            QtdResultado.top += 10;
             ConsultarProduto();
             SetarRadios();
         }
@@ -243,6 +246,7 @@ namespace FrmLogin
 
         private void AtualizarProduto()
         {
+            
             Atualizar atualizar = new Atualizar();
 
             string ativo;
@@ -258,6 +262,7 @@ namespace FrmLogin
             {
 
                 this.imagem = TratarImagem();
+                QtdResultado.top = 10;
                 int linhas = atualizar.AtualizarProduto(txtNome.Text, txtDescricao.Text, Convert.ToDecimal(txtPreco.Text),
                 Convert.ToDecimal(txtDesconto.Text), this.idCategorias, ativo,
                 Convert.ToInt32(txtIdUsuario.Text), Convert.ToInt32(txtQuantidade.Text), Convert.ToInt32(txtIdProduto.Text), this.imagem);
@@ -434,6 +439,7 @@ namespace FrmLogin
 
         private void AtualizarGrid()
         {
+            QtdResultado.top = 10;
             ConsultarProduto();
             dgvProduto.Update();
             dgvProduto.Refresh();
@@ -453,6 +459,11 @@ namespace FrmLogin
         private void button1_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(cbCategoria.SelectedValue);
+        }
+
+        private void Produtos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            QtdResultado.top = 0;
         }
     }
 }

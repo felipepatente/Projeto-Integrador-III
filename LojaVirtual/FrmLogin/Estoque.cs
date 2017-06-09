@@ -98,7 +98,7 @@ namespace FrmLogin
                         Deletar deletar = new Deletar();
                         int linhas = deletar.DeletarEstoque(Convert.ToInt32(txtIdProduto.Text));
 
-                        Mensagem mensagem = new Mensagem(linhas, "estoque");
+                        Mensagem mensagem = new Mensagem(linhas, "estoque","produto");
                         string tipoMensagem = mensagem.GetMensagem();
 
                         if (tipoMensagem.Equals("d"))

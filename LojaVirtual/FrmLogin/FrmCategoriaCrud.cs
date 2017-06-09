@@ -96,7 +96,7 @@ namespace FrmLogin
                         Deletar deletar = new Deletar();
                         int linhasAfetadas = deletar.DeletarCategoria(categoriaSelecionado.IdCategoria);
 
-                        Mensagem mensagem = new Mensagem(linhasAfetadas, "categoria");
+                        Mensagem mensagem = new Mensagem(linhasAfetadas, "categoria","produto");
                         string tipoMensagem = mensagem.GetMensagem();
 
                         if (tipoMensagem.Equals("d"))

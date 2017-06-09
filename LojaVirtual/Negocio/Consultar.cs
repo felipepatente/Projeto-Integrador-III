@@ -33,7 +33,7 @@ namespace Negocio
                 SqlCommand comando = conexao.CreateCommand();
                 comando.Parameters.Add("@nomeCategoria", SqlDbType.NVarChar, 50).Value = nome;
                 comando.CommandText = "SELECT idCategoria, nomeCategoria, descCategoria FROM categoria "+
-                    "WHERE nomeCategoria LIKE '%' + @nomeCategoria + '%';";
+                    "WHERE nomeCategoria LIKE '%' + @nomeCategoria + '%' ORDER BY nomeCategoria";
                 conexao.Open();
                 
                 SqlDataReader meuDataReader = comando.ExecuteReader();
@@ -116,12 +116,12 @@ namespace Negocio
                 comando.Parameters.Add("@tipoPesquisa", SqlDbType.NVarChar, 50).Value = tipoPesquisa;
                 comando.Parameters.Add("@pesquisa", SqlDbType.NVarChar, 50).Value = pesquisa;
                 
-                string sql = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, " +
+                string sql = "SELECT TOP "+  QtdResultado.top +" idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, " +
                     "nomeCategoria, c.idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem " +
                     "FROM Produto AS p " +
                     "INNER JOIN Categoria AS c " +
                     "ON c.idCategoria = p.idCategoria " +
-                    "WHERE " + tipoPesquisa + " LIKE '%' + @pesquisa + '%';";
+                    "WHERE " + tipoPesquisa + " LIKE '%' + @pesquisa + '%' ORDER BY nomeProduto";
                 
                 comando.CommandText = sql;
                 conexao.Open();
@@ -217,7 +217,7 @@ namespace Negocio
                 comando.Parameters.Add("@nomeUsuario", SqlDbType.NVarChar, 50).Value = nome;
                 comando.CommandText = "SELECT idUsuario, loginUsuario, senhaUsuario, nomeUsuario, tipoPerfil, usuarioAtivo " +
                 "FROM Usuario " +
-                "WHERE nomeUsuario LIKE '%' + @nomeUsuario + '%';";
+                "WHERE nomeUsuario LIKE '%' + @nomeUsuario + '%' ORDER BY nomeUsuario";
                 conexao.Open();
 
                 SqlDataReader meuDataReader = comando.ExecuteReader();
@@ -255,7 +255,7 @@ namespace Negocio
                 comando.CommandText = "SELECT e.idProduto, nomeProduto, qtdProdutoDisponivel " +
                                        "FROM estoque AS e " +
                                         "INNER JOIN Produto AS p " +
-                                        "ON e.idProduto = p.idProduto";
+                                        "ON e.idProduto = p.idProduto ORDER BY nomeProduto";
                 conexao.Open();
                 SqlDataReader meuDataReader = comando.ExecuteReader();
 

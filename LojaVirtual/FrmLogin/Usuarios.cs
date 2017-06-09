@@ -39,7 +39,7 @@ namespace FrmLogin
                         Usuario usuario = (dgvUsuario.SelectedRows[0].DataBoundItem as Usuario);
                         int linhas = deletar.DeletarUsuario(usuario.IdUsuario);
 
-                        Mensagem mensagem = new Mensagem(linhas, "usuario");
+                        Mensagem mensagem = new Mensagem(linhas, "usuario","produto");
                         string tipoMensagem = mensagem.GetMensagem();
 
                         if (tipoMensagem.Equals("d"))
