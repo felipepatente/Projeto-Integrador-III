@@ -604,6 +604,7 @@
             // cbCategoria
             // 
             this.cbCategoria.BackColor = System.Drawing.SystemColors.Control;
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(272, 192);
             this.cbCategoria.Name = "cbCategoria";

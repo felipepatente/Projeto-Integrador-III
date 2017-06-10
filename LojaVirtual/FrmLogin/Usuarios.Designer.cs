@@ -255,6 +255,7 @@
             // sltTipoPerfil
             // 
             this.sltTipoPerfil.BackColor = System.Drawing.SystemColors.Control;
+            this.sltTipoPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sltTipoPerfil.FormattingEnabled = true;
             this.sltTipoPerfil.Items.AddRange(new object[] {
             "A",
@@ -263,7 +264,6 @@
             this.sltTipoPerfil.Name = "sltTipoPerfil";
             this.sltTipoPerfil.Size = new System.Drawing.Size(225, 21);
             this.sltTipoPerfil.TabIndex = 48;
-            this.sltTipoPerfil.Text = "E";
             // 
             // label6
             // 
@@ -371,12 +371,14 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(225, 20);
             this.txtNome.TabIndex = 41;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // txtSenha
             // 
             this.txtSenha.BackColor = System.Drawing.SystemColors.Control;
             this.txtSenha.Location = new System.Drawing.Point(97, 248);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(225, 20);
             this.txtSenha.TabIndex = 40;
             // 

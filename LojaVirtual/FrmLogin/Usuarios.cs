@@ -197,5 +197,27 @@ namespace FrmLogin
             txtSenha.Text = null;
             txtNome.Text = null;
         }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            if (!ELetra(txtNome.Text) && txtNome.Text != "")
+            {
+                MessageBox.Show("Só é permitida a entrada de letras");
+                txtNome.Text = "";
+            }
+        }
+
+        private bool ELetra(string texto)
+        {
+            try
+            {
+                double numero = Convert.ToDouble(texto);
+                return false;
+            }
+            catch (Exception)
+            {
+                return true;
+            }
+        }
     }
 }
